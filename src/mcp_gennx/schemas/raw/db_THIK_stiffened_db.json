@@ -1,0 +1,656 @@
+{
+  "endpoint": "db/THIK",
+  "title": "Thickness - Stiffened DB",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35942342783769-Thickness-Stiffened-DB",
+  "input_uri": "{base url} + db/THIK",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "THIK": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "TYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "STYPE": {
+          "description": "SubType",
+          "type": "string"
+        },
+        "RIB_POS": {
+          "description": "RibPosition",
+          "type": "string"
+        },
+        "SECTION": {
+          "type": "object",
+          "properties": {
+            "THIKNESS": {
+              "description": "thicknessdataofplateelement",
+              "type": "number"
+            },
+            "DBNAME": {
+              "description": "NameofDB",
+              "type": "string"
+            },
+            "XZ": {
+              "type": "object",
+              "properties": {
+                "bRIB": {
+                  "description": "UseRibAttached",
+                  "type": "boolean"
+                },
+                "SHAPE": {
+                  "description": "Shape",
+                  "type": "string"
+                },
+                "NAME": {
+                  "description": "SectName",
+                  "type": "string"
+                },
+                "DIST": {
+                  "description": "Distance",
+                  "type": "number"
+                }
+              }
+            },
+            "YZ": {
+              "type": "object",
+              "properties": {
+                "bRIB": {
+                  "description": "UseRibAttached",
+                  "type": "boolean"
+                },
+                "SHAPE": {
+                  "description": "Shape",
+                  "type": "string"
+                },
+                "NAME": {
+                  "description": "SectName",
+                  "type": "string"
+                },
+                "DIST": {
+                  "description": "Distance",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Stiffened DB Example 1": {
+      "Assign": {
+        "101": {
+          "TYPE": "STIFFENED",
+          "STYPE": "DB",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "DBNAME": "KS21",
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "C",
+              "NAME": "C75x40x5/7",
+              "DIST": 0.4
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "L",
+              "NAME": "L25x3",
+              "DIST": 0.3
+            }
+          }
+        }
+      }
+    },
+    "Stiffened DB Example 2": {
+      "Assign": {
+        "102": {
+          "TYPE": "STIFFENED",
+          "STYPE": "DB",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "DBNAME": "KS21",
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "T",
+              "NAME": "T50x50x5/7",
+              "DIST": 0.4
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "H",
+              "NAME": "H100x50x5/7",
+              "DIST": 0.3
+            }
+          }
+        }
+      }
+    },
+    "Stiffened DB Example 3": {
+      "Assign": {
+        "103": {
+          "TYPE": "STIFFENED",
+          "STYPE": "DB",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "DBNAME": "KS21",
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "P",
+              "NAME": "P21.7x2",
+              "DIST": 0.4
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "B",
+              "NAME": "B40x40x1.6",
+              "DIST": 0.3
+            }
+          }
+        }
+      }
+    },
+    "Stiffened DB Example 4": {
+      "Assign": {
+        "104": {
+          "TYPE": "STIFFENED",
+          "STYPE": "DB",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "DBNAME": "ICHA",
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "2C",
+              "NAME": "IC30X86.8",
+              "DIST": 0.4
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "2L",
+              "NAME": "TL20X93.9",
+              "DIST": 0.3
+            }
+          }
+        }
+      }
+    },
+    "Stiffened DB Example 5": {
+      "Assign": {
+        "105": {
+          "TYPE": "STIFFENED",
+          "STYPE": "DB",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "DBNAME": "SS",
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "SB",
+              "NAME": "FB3x12",
+              "DIST": 0.4
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "SB",
+              "NAME": "FB3x12",
+              "DIST": 0.3
+            }
+          }
+        }
+      }
+    },
+    "Stiffened DB Example 6": {
+      "Assign": {
+        "106": {
+          "TYPE": "STIFFENED",
+          "STYPE": "DB",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "DBNAME": "KS21",
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "SR",
+              "NAME": "SR6",
+              "DIST": 0.4
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "SR",
+              "NAME": "SR6",
+              "DIST": 0.3
+            }
+          }
+        }
+      }
+    },
+    "Stiffened DB Example 7": {
+      "Assign": {
+        "107": {
+          "TYPE": "STIFFENED",
+          "STYPE": "DB",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "DBNAME": "KS21",
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "URIB",
+              "NAME": "URIB320x240x6-40",
+              "DIST": 0.4
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "CC",
+              "NAME": "LC-250x75x25x4.5",
+              "DIST": 0.3
+            }
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Thickness Type•\nValue: \"VALUE\"•\nStiffened: \"STIFFENED\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Stiffened Thickness Type•\nValue: \"VALUE\"•\nUse: \"USER\"•\nDB: \"DB\"",
+        "Key": "STYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Rib Position•\n\"LOWER\"•\n\"UPPER\"",
+        "Key": "RIB_POS",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Defined Stiffener",
+        "Key": "SECTION",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Thickness",
+        "Key": "THIKNESS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "DB Name²⁾",
+        "Key": "DBNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "XZ Section",
+        "Key": "XZ",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Use Rib Attached",
+        "Description": "\"bRIB\"",
+        "Key": "Boolean",
+        "Value Type": "False",
+        "Default": "Optional"
+      },
+      {
+        "No.": "ii. Shape¹⁾",
+        "Description": "\"SHAPE\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Section Name•\nRefer to Product",
+        "Description": "\"NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iv. Distance",
+        "Description": "\"DIST\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "YZ Section",
+        "Key": "YZ",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Use Rib Attached",
+        "Description": "\"bRIB\"",
+        "Key": "Boolean",
+        "Value Type": "False",
+        "Default": "Optional"
+      },
+      {
+        "No.": "ii. Shape¹⁾",
+        "Description": "\"SHAPE\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Section Name•\nRefer to Product",
+        "Description": "\"NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iv. Distance",
+        "Description": "\"DIST\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Required"
+      }
+    ],
+    [
+      {
+        "No.": "Size1",
+        "Shape Type": "Size2",
+        "Key(\"SHAPE\")": "Size3",
+        "Value Type (\"SIZE\")": "Size4"
+      },
+      {
+        "No.": "1",
+        "Shape Type": "Angle",
+        "Key(\"SHAPE\")": "\"L\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "2",
+        "Shape Type": "Channel",
+        "Key(\"SHAPE\")": "\"C\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "3",
+        "Shape Type": "H-Section",
+        "Key(\"SHAPE\")": "\"H\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "4",
+        "Shape Type": "T-Section",
+        "Key(\"SHAPE\")": "\"T\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "5",
+        "Shape Type": "BOX",
+        "Key(\"SHAPE\")": "\"B\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "6",
+        "Shape Type": "PIPE",
+        "Key(\"SHAPE\")": "\"P\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "7",
+        "Shape Type": "Double Angle",
+        "Key(\"SHAPE\")": "\"2L\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "8",
+        "Shape Type": "Double Channel",
+        "Key(\"SHAPE\")": "\"2C\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "9",
+        "Shape Type": "Solid Rectangle",
+        "Key(\"SHAPE\")": "\"SB\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "10",
+        "Shape Type": "Solid Round",
+        "Key(\"SHAPE\")": "\"SR\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "11",
+        "Shape Type": "Cold Formed Channel",
+        "Key(\"SHAPE\")": "\"CC\"",
+        "Value Type (\"SIZE\")": "Number"
+      },
+      {
+        "No.": "12",
+        "Shape Type": "U-RIB",
+        "Key(\"SHAPE\")": "\"URIB\"",
+        "Value Type (\"SIZE\")": "Number"
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Shape Type": "Korean Industrial Standards 2021",
+        "Value": "\"KS21\""
+      },
+      {
+        "No.": "2",
+        "Shape Type": "Korean Industrial Standards",
+        "Value": "\"KS\""
+      },
+      {
+        "No.": "3",
+        "Shape Type": "American Institute of Steel Construction 2010(US Unit)",
+        "Value": "\"AISC10(US)\""
+      },
+      {
+        "No.": "4",
+        "Shape Type": "American Institute of Steel Construction 2010(SI Unit)",
+        "Value": "\"AISC10(SI)\""
+      },
+      {
+        "No.": "5",
+        "Shape Type": "American Institute of Steel Construction 2005(US Unit)",
+        "Value": "\"AISC05(US)\""
+      },
+      {
+        "No.": "6",
+        "Shape Type": "American Institute of Steel Construction 2005(SI Unit)",
+        "Value": "\"AISC05(SI)\""
+      },
+      {
+        "No.": "7",
+        "Shape Type": "American Institute of Steel Construction 2000(US Unit)",
+        "Value": "\"AISC2K(US)\""
+      },
+      {
+        "No.": "8",
+        "Shape Type": "American Institute of Steel Construction 2000(SI Unit)",
+        "Value": "\"AISC2K(SI)\""
+      },
+      {
+        "No.": "9",
+        "Shape Type": "American Institute of Steel Construction",
+        "Value": "\"AISC\""
+      },
+      {
+        "No.": "10",
+        "Shape Type": "Canadian Institute of Steel Construction 2002(US Unit)",
+        "Value": "\"CISC02(US)\""
+      },
+      {
+        "No.": "11",
+        "Shape Type": "Canadian Institute of Steel Construction 2002(SI Unit)",
+        "Value": "\"CISC02(SI)\""
+      },
+      {
+        "No.": "12",
+        "Shape Type": "British Standard",
+        "Value": "\"BS\""
+      },
+      {
+        "No.": "13",
+        "Shape Type": "British Standard / BS 4-1: 1993",
+        "Value": "\"BS4-93\""
+      },
+      {
+        "No.": "14",
+        "Shape Type": "British Standard / BS EN 10365 : 2017",
+        "Value": "\"BS_EN_10365-2017\""
+      },
+      {
+        "No.": "15",
+        "Shape Type": "British Standard / EN 10365 : 2017",
+        "Value": "\"EN_10365-2017\""
+      },
+      {
+        "No.": "16",
+        "Shape Type": "Deutches Institut fur Normung e.v",
+        "Value": "\"DIN\""
+      },
+      {
+        "No.": "17",
+        "Shape Type": "Italian National Unification Body",
+        "Value": "\"UNI\""
+      },
+      {
+        "No.": "18",
+        "Shape Type": "Russian National Standards",
+        "Value": "\"GOST\""
+      },
+      {
+        "No.": "19",
+        "Shape Type": "Russian Standards / Rolled Steel Sections",
+        "Value": "\"STO_ASCHM\""
+      },
+      {
+        "No.": "20",
+        "Shape Type": "Japanese Industrial Standards 2000",
+        "Value": "\"JIS2K\""
+      },
+      {
+        "No.": "21",
+        "Shape Type": "Japanese Industrial Standards",
+        "Value": "\"JIS\""
+      },
+      {
+        "No.": "22",
+        "Shape Type": "Guojia Biao Zhun-Yejin Bu Biao Zhun",
+        "Value": "\"GB-YB\""
+      },
+      {
+        "No.": "23",
+        "Shape Type": "Guojia Biao Zhun-Yejin Bu Biao Zhun 2005",
+        "Value": "\"GB-YB05\""
+      },
+      {
+        "No.": "24",
+        "Shape Type": "Technical code of cold-formed thin-wall steel structures 2002",
+        "Value": "\"GB50018-02\""
+      },
+      {
+        "No.": "25",
+        "Shape Type": "Bentley Pacific Standards (SI Unit)",
+        "Value": "\"Pacific(SI)\""
+      },
+      {
+        "No.": "26",
+        "Shape Type": "Indian Standards",
+        "Value": "\"IS\""
+      },
+      {
+        "No.": "27",
+        "Shape Type": "Indian Standards (HOT ROLLED STEEL BEAM, COLUMN, CHANNEL AND ANGLE SECTIONS)",
+        "Value": "\"IS808\""
+      },
+      {
+        "No.": "28",
+        "Shape Type": "Indian Standards (Steel Tube)",
+        "Value": "\"IS1161\""
+      },
+      {
+        "No.": "29",
+        "Shape Type": "Chinese National Standard",
+        "Value": "\"CNS91\""
+      },
+      {
+        "No.": "30",
+        "Shape Type": "Chinese National Standard 2020",
+        "Value": "\"CNS2020\""
+      },
+      {
+        "No.": "31",
+        "Shape Type": "Code for design of photovoltaic modules support structures",
+        "Value": "\"NBT_10115-2018\""
+      },
+      {
+        "No.": "32",
+        "Shape Type": "Singapore Standards",
+        "Value": "\"SS\""
+      },
+      {
+        "No.": "33",
+        "Shape Type": "Chilean Steel Institute",
+        "Value": "\"ICHA\""
+      },
+      {
+        "No.": "34",
+        "Shape Type": "Thai Industrial Standards Institute (TISI) (2015)",
+        "Value": "\"TIS-1227-2558\""
+      },
+      {
+        "No.": "35",
+        "Shape Type": "Thai Industrial Standards Institute (TISI) (2018)",
+        "Value": "\"TIS-1228(2018)\""
+      },
+      {
+        "No.": "36",
+        "Shape Type": "Russian National Standard",
+        "Value": "\"GOST_8293-89\"\"GOST_26020-83\"\"GOST_19425-74\"\"GOST_P_57837-2017\"\"GOST_8240-97\"\"GOST_8278-83\"\"GOST_8239-72\"\"GOST_8509-93\"\"GOST_8510-72\"\"GOST_30245-2003\"\"GOST_8639-82\"\"GOST_8732-78\"\"GOST_Р_54157-2010\"\"GOST_10704-91\"\"GOST_54929-2012\"\"STO_ASCHM_20-93\"\"TU_14-2-24-72\""
+      },
+      {
+        "No.": "37",
+        "Shape Type": "Canadian Institute of Steel Construction 12th",
+        "Value": "\"CISC(SST12)\""
+      }
+    ]
+  ],
+  "menu_name": "Thickness - Stiffened DB"
+}

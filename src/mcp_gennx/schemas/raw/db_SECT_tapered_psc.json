@@ -1,0 +1,5540 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Tapered - PSC",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35941360898713-Section-Properties-Tapered-PSC",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_YJ": {
+              "description": "UserOffsetYJ",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_ZJ": {
+              "description": "UserOffsetZJ",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "TYPE": {
+              "description": "Type",
+              "type": "integer"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_A": {
+                  "description": "forOnlyPSCSectionISIZE-A",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_B": {
+                  "description": "forOnlyPSCSectionISIZE-B",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_C": {
+                  "description": "forOnlyPSCSectionISIZE-C",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_D": {
+                  "description": "forOnlyPSCSectionISIZE-D",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "SWIDTH": {
+                  "description": "forOnlyPSCSectionIorJSectionS-Width",
+                  "type": "number"
+                }
+              }
+            },
+            "SECT_J": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_A": {
+                  "description": "forOnlyPSCSectionISIZE-A",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_B": {
+                  "description": "forOnlyPSCSectionISIZE-B",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_C": {
+                  "description": "forOnlyPSCSectionISIZE-C",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_D": {
+                  "description": "forOnlyPSCSectionISIZE-D",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "SWIDTH": {
+                  "description": "forOnlyPSCSectionIorJSectionS-Width",
+                  "type": "number"
+                }
+              }
+            },
+            "Y_VAR": {
+              "description": "LyType",
+              "type": "integer"
+            },
+            "Z_VAR": {
+              "description": "LzType",
+              "type": "integer"
+            },
+            "WARPING_CHK_AUTO_I": {
+              "description": "WarpingCheckAuto",
+              "type": "boolean"
+            },
+            "WARPING_CHK_AUTO_J": {
+              "description": "WarpingCheckAuto",
+              "type": "boolean"
+            },
+            "SHEAR_CHK": {
+              "description": "ShearCheck",
+              "type": "boolean"
+            },
+            "WARPING_CHK_POS_I": {
+              "description": "WarpingCheckPositionI",
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 6
+                },
+                "maxItems": 2
+              }
+            },
+            "WARPING_CHK_POS_J": {
+              "description": "WarpingCheckPositionJ",
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 6
+                },
+                "maxItems": 2
+              }
+            },
+            "USE_WEB_THICK": {
+              "description": "UseWebThick",
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "maxItems": 2
+              }
+            },
+            "WEB_THICK": {
+              "description": "WebThick",
+              "type": "array",
+              "items": {
+                "type": "number",
+                "maxItems": 2
+              }
+            },
+            "USE_WEB_THICK_SHEAR": {
+              "description": "UseAutoWebThickShear",
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "boolean",
+                  "maxItems": 3
+                },
+                "maxItems": 2
+              }
+            },
+            "WEB_THICK_SHEAR": {
+              "description": "WebThickShear",
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 3
+                },
+                "maxItems": 2
+              }
+            },
+            "USE_SYMMETRIC": {
+              "description": "Symmetric",
+              "type": "boolean"
+            },
+            "USE_SMALL_HOLE": {
+              "description": "UseSmallHole",
+              "type": "boolean"
+            },
+            "USE_USER_DEF_MESHSIZE": {
+              "description": "UseUserDefinitionMeshSize",
+              "type": "boolean"
+            },
+            "MESHSIZE": {
+              "description": "MeshSize",
+              "type": "number"
+            },
+            "USE_USER_INTPUT_STIFF": {
+              "description": "UseUserInputStiffness",
+              "type": "boolean"
+            },
+            "PSC_OPT1": {
+              "description": "PSCOption1",
+              "type": "string"
+            },
+            "PSC_OPT2": {
+              "description": "PSCOption2",
+              "type": "string"
+            },
+            "JOINT": {
+              "description": "Joint",
+              "type": "array",
+              "items": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "PSC-1CELL": {
+      "Assign": {
+        "581": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-1CELL",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "1CEL",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "",
+            "PSC_OPT2": "",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-2CELL": {
+      "Assign": {
+        "582": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-2CELL",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "2CEL",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1,
+                0.1
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1,
+                0.1
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "",
+            "PSC_OPT2": "",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-3CELL": {
+      "Assign": {
+        "583": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-3CELL",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "3CEL",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.2,
+                0.4,
+                1.22,
+                0.36,
+                0.23,
+                0.42,
+                1.1,
+                0.6,
+                1.62,
+                0.34
+              ],
+              "vSIZE_PSC_B": [
+                0.92,
+                0.44,
+                2.05,
+                0.94,
+                0.4,
+                1.16,
+                1.12,
+                0.35,
+                2.08,
+                2.7,
+                1.36,
+                0.43
+              ],
+              "vSIZE_PSC_C": [
+                1.25,
+                0.52,
+                0.06,
+                0.2,
+                0.05,
+                0.14,
+                0.21,
+                0.32,
+                0.39,
+                1.12,
+                0.49,
+                0.24,
+                0.17
+              ],
+              "vSIZE_PSC_D": [
+                0.99,
+                0.51,
+                0.32,
+                0.68,
+                0.68,
+                0.33,
+                0.45,
+                0.98,
+                1.5,
+                0.93,
+                0.46,
+                0.74,
+                0.29
+              ],
+              "SWIDTH": 0.2
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.2,
+                0.4,
+                1.22,
+                0.36,
+                0.23,
+                0.42,
+                1.1,
+                0.6,
+                1.62,
+                0.34
+              ],
+              "vSIZE_PSC_B": [
+                0.92,
+                0.44,
+                2.05,
+                0.94,
+                0.4,
+                1.16,
+                1.12,
+                0.35,
+                2.08,
+                2.7,
+                1.36,
+                0.43
+              ],
+              "vSIZE_PSC_C": [
+                1.25,
+                0.52,
+                0.06,
+                0.2,
+                0.05,
+                0.14,
+                0.21,
+                0.32,
+                0.39,
+                1.12,
+                0.49,
+                0.24,
+                0.17
+              ],
+              "vSIZE_PSC_D": [
+                0.99,
+                0.51,
+                0.32,
+                0.68,
+                0.68,
+                0.33,
+                0.45,
+                0.98,
+                1.5,
+                0.93,
+                0.46,
+                0.74,
+                0.29
+              ],
+              "SWIDTH": 0.2
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "",
+            "PSC_OPT2": "",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-nCELL": {
+      "Assign": {
+        "584": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-nCELL",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "NCEL",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                1.5,
+                0.3,
+                0.2,
+                0.1,
+                0.15
+              ],
+              "vSIZE_PSC_B": [
+                4,
+                0.8,
+                0.18,
+                0.05,
+                0.05,
+                0.21,
+                0.12,
+                0.15
+              ],
+              "SWIDTH": 1.5
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                1.5,
+                0.3,
+                0.2,
+                0.1,
+                0.15
+              ],
+              "vSIZE_PSC_B": [
+                4,
+                0.8,
+                0.18,
+                0.05,
+                0.05,
+                0.21,
+                0.12,
+                0.15
+              ],
+              "SWIDTH": 1.5
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_AUTO_SHEAR_CHK_POS": [
+              [
+                true,
+                false,
+                true
+              ],
+              [
+                true,
+                false,
+                true
+              ]
+            ],
+            "AUTO_SHEAR_CHK_POS": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "CHAMFER",
+            "PSC_OPT2": "4"
+          }
+        }
+      }
+    },
+    "PSC-nCELL2_Polygon": {
+      "Assign": {
+        "585": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-nCELL2",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "NCE2",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.7,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_B": [
+                0.19,
+                0.13,
+                0.15,
+                0.08,
+                0.09,
+                0.07,
+                0.22,
+                0.2,
+                0.07,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "vSIZE_PSC_C": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.6999999999999998,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_D": [
+                0.19,
+                0.13,
+                0.15,
+                0.08,
+                0.09,
+                0.07,
+                0.22,
+                0.2,
+                0.07,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "SWIDTH": 4
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.7,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_B": [
+                0.19,
+                0.13,
+                0.15,
+                0.08,
+                0.09,
+                0.07,
+                0.22,
+                0.2,
+                0.07,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "vSIZE_PSC_C": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.6999999999999998,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_D": [
+                0.19,
+                0.13,
+                0.15,
+                0.08,
+                0.09,
+                0.07,
+                0.22,
+                0.2,
+                0.07,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "SWIDTH": 4
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_AUTO_SHEAR_CHK_POS": [
+              [
+                true,
+                false,
+                true
+              ],
+              [
+                true,
+                false,
+                true
+              ]
+            ],
+            "AUTO_SHEAR_CHK_POS": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "POLYGON",
+            "PSC_OPT2": "3",
+            "JOINT": [
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-nCELL2_Circle": {
+      "Assign": {
+        "586": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-nCELL2",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "NCE2",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.7,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_B": [
+                0.4,
+                0.5,
+                0.15,
+                0.2,
+                0.09,
+                0.07,
+                0.22,
+                0.6,
+                0.2,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "vSIZE_PSC_C": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.6999999999999998,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_D": [
+                0.4,
+                0.5,
+                0.15,
+                0.2,
+                0.09,
+                0.07,
+                0.22,
+                0.6,
+                0.2,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "SWIDTH": 4
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.7,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_B": [
+                0.4,
+                0.5,
+                0.15,
+                0.2,
+                0.09,
+                0.07,
+                0.22,
+                0.6,
+                0.2,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "vSIZE_PSC_C": [
+                0.12,
+                0.2,
+                0.08,
+                0.4,
+                0.6999999999999998,
+                0.34,
+                0.2,
+                0.3,
+                0.34,
+                0.5,
+                0.51
+              ],
+              "vSIZE_PSC_D": [
+                0.4,
+                0.5,
+                0.15,
+                0.2,
+                0.09,
+                0.07,
+                0.22,
+                0.6,
+                0.2,
+                0.06,
+                0.05,
+                0.03,
+                0.13,
+                0.05,
+                0.06,
+                0.07,
+                0.2,
+                0.3
+              ],
+              "SWIDTH": 4
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_AUTO_SHEAR_CHK_POS": [
+              [
+                true,
+                false,
+                true
+              ],
+              [
+                true,
+                false,
+                true
+              ]
+            ],
+            "AUTO_SHEAR_CHK_POS": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "CIRCLE",
+            "PSC_OPT2": "2",
+            "JOINT": [
+              true,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-MID_None/None": {
+      "Assign": {
+        "587": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-MID-NoneNone",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCM",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.3,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0.5,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                2.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0.7,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 2.3
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.3,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0.5,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                2.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0.7,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 2.3
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "NONE",
+            "PSC_OPT2": "NONE",
+            "JOINT": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-MID_None/Cirlcle": {
+      "Assign": {
+        "588": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-MID-NoneCirlcle",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCM",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.3,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0.5,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.4,
+                0,
+                0,
+                0,
+                1.5,
+                0,
+                0,
+                0,
+                0.3
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0.7,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 2.3
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.3,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0.5,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.4,
+                0,
+                0,
+                0,
+                1.5,
+                0,
+                0,
+                0,
+                0.3
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0.7,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 2.3
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "NONE",
+            "PSC_OPT2": "CIRCLE",
+            "JOINT": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-MID_None/Polygon": {
+      "Assign": {
+        "589": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-MID-NonePolygon",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCM",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.3,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0.5,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                0.94,
+                0.44,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.87,
+                1.09
+              ],
+              "SWIDTH": 2.3
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.3,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0.5,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                0.94,
+                0.44,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.87,
+                1.09
+              ],
+              "SWIDTH": 2.3
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "NONE",
+            "PSC_OPT2": "POLYGON",
+            "JOINT": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-MID_Circle/Circle": {
+      "Assign": {
+        "590": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-MID-CircleCircle",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCM",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.3,
+                0.45,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0.8
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.4,
+                0,
+                0,
+                0,
+                1.5,
+                0,
+                0,
+                0,
+                0.3
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0.7,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 2.3
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.3,
+                0.45,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0.8
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.4,
+                0,
+                0,
+                0,
+                1.5,
+                0,
+                0,
+                0,
+                0.3
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0.7,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 2.3
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "CIRCLE",
+            "PSC_OPT2": "CIRCLE",
+            "JOINT": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-MID_Circle/Polygon": {
+      "Assign": {
+        "592": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-MID-CirclePolygon",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCM",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.3,
+                0.45,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0.8
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                0.48,
+                0.94,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.87,
+                1.09
+              ],
+              "SWIDTH": 2.3
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.3,
+                0.45,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0.8
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                0.48,
+                0.94,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.87,
+                1.09
+              ],
+              "SWIDTH": 2.3
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "CIRCLE",
+            "PSC_OPT2": "POLYGON",
+            "JOINT": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-MID_Polygon/Polygon": {
+      "Assign": {
+        "593": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-MID-PolygonPolygon",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCM",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.45,
+                0.26,
+                0.44,
+                0.05,
+                0.2,
+                1.13,
+                0.4,
+                0.07,
+                0.22,
+                0.27
+              ],
+              "vSIZE_PSC_B": [
+                0.16,
+                1.36,
+                0.44,
+                0.9,
+                0.85,
+                1.08
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                1.09,
+                0.44,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.87,
+                1.09
+              ],
+              "SWIDTH": 2.45
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.45,
+                0.26,
+                0.44,
+                0.05,
+                0.2,
+                1.13,
+                0.4,
+                0.07,
+                0.22,
+                0.27
+              ],
+              "vSIZE_PSC_B": [
+                0.16,
+                1.36,
+                0.44,
+                0.9,
+                0.85,
+                1.08
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                1.09,
+                0.44,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.87,
+                1.09
+              ],
+              "SWIDTH": 2.45
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "POLYGON",
+            "PSC_OPT2": "POLYGON",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-I": {
+      "Assign": {
+        "596": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-I",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCI",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.45,
+                0.26,
+                0.44,
+                0.05,
+                0.2,
+                1.13,
+                0.4,
+                0.07,
+                0.22,
+                0.27
+              ],
+              "vSIZE_PSC_B": [
+                0.16,
+                1.36,
+                0.44,
+                0.9,
+                0.8,
+                0.29,
+                0.52
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                1.09,
+                0.44,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.82,
+                0.35,
+                0.57
+              ],
+              "SWIDTH": 2.45
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.45,
+                0.26,
+                0.44,
+                0.05,
+                0.2,
+                1.13,
+                0.4,
+                0.07,
+                0.22,
+                0.27
+              ],
+              "vSIZE_PSC_B": [
+                0.16,
+                1.36,
+                0.44,
+                0.9,
+                0.8,
+                0.29,
+                0.52
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.48,
+                0.03,
+                0.22,
+                1.09,
+                0.44,
+                0.05,
+                0.24,
+                0.25
+              ],
+              "vSIZE_PSC_D": [
+                0.18,
+                1.34,
+                0.46,
+                0.85,
+                0.82,
+                0.35,
+                0.57
+              ],
+              "SWIDTH": 2.45
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "",
+            "PSC_OPT2": "",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-Half_Left/Polygon": {
+      "Assign": {
+        "597": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-Half-Left-Polygon",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCH",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "LEFT",
+            "PSC_OPT2": "POLYGON",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-Half_Right/Polygon": {
+      "Assign": {
+        "598": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-Half-Right-Polygon",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCH",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0.05,
+                0.14,
+                1.23,
+                0.88,
+                0.2,
+                0.025,
+                0.09,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0.89,
+                1.56,
+                1.69,
+                1.48,
+                0.57,
+                1.1
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "RIGHT",
+            "PSC_OPT2": "POLYGON",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-Half_Left/Circle": {
+      "Assign": {
+        "599": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-Half-Left-Circle",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCH",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0,
+                0,
+                0,
+                1.75,
+                0,
+                0,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0,
+                0,
+                0,
+                1.75,
+                0,
+                0,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "LEFT",
+            "PSC_OPT2": "CIRCLE",
+            "JOINT": [
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-Half_Right/Circle": {
+      "Assign": {
+        "600": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-Half-Right-Circle",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCH",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0,
+                0,
+                1.75,
+                0,
+                0.2,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0,
+                0,
+                0,
+                1.48,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                0.22,
+                0.44,
+                0,
+                0,
+                1.75,
+                0,
+                0.2,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0,
+                0,
+                0,
+                1.48,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "RIGHT",
+            "PSC_OPT2": "CIRCLE",
+            "JOINT": [
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-Half_Left/None": {
+      "Assign": {
+        "601": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-Half-Left-None",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCH",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                2.3,
+                0.44,
+                0,
+                0,
+                1.75,
+                0,
+                0.2,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0,
+                0,
+                0,
+                1.48,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                2.3,
+                0.44,
+                0,
+                0,
+                1.75,
+                0,
+                0.2,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0,
+                0,
+                0,
+                1.48,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "LEFT",
+            "PSC_OPT2": "NONE",
+            "JOINT": [
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-Half_Right/None": {
+      "Assign": {
+        "602": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-Half-Right-None",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCH",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                2.3,
+                0.44,
+                0,
+                0,
+                1.75,
+                0,
+                0.2,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0,
+                0,
+                0,
+                1.48,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                0.23,
+                0.42,
+                0.055,
+                0.18,
+                1.68,
+                0.23
+              ],
+              "vSIZE_PSC_B": [
+                1.23,
+                0.44,
+                0.9,
+                0.6,
+                0.02,
+                1.8
+              ],
+              "vSIZE_PSC_C": [
+                2.3,
+                0.44,
+                0,
+                0,
+                1.75,
+                0,
+                0.2,
+                0,
+                0,
+                0.21
+              ],
+              "vSIZE_PSC_D": [
+                1.91,
+                0,
+                0,
+                0,
+                1.48,
+                0,
+                0
+              ],
+              "SWIDTH": 0.23
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "RIGHT",
+            "PSC_OPT2": "NONE",
+            "JOINT": [
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-TEE": {
+      "Assign": {
+        "603": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-TEE",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCT",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                2.17,
+                0.29,
+                0.13,
+                1.8,
+                0.21,
+                0.13,
+                1.63,
+                1.83
+              ],
+              "vSIZE_PSC_B": [
+                0.025,
+                0.08,
+                1.43,
+                0.85,
+                0.06,
+                0.03,
+                0.81,
+                1.42
+              ],
+              "vSIZE_PSC_C": [
+                0.29,
+                0.28,
+                1.7,
+                0.19,
+                0.16,
+                1.6,
+                1.85
+              ],
+              "vSIZE_PSC_D": [
+                0.05,
+                0.16,
+                1.4,
+                0.85,
+                0.06,
+                0.02,
+                0.8,
+                1.39
+              ],
+              "SWIDTH": 2.17
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                2.17,
+                0.29,
+                0.13,
+                1.8,
+                0.21,
+                0.13,
+                1.63,
+                1.83
+              ],
+              "vSIZE_PSC_B": [
+                0.025,
+                0.08,
+                1.43,
+                0.85,
+                0.06,
+                0.03,
+                0.81,
+                1.42
+              ],
+              "vSIZE_PSC_C": [
+                0.29,
+                0.28,
+                1.7,
+                0.19,
+                0.16,
+                1.6,
+                1.85
+              ],
+              "vSIZE_PSC_D": [
+                0.05,
+                0.16,
+                1.4,
+                0.85,
+                0.06,
+                0.02,
+                0.8,
+                1.39
+              ],
+              "SWIDTH": 2.17
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "",
+            "PSC_OPT2": "",
+            "JOINT": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-PLAT_Half/Left": {
+      "Assign": {
+        "604": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-PLAT-HalfLeft",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCB",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1.44
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1.44
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "HALF",
+            "PSC_OPT2": "LEFT",
+            "JOINT": [
+              true,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "PSC-PLAT_Half/Right": {
+      "Assign": {
+        "605": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-PLAT-HalfRight",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCB",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1.44
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1.44
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "HALF",
+            "PSC_OPT2": "RIGHT",
+            "JOINT": [
+              false,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-PLAT_1Cell/Circle": {
+      "Assign": {
+        "606": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-PLAT-1CellCircle",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCB",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                1.88,
+                0.18,
+                0.19,
+                1.55,
+                0.32,
+                1.4,
+                0.43,
+                0.23
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1.44
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                1.88,
+                0.18,
+                0.19,
+                1.55,
+                0.32,
+                1.4,
+                0.43,
+                0.23
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1.44
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "1CELL",
+            "PSC_OPT2": "CIRCLE",
+            "JOINT": [
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-PLAT_1Cell/Polygon": {
+      "Assign": {
+        "607": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-PLAT-1CellPolygon",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCB",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0.1,
+                0.21,
+                0.6,
+                0.3,
+                0.75,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                1.88,
+                0.18,
+                0.19,
+                1.55,
+                0.32,
+                1.4,
+                0.43,
+                0.23
+              ],
+              "vSIZE_PSC_D": [
+                0.28,
+                0.24,
+                0.5,
+                0.43,
+                0.8
+              ],
+              "SWIDTH": 1.44
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                1.44,
+                0.26,
+                1.7,
+                0.14,
+                0.16,
+                1.35,
+                0.37,
+                1.45,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0.1,
+                0.21,
+                0.6,
+                0.3,
+                0.75,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                1.88,
+                0.18,
+                0.19,
+                1.55,
+                0.32,
+                1.4,
+                0.43,
+                0.23
+              ],
+              "vSIZE_PSC_D": [
+                0.28,
+                0.24,
+                0.5,
+                0.43,
+                0.8
+              ],
+              "SWIDTH": 1.44
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "1CELL",
+            "PSC_OPT2": "POLYGON",
+            "JOINT": [
+              true,
+              true
+            ]
+          }
+        }
+      }
+    },
+    "PSC-PLAT-2Cell": {
+      "Assign": {
+        "608": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-PLAT-2Cell",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "PSCB",
+            "TYPE": 11,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                1,
+                0.5,
+                1.7,
+                0.14,
+                0.16,
+                1.85,
+                0.37,
+                1.95,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0.2
+              ],
+              "vSIZE_PSC_C": [
+                1.88,
+                0.18,
+                0.19,
+                2.05,
+                0.32,
+                1.9,
+                0.43,
+                0.23
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1
+            },
+            "SECT_J": {
+              "vSIZE_PSC_A": [
+                1,
+                0.5,
+                1.7,
+                0.14,
+                0.16,
+                1.85,
+                0.37,
+                1.95,
+                0.48,
+                0.18
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0.2
+              ],
+              "vSIZE_PSC_C": [
+                1.88,
+                0.18,
+                0.19,
+                2.05,
+                0.32,
+                1.9,
+                0.43,
+                0.23
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "SWIDTH": 1
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "WARPING_CHK_AUTO_I": false,
+            "WARPING_CHK_AUTO_J": false,
+            "WARPING_CHK_POS_I": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "WARPING_CHK_POS_J": [
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ],
+              [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6
+              ]
+            ],
+            "USE_WEB_THICK": [
+              true,
+              true
+            ],
+            "WEB_THICK": [
+              0,
+              0
+            ],
+            "USE_WEB_THICK_SHEAR": [
+              [
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true
+              ]
+            ],
+            "WEB_THICK_SHEAR": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "USE_SYMMETRIC": false,
+            "USE_SMALL_HOLE": false,
+            "USE_USER_DEF_MESHSIZE": true,
+            "MESHSIZE": 0.5,
+            "USE_USER_INTPUT_STIFF": false,
+            "PSC_OPT1": "2CELL",
+            "PSC_OPT2": "",
+            "JOINT": [
+              true,
+              true
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Data",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Tapered Type•\nPSC: 11",
+        "Key": "TYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Y Axis Variations•\nLinear: 1•\nParabolic: 2•\nCubic: 3",
+        "Key": "Y_VAR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Z Axis Variations•\nLinear: 1•\nParabolic: 2•\nCubic: 3",
+        "Key": "Z_VAR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Section Specifications - I",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Outer-Height¹⁾",
+        "Description": "\"vSIZE_PSC_A\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Outer-Breadth¹⁾",
+        "Description": "\"vSIZE_PSC_B\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Inner-Height¹⁾",
+        "Description": "\"vSIZE_PSC_C\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iv. Inner-Breadth¹⁾",
+        "Description": "\"vSIZE_PSC_D\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "v. PSC-nCELL2•\nSlab Widthv. Others•\nIndex 0 of \"vSIZE_PSC_A\"",
+        "Description": "\"SWIDTH\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Section Specifications - J",
+        "Key": "SECT_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Outer-Height¹⁾",
+        "Description": "\"vSIZE_PSC_A\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Outer-Breadth¹⁾",
+        "Description": "\"vSIZE_PSC_B\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Inner-Height¹⁾",
+        "Description": "\"vSIZE_PSC_C\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iv. Inner-Breadth¹⁾",
+        "Description": "\"vSIZE_PSC_D\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "v. PSC-nCELL2•\nSlab Widthv. Others•\nIndex 0 of \"vSIZE_PSC_A\"",
+        "Description": "\"SWIDTH\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Warping Check for I•\nAuto: true•\nUser: false",
+        "Key": "WARPING_CHK_AUTO_I",
+        "Value Type": "Boolean",
+        "Default": "true",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Warping Check for J•\nAuto: true•\nUser: false",
+        "Key": "WARPING_CHK_AUTO_J",
+        "Value Type": "Boolean",
+        "Default": "true",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Warping Check Position for I•\n[[ y1, y2, y3, y4, y5, y6 ],[ z1, z2, z3, z4, z5, z6 ]]",
+        "Key": "WARPING_CHK_POS_I",
+        "Value Type": "Array[Array[Number]]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Warping Check Position for J•\n[[ y1, y2, y3, y4, y5, y6 ],[ z1, z2, z3, z4, z5, z6 ]]",
+        "Key": "WARPING_CHK_POS_J",
+        "Value Type": "Array[Array[Number]]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Web Thickness Check for Torsion of I, J•\n[i, j]",
+        "Key": "USE_WEB_THICK",
+        "Value Type": "Array[Boolean]",
+        "Default": "false",
+        "Required": "Required"
+      },
+      {
+        "No.": "(11)",
+        "Description": "Web Thickness Value for Torsion of I, J•\n[i, j]",
+        "Key": "WEB_THICK",
+        "Value Type": "Array[Number]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(12)",
+        "Description": "Web Thickness Check for Shear of I, J•\n[[ti1, ti2, ti3], [tj1, tj2, tj3]]",
+        "Key": "USE_WEB_THICK_SHEAR",
+        "Value Type": "Array[Array[Boolean]]",
+        "Default": "false",
+        "Required": "Required"
+      },
+      {
+        "No.": "(13)",
+        "Description": "Web Thickness Value for Shear of I, J•\n[[ti1, ti2, ti3], [tj1, tj2, tj3]]",
+        "Key": "WEB_THICK_SHEAR",
+        "Value Type": "Array[Array[Number]]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(14)",
+        "Description": "Symmetry Option",
+        "Key": "USE_SYMMETRIC",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(15)",
+        "Description": "Side Hole Option•\nOnly nCELL2",
+        "Key": "USE_SMALL_HOLE",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(16)",
+        "Description": "Mesh Size Calculation Option",
+        "Key": "USE_USER_DEF_MESHSIZE",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(17)",
+        "Description": "Mesh Size",
+        "Key": "MESH SIZE",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(18)",
+        "Description": "Stiffness Calculation Option",
+        "Key": "USE_USER_INTPUT_STIFF",
+        "Value Type": "Boolean",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(19)",
+        "Description": "Shape Option 1¹⁾",
+        "Key": "PSC_OPT1",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(20)",
+        "Description": "Shape Option 2¹⁾",
+        "Key": "PSC_OPT2",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(21)",
+        "Description": "Joint On/Off¹⁾",
+        "Key": "JOINT",
+        "Value Type": "Array[Boolean]",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Tapered - PSC"
+}

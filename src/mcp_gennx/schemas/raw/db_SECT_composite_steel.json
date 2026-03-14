@@ -1,0 +1,2452 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Composite - Steel",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35939122737689-Section-Properties-Composite-Steel",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "USE_SYM_CALC": {
+                  "description": "SymmetricAutoCalculator",
+                  "type": "boolean"
+                },
+                "STIFF": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "STIFFENER": {
+                  "type": "object",
+                  "properties": {
+                    "POSITION": {
+                      "description": "Position",
+                      "type": "integer"
+                    },
+                    "REFERENCE_OF_D": {
+                      "description": "Referenceofd",
+                      "type": "integer"
+                    },
+                    "STIFF_CNT": {
+                      "description": "StiffArrayCount",
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "maxItems": 4
+                      }
+                    },
+                    "STIFF_SHAPE": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "NAME": {
+                            "description": "Name",
+                            "type": "string"
+                          },
+                          "SHAPE_TYPE": {
+                            "description": "Type",
+                            "type": "integer"
+                          },
+                          "SIZE": {
+                            "description": "Size",
+                            "type": "array",
+                            "items": {
+                              "type": "number",
+                              "maxItems": 8
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "STIFF_TOP": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "SPACING": {
+                            "description": "Spacing",
+                            "type": "number"
+                          },
+                          "SHAPE": {
+                            "description": "Shape",
+                            "type": "integer"
+                          },
+                          "USE_CALC": {
+                            "description": "UseCalc",
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    },
+                    "STIFF_BOT": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "SPACING": {
+                            "description": "Spacing",
+                            "type": "number"
+                          },
+                          "SHAPE": {
+                            "description": "Shape",
+                            "type": "integer"
+                          },
+                          "USE_CALC": {
+                            "description": "UseCalc",
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    },
+                    "STIFF_LEFT": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "SPACING": {
+                            "description": "Spacing",
+                            "type": "number"
+                          },
+                          "SHAPE": {
+                            "description": "Shape",
+                            "type": "integer"
+                          },
+                          "USE_CALC": {
+                            "description": "UseCalc",
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    },
+                    "STIFF_RIGHT": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "SPACING": {
+                            "description": "Spacing",
+                            "type": "number"
+                          },
+                          "SHAPE": {
+                            "description": "Shape",
+                            "type": "integer"
+                          },
+                          "USE_CALC": {
+                            "description": "UseCalc",
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "SODSTIFF": {
+                  "type": "object",
+                  "properties": {
+                    "TOSTIFNOS": {
+                      "description": "Definedstiffenernumber",
+                      "type": "integer"
+                    },
+                    "SHAPE": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "NAME": {
+                            "description": "Name",
+                            "type": "string"
+                          },
+                          "SHAPE_TYPE": {
+                            "description": "Type",
+                            "type": "integer"
+                          },
+                          "SIZE": {
+                            "description": "Size",
+                            "type": "array",
+                            "items": {
+                              "type": "number",
+                              "maxItems": 8
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "DECKSTIFFNO": {
+                      "description": "Totaldeck&Stiffnumber",
+                      "type": "integer"
+                    },
+                    "SUB": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "DECK_POS": {
+                            "description": "DeckPosition",
+                            "type": "integer"
+                          },
+                          "DECK_PART": {
+                            "description": "DeckPart",
+                            "type": "integer"
+                          },
+                          "REF_POS": {
+                            "description": "ReferencePosition",
+                            "type": "integer"
+                          },
+                          "NUM": {
+                            "description": "Stiffenernumber",
+                            "type": "integer"
+                          },
+                          "DECK_NAME": {
+                            "description": "DeckName",
+                            "type": "string"
+                          },
+                          "EACHSTIFFNOS": {
+                            "description": "Appliedstiffenernumber",
+                            "type": "integer"
+                          },
+                          "DATA": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "USE_CALC": {
+                                  "description": "UseCalculation",
+                                  "type": "boolean"
+                                },
+                                "SPACING": {
+                                  "description": "Spacing",
+                                  "type": "number"
+                                },
+                                "STIF_POS": {
+                                  "description": "Position",
+                                  "type": "integer"
+                                },
+                                "SHAPE_NAME": {
+                                  "description": "ShapeName",
+                                  "type": "string"
+                                },
+                                "STIF_NAME": {
+                                  "description": "StiffName",
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "MATL_ELAST": {
+              "description": "Matl_Elast",
+              "type": "number"
+            },
+            "MATL_DENS": {
+              "description": "Matl_Density",
+              "type": "number"
+            },
+            "MATL_POIS_S": {
+              "description": "Matl_Poisson_S",
+              "type": "number"
+            },
+            "MATL_POIS_C": {
+              "description": "Matl_Poisson_C",
+              "type": "number"
+            },
+            "MATL_THERMAL": {
+              "description": "Matl_Thermal",
+              "type": "number"
+            },
+            "USE_MULTI_ELAST": {
+              "description": "UseMultipleELastic",
+              "type": "boolean"
+            },
+            "LONGTERM_ESEC": {
+              "description": "LongTermESEC",
+              "type": "number"
+            },
+            "SHRINK_ESEC": {
+              "description": "ShrinkageESEC",
+              "type": "number"
+            }
+          }
+        },
+        "SECT_AFTER": {
+          "type": "object",
+          "properties": {
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "SLAB": {
+              "description": "SlabforOnlyCompositeSection",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Steel-Box (Type1)": {
+      "Assign": {
+        "701": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Box(Type1)",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "B",
+            "SECT_I": {
+              "vSIZE": [
+                0.9,
+                0.018,
+                1.4,
+                0.2,
+                0.025,
+                0.8,
+                0.25,
+                0.02
+              ]
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SLAB": [
+              2.2,
+              0.15,
+              0.1
+            ]
+          }
+        }
+      }
+    },
+    "Steel-Box (Type1) with Stiffener": {
+      "Assign": {
+        "702": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Box(Type1)-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "B",
+            "SECT_I": {
+              "vSIZE": [
+                0.9,
+                0.018,
+                1.4,
+                0.2,
+                0.025,
+                0.8,
+                0.25,
+                0.02
+              ],
+              "STIFFENER": {
+                "POSITION": 0,
+                "REFERENCE_OF_D": 0,
+                "STIFF_CNT": [
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "STIFF_SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "STIFF_TOP": [
+                  {
+                    "SPACING": 0.31,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.32,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.33,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ],
+                "STIFF_BOT": [
+                  {
+                    "SPACING": 0.21,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.22,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.23,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ],
+                "STIFF_LEFT": [
+                  {
+                    "SPACING": 0.21,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.22,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.23,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ],
+                "STIFF_RIGHT": [
+                  {
+                    "SPACING": 0.21,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.22,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.23,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ]
+              }
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SLAB": [
+              2.2,
+              0.15,
+              0.1
+            ]
+          }
+        }
+      }
+    },
+    "Steel-I (Type1)": {
+      "Assign": {
+        "703": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-I(Type1)",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "I",
+            "SECT_I": {
+              "vSIZE": [
+                0.9,
+                0.018,
+                1.4,
+                0.025,
+                0.8,
+                0.02
+              ]
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SLAB": [
+              2.2,
+              0.15,
+              0.1
+            ]
+          }
+        }
+      }
+    },
+    "Steel-I (Type1) with Stiffener": {
+      "Assign": {
+        "704": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-I(Type1)-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "I",
+            "SECT_I": {
+              "vSIZE": [
+                0.9,
+                0.018,
+                1.4,
+                0.025,
+                0.8,
+                0.02
+              ],
+              "STIFFENER": {
+                "POSITION": 0,
+                "REFERENCE_OF_D": 0,
+                "STIFF_CNT": [
+                  3,
+                  3,
+                  0,
+                  0
+                ],
+                "STIFF_SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "STIFF_LEFT": [
+                  {
+                    "SPACING": 0.21,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.22,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.23,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ],
+                "STIFF_RIGHT": [
+                  {
+                    "SPACING": 0.21,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.22,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.23,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ]
+              }
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SLAB": [
+              2.2,
+              0.15,
+              0.1
+            ]
+          }
+        }
+      }
+    },
+    "Steel-Tub (Type1)": {
+      "Assign": {
+        "705": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Tub(Type1)",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "Tub",
+            "SECT_I": {
+              "vSIZE": [
+                0.9,
+                0.018,
+                1.2,
+                0.3,
+                0.025,
+                0.8,
+                0.25,
+                0.02,
+                0.2,
+                0
+              ]
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SLAB": [
+              2.2,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    },
+    "Steel-Tub (Type1) with Stiffener": {
+      "Assign": {
+        "706": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Tub(Type1)-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "Tub",
+            "SECT_I": {
+              "vSIZE": [
+                0.9,
+                0.018,
+                1.2,
+                0.3,
+                0.025,
+                0.8,
+                0.25,
+                0.02,
+                0.2,
+                0
+              ],
+              "STIFFENER": {
+                "POSITION": 0,
+                "REFERENCE_OF_D": 0,
+                "STIFF_CNT": [
+                  3,
+                  3,
+                  3,
+                  0
+                ],
+                "STIFF_SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "STIFF_BOT": [
+                  {
+                    "SPACING": 0.2,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.19,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.18,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ],
+                "STIFF_LEFT": [
+                  {
+                    "SPACING": 0.21,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.22,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.23,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ],
+                "STIFF_RIGHT": [
+                  {
+                    "SPACING": 0.21,
+                    "SHAPE": 0,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.22,
+                    "SHAPE": 1,
+                    "USE_CALC": true
+                  },
+                  {
+                    "SPACING": 0.23,
+                    "SHAPE": 2,
+                    "USE_CALC": true
+                  }
+                ]
+              }
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SLAB": [
+              2.2,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    },
+    "Steel-Box (Type2)": {
+      "Assign": {
+        "707": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Box(Type2)",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "GB",
+            "SECT_I": {
+              "vSIZE": [
+                0.2,
+                0.8,
+                0.3,
+                0.12,
+                0.4,
+                0.15,
+                0.9,
+                0.023,
+                0.025,
+                0.026,
+                0.027
+              ],
+              "USE_SYM_CALC": false
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.4,
+                0.8,
+                1.2
+              ]
+            },
+            "SLAB": [
+              2.2,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    },
+    "Steel-Box (Type2) with Stiffener": {
+      "Assign": {
+        "708": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Box(Type2)-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "GB",
+            "SECT_I": {
+              "vSIZE": [
+                0.91,
+                1.2,
+                0.92,
+                0.93,
+                1.3,
+                0.94,
+                0.9,
+                0.023,
+                0.025,
+                0.026,
+                0.027
+              ],
+              "USE_SYM_CALC": false,
+              "SODSTIFF": {
+                "TOSTIFNOS": 3,
+                "SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "DECKSTIFFNO": 8,
+                "SUB": [
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.2,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.3,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Center",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.2,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TC1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.3,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TC2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.4,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TC3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 2,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.2,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.3,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.4,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TR3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 1,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Web-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "WL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "WL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "WL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 2,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Web-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "WR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "WR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "WR3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Center",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.31,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BC1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.32,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BC2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.33,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BC3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 2,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BR3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.2,
+                1,
+                0.8
+              ]
+            },
+            "SLAB": [
+              4,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    },
+    "Steel-I (Type2)": {
+      "Assign": {
+        "709": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-I(Type2)",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "GI",
+            "SECT_I": {
+              "vSIZE": [
+                0.91,
+                1.2,
+                0.92,
+                0.93,
+                0.9,
+                0.023,
+                0.025,
+                0.026
+              ],
+              "USE_SYM_CALC": false
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.2,
+                1,
+                0.8
+              ]
+            },
+            "SLAB": [
+              4,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    },
+    "Steel-I (Type2) with Stiffener": {
+      "Assign": {
+        "710": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-I(Type2)-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "GI",
+            "SECT_I": {
+              "vSIZE": [
+                0.91,
+                1.2,
+                0.92,
+                0.93,
+                0.9,
+                0.023,
+                0.025,
+                0.026
+              ],
+              "USE_SYM_CALC": false,
+              "SODSTIFF": {
+                "TOSTIFNOS": 3,
+                "SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "DECKSTIFFNO": 5,
+                "SUB": [
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.2,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.2,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TR3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 1,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Web",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.2,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "W1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "W2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "W3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 2,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 2,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BR3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.2,
+                1,
+                0.8
+              ]
+            },
+            "SLAB": [
+              4,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    },
+    "Steel-Tub (Type2)": {
+      "Assign": {
+        "711": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Tub(Type2)",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "GT",
+            "SECT_I": {
+              "vSIZE": [
+                0.45,
+                0.8,
+                0.46,
+                0.85,
+                0.96,
+                0.87,
+                1.2,
+                0.023,
+                0.025,
+                0.026,
+                0.027,
+                0.2,
+                0.21,
+                0
+              ],
+              "USE_SYM_CALC": false
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.145,
+                0.45,
+                0.12
+              ]
+            },
+            "SLAB": [
+              2.2,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    },
+    "Steel-Tub (Type2) with Stiffener": {
+      "Assign": {
+        "712": {
+          "SECTTYPE": "COMPOSITE",
+          "SECT_NAME": "Steel-Tub(Type2)-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "GT",
+            "SECT_I": {
+              "vSIZE": [
+                0.45,
+                0.8,
+                0.46,
+                0.85,
+                0.96,
+                0.87,
+                1.2,
+                0.023,
+                0.025,
+                0.026,
+                0.027,
+                0.2,
+                0.21,
+                0
+              ],
+              "USE_SYM_CALC": false,
+              "SODSTIFF": {
+                "TOSTIFNOS": 3,
+                "SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "DECKSTIFFNO": 5,
+                "SUB": [
+                  {
+                    "DECK_POS": 1,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "LW1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "LW2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.31,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "LW3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 2,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Web-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "RW1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "RW2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.31,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "RW3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Center",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BC1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BC2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BC3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 2,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BR3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1.2,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.145,
+                0.45,
+                0.12
+              ]
+            },
+            "SLAB": [
+              2.2,
+              0.15,
+              0.12
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Data•\nMaterial and Steel Girder",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Modulus Ratio, Steel to Concrete",
+        "Key": "MATL_ELAST",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Density Ratio, Steel to Concrete",
+        "Key": "MATL_DENS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Poisson's Ratio of Steel",
+        "Key": "MATL_POIS_S",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Poisson's Ratio of Concrete",
+        "Key": "MATL_POIS_C",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Ratio of Thermal Expansion Coefficient of Steel and Concrete",
+        "Key": "MATL_THERMAL",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Multiple Modulus of Elasticity Options",
+        "Key": "USE_MULTI_ELAST",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Long-term Es/Ec",
+        "Key": "LONGTERM_ESEC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Shrinkage Es/Ec",
+        "Key": "SHRINK_ESEC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Type 1 (Symmetric Section)"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Section Specifications",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array [Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Stiffener²⁾",
+        "Description": "\"STIFFENER\"",
+        "Key": "Object",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "_condition": "Type 2 (Asymmetric Section)"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Section Specifications",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array [Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Symmetric Section Auto Calculation",
+        "Description": "\"USE_SYM_CALC\"",
+        "Key": "Boolean",
+        "Value Type": "false",
+        "Default": "Optional"
+      },
+      {
+        "No.": "iii. Stiffener³⁾",
+        "Description": "\"SODSTIFF\"",
+        "Key": "Object",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Section Data•\nReference Line and Slab",
+        "Key": "SECT_AFTER",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Type 1 (Symmetric Section)"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Slab Dimensions•\n[Bc, tc, Hh]",
+        "Key": "SLAB",
+        "Value Type": "Array [Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Type 2 (Asymmetric Section)"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Slab Dimensions•\n[Bc, tc, Hh]",
+        "Key": "SLAB",
+        "Value Type": "Array [Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Section Specifications",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Distance from Reference Line•\n[Sg, Top, Bot]",
+        "Description": "\"vSIZE\"",
+        "Key": "Array [Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Description": "Stiffener",
+        "Key": "STIFFENER",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Position of Stiffener•\nBoth: 0•\nLeft: 1•\nRight: 2",
+        "Key": "POSITION",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Reference of d•\nTop: 0•\nBottom: 1",
+        "Key": "REFERENCE_OF_D",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Stiffener Array Count•\n[N Left, N Right, N Bottom, N Top]",
+        "Key": "STIFF_CNT",
+        "Value Type": "Array[Integer]",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Stiffener Shape•\nInsert the data as an object",
+        "Key": "STIFF_SHAPE",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "i. Stiffener Name•\nUser defined",
+        "Description": "\"NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "ii. Stiffener Shape Type•\nFlat: 0•\nTee: 1•\nU-Rib: 2",
+        "Description": "\"SHAPE_TYPE\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iii. Stiffener Size•\nFlat: [H, B]•\nTee: [H, B, tw, tf]•\nU-Rib: [H, B1, B2, t, R]",
+        "Description": "\"SIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Stiffener Top/Bottom/Left/Right•\nInsert the data as an object",
+        "Key": "STIFF_TOP\"\"STIFF_BOT\"\"STIFF_LEFT\"\"STIFF_RIGHT",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "i. Stiffener Spacing",
+        "Description": "\"SPACING\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "ii. Stiffener Shape•\n\"STIFF_SHAPE\" Index",
+        "Description": "\"SHAPE\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iii. Considering for the Section Property Calculations",
+        "Description": "\"USE_CALC\"",
+        "Key": "Boolean",
+        "Value Type": "-",
+        "Default": "-"
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Description": "Stiffener",
+        "Key": "SODSTIFF",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Number of defined Stiffeners Shape",
+        "Key": "TOSTIFNOS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Number of defined Stiffeners Positions",
+        "Key": "DECKSTIFFNO",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Stiffener Shape•\nInsert the data as an object",
+        "Key": "SHAPE",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "i. Stiffener Name•\nUser defined",
+        "Description": "\"NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "ii. Stiffener Shape Type•\nFlat: 0•\nTee: 1•\nU-Rib: 2",
+        "Description": "\"SHAPE_TYPE\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iii. Stiffener Size•\nFlat: [H, B]•\nTee: [H, B, tw, tf]•\nU-Rib: [H, B1, B2, t, R]",
+        "Description": "\"SIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Stiffener Positions•\nInsert the data as an object",
+        "Key": "SUB",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "i. Deck Positions<strong>•\n</strong>Steel-Box◦\nTop flange: 0◦\nLeft web: 1◦\nRight web: 2◦\nBottom flange: 3",
+        "Description": "\"DECK_POS\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "ii. Deck Part•\nDeck1, Web: 0•\nDeck2: 1•\nDeck3: 2",
+        "Description": "\"DECK_PART\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iii. Reference Positions•\nLeft, Top: 0•\nRight, Bottom: 1",
+        "Description": "\"REF_POS\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iv. Number of Stiffeners",
+        "Description": "\"NUM\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "v. Deck Name•\nDECK_POS/DECK_PART: \"Deck Name\"•\nSteel Box•\nSteel-I•\nSteel-Tub",
+        "Description": "\"DECK_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vi. Number of Stiffeners in a Deck Positions",
+        "Description": "\"EACHSTIFFNOS\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii. Stiffeners Data at Positions•\nInsert the data as an object",
+        "Description": "\"DATA\"",
+        "Key": "Array[Object]",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-1. Considering for the section property calculations",
+        "Description": "\"USE_CALC\"",
+        "Key": "Boolean",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-2. Stiffener Spacing",
+        "Description": "\"SPACING\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-3. Stiffener Positions•\nTop flange/Bottom: 1•\nWeb/Left: 0•\nWeb/Right: 1•\nWeb/Both: 2•\nBottom flange/Top: 0",
+        "Description": "\"STIF_POS\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-4. Stiffener Shape Name",
+        "Description": "\"SHAPE_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-5. Stiffener Name",
+        "Description": "\"STIF_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Composite - Steel"
+}

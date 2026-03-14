@@ -1,0 +1,506 @@
+{
+  "endpoint": "db/MATL",
+  "title": "Material Properties",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35807411331993-Material-Properties",
+  "input_uri": "{base url} + db/MATL",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "MATL": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "TYPE": {
+          "description": "MaterialType",
+          "type": "string"
+        },
+        "NAME": {
+          "description": "MaterialName",
+          "type": "string"
+        },
+        "HE_SPEC": {
+          "description": "SpecificHeat",
+          "type": "number"
+        },
+        "HE_COND": {
+          "description": "HeatConduction",
+          "type": "number"
+        },
+        "PLMT": {
+          "description": "PlasticityKey",
+          "type": "integer"
+        },
+        "P_NAME": {
+          "description": "PlasticityName",
+          "type": "string"
+        },
+        "bMASS_DENS": {
+          "description": "UseMassDensity",
+          "type": "boolean"
+        },
+        "DAMP_RAT": {
+          "description": "DampingRatio",
+          "type": "number"
+        },
+        "PARAM": {
+          "description": "MaterialData",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "P_TYPE": {
+                "description": "DataType",
+                "type": "integer"
+              },
+              "STANDARD": {
+                "description": "DBStandard",
+                "type": "string"
+              },
+              "CODE": {
+                "description": "CODE/PRODUCTName",
+                "type": "string"
+              },
+              "DB": {
+                "description": "DBName",
+                "type": "string"
+              },
+              "bELAST": {
+                "description": "UseElasticity",
+                "type": "boolean"
+              },
+              "ELAST": {
+                "description": "Elasticity",
+                "type": "number"
+              },
+              "POISN": {
+                "description": "Poisson`sratio",
+                "type": "number"
+              },
+              "THERMAL": {
+                "description": "Coefficientsoflinearthermal",
+                "type": "number"
+              },
+              "ELAST_M": {
+                "description": "Moduliiofelasticitycorrespondingdirection(X,Y,Z)",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 3
+                }
+              },
+              "POISN_M": {
+                "description": "Poisson`sratiocorrespondingdirection(X,Y,Z)",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 3
+                }
+              },
+              "THERMAL_M": {
+                "description": "Coefficientsoflinearthermalexpansioninthecorrespondingdirection(X,Y,Z)",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 3
+                }
+              },
+              "SHEAR_M": {
+                "description": "ShearmoduliiofelasticityinthecorrespondingdirectionsX",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 3
+                }
+              },
+              "DEN": {
+                "description": "Density",
+                "type": "number"
+              },
+              "MASS": {
+                "description": "MassDensity",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Standard": {
+      "Assign": {
+        "1": {
+          "TYPE": "STEEL",
+          "NAME": "DB_Steel",
+          "HE_SPEC": 0,
+          "HE_COND": 0,
+          "PLMT": 0,
+          "P_NAME": "",
+          "bMASS_DENS": false,
+          "DAMP_RAT": 0.02,
+          "PARAM": [
+            {
+              "P_TYPE": 1,
+              "STANDARD": "EN05(S)",
+              "CODE": "",
+              "DB": "S450",
+              "bELAST": false,
+              "ELAST": 210000000
+            }
+          ]
+        },
+        "2": {
+          "TYPE": "CONC",
+          "NAME": "DB_Conc",
+          "HE_SPEC": 0,
+          "HE_COND": 0,
+          "PLMT": 0,
+          "P_NAME": "",
+          "bMASS_DENS": false,
+          "DAMP_RAT": 0.05,
+          "PARAM": [
+            {
+              "P_TYPE": 1,
+              "STANDARD": "EN04(RC)",
+              "CODE": "",
+              "DB": "C40/50",
+              "bELAST": false,
+              "ELAST": 35220000
+            }
+          ]
+        },
+        "3": {
+          "TYPE": "SRC",
+          "NAME": "DB_SRC",
+          "HE_SPEC": 0,
+          "HE_COND": 0,
+          "PLMT": 0,
+          "P_NAME": "",
+          "bMASS_DENS": false,
+          "DAMP_RAT": 0.05,
+          "PARAM": [
+            {
+              "P_TYPE": 1,
+              "STANDARD": "EN05(S)",
+              "CODE": "",
+              "DB": "S450",
+              "bELAST": false,
+              "ELAST": 210000000
+            },
+            {
+              "P_TYPE": 1,
+              "STANDARD": "EN04(RC)",
+              "CODE": "",
+              "DB": "C40/50",
+              "bELAST": false,
+              "ELAST": 35220000
+            }
+          ]
+        },
+        "4": {
+          "TYPE": "USER",
+          "NAME": "DB_User",
+          "HE_SPEC": 0,
+          "HE_COND": 0,
+          "PLMT": 0,
+          "P_NAME": "",
+          "bMASS_DENS": false,
+          "DAMP_RAT": 0,
+          "PARAM": [
+            {
+              "P_TYPE": 1,
+              "STANDARD": "BS04(S)",
+              "CODE": "",
+              "DB": "S460",
+              "bELAST": false,
+              "ELAST": 205000000
+            }
+          ]
+        }
+      }
+    },
+    "Isotropic - User Defined": {
+      "Assign": {
+        "5": {
+          "TYPE": "USER",
+          "NAME": "User_None",
+          "HE_SPEC": 0,
+          "HE_COND": 0,
+          "PLMT": 0,
+          "P_NAME": "",
+          "bMASS_DENS": true,
+          "DAMP_RAT": 0,
+          "PARAM": [
+            {
+              "P_TYPE": 2,
+              "ELAST": 205000000,
+              "POISN": 0.3,
+              "THERMAL": 6.6666666666666675e-06,
+              "DEN": 76.97999999999999,
+              "MASS": 7.849775407504091
+            }
+          ]
+        }
+      }
+    },
+    "Orthotropic - User Defined": {
+      "Assign": {
+        "6": {
+          "TYPE": "USER",
+          "NAME": "User_Orth",
+          "HE_SPEC": 10,
+          "HE_COND": 11,
+          "PLMT": 0,
+          "P_NAME": "",
+          "bMASS_DENS": true,
+          "DAMP_RAT": 0.05,
+          "PARAM": [
+            {
+              "P_TYPE": 3,
+              "ELAST_M": [
+                30000,
+                40000,
+                50000
+              ],
+              "POISN_M": [
+                0.15,
+                0.16,
+                0.17
+              ],
+              "THERMAL_M": [
+                1.1e-05,
+                1.2e-05,
+                1.3e-05
+              ],
+              "SHEAR_M": [
+                50000,
+                60000,
+                70000
+              ],
+              "DEN": 24,
+              "MASS": 2.5
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Material Type•\nConcrete: \"CONC\"•\nSteel: \"STEEL\"•\nSRC: \"SRC\"• Aluminum: \"ALUMINUM\"•\nUser Defined: \"User\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Material Name",
+        "Key": "NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Specific heat",
+        "Key": "HE_SPEC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Heat Conduction",
+        "Key": "HE_COND",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Plastic Material No.",
+        "Key": "PLMT",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Plastic Material Name",
+        "Key": "P_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Use Mass Density",
+        "Key": "bMASS_DENS",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Damping Ratio",
+        "Key": "DAMP_RAT",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Material Parameter",
+        "Key": "PARAM",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Material Type•\nStandard: 1•\nIsotropic: 2•\nOrthotropic: 3",
+        "Key": "P_TYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "When Material Type, \"P_TYPE\" is 1 (Standard)"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Standard Name",
+        "Key": "STANDARD",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Code Name",
+        "Key": "CODE",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "DB Name",
+        "Key": "DB",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Youngs Modulus for User Define Option•\nJTG3362-18(S)",
+        "Key": "bELAST",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Material Type, \"P_TYPE\" is 2 (Isotropic)"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Modulus of Elasticity",
+        "Key": "ELAST",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Poisson’s Ratio",
+        "Key": "POISN",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Thermal Coefficient",
+        "Key": "THERMAL",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Weight of Density",
+        "Key": "DEN",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Mass Density",
+        "Key": "MASS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "When Material Type, \"P_TYPE\" is 3 (Orthotropic)"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Modulus of Elasticity",
+        "Key": "ELAST_M",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Poisson’s Ratio",
+        "Key": "POISN_M",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Thermal Coefficient",
+        "Key": "THERMAL_M",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Shear Modulus",
+        "Key": "SHEAR_M",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Weight of Density",
+        "Key": "DEN",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Mass Density",
+        "Key": "MASS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Material Properties"
+}

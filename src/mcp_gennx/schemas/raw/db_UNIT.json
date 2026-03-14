@@ -1,0 +1,83 @@
+{
+  "endpoint": "db/UNIT",
+  "title": "Unit System",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35802155483801-Unit-System",
+  "input_uri": "{base url} + db/UNIT",
+  "active_methods": [
+    "GET",
+    "PUT"
+  ],
+  "json_schema": {
+    "UNIT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "FORCE": {
+          "description": "Force",
+          "type": "string"
+        },
+        "DIST": {
+          "description": "Distance",
+          "type": "string"
+        },
+        "HEAT": {
+          "description": "Heat",
+          "type": "string"
+        },
+        "TEMPER": {
+          "description": "TemperUnit",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Units": {
+      "Assign": {
+        "1": {
+          "FORCE": "KIPS",
+          "DIST": "FT",
+          "HEAT": "BTU",
+          "TEMPER": "C"
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Force (Mass)•\nN (kg): \"N\"•\nkN (ton): \"KN\"•\nkgf (kg): \"KGF\"•\ntonf (ton): \"TONF\"•\nlbf (lb): \"LBF\"•\nkips (kips/g): \"KIPS\"",
+        "Key": "FORCE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "2",
+        "Description": "Length•\nm: \"M\"•\ncm: \"CM\"•\nmm: \"MM\"•\nft: \"FT\"•\nin: \"IN\"",
+        "Key": "DIST",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Heat•\ncal: \"CAL\"•\nkcal: \"KCAL\"•\nJ: \"J\"•\nkJ: \"KJ\"•\nBtu: \"BTU\"",
+        "Key": "HEAT",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Temperature Unit•\nCelsius: \"C\"•\nFahrenheit: \"F\"",
+        "Key": "TEMPER",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Unit System"
+}

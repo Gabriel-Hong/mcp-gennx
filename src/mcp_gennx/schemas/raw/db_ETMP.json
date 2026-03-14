@@ -1,0 +1,112 @@
+{
+  "endpoint": "db/ETMP",
+  "title": "Element Temperature",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35954097233561-Element-Temperature",
+  "input_uri": "{base url} + db/ETMP",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "ETMP": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "GROUP_NAME": {
+                "description": "NameofLoadGroup",
+                "type": "string"
+              },
+              "TEMP": {
+                "description": "ElementTemperature",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Element Temperature": {
+      "Assign": {
+        "1": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Temp(+)",
+              "GROUP_NAME": "",
+              "TEMP": 35
+            },
+            {
+              "ID": 2,
+              "LCNAME": "Temp(-)",
+              "GROUP_NAME": "",
+              "TEMP": -20
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Element Temperature•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Temperature",
+        "Key": "TEMP",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Element Temperature"
+}

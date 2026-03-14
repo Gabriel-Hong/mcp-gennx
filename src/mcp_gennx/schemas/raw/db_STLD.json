@@ -1,0 +1,421 @@
+{
+  "endpoint": "db/STLD",
+  "title": "Static Load Cases",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35952651947801-Static-Load-Cases",
+  "input_uri": "{base url} + db/STLD",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "STLD": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NO": {
+          "description": "No",
+          "type": "integer"
+        },
+        "NAME": {
+          "description": "StaticLoadCaseName",
+          "type": "string"
+        },
+        "TYPE": {
+          "description": "StaticLoadCaseType",
+          "type": "string"
+        },
+        "DESC": {
+          "description": "Description",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Static Load Cases": {
+      "Assign": {
+        "1": {
+          "NAME": "DL",
+          "TYPE": "D",
+          "DESC": "DeadLoads"
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Ordering Index in GUI",
+        "Key": "NO",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Read Only"
+      },
+      {
+        "No.": "2",
+        "Description": "Load Case Name",
+        "Key": "NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Load Type¹⁾",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Description",
+        "Key": "DESC",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Load Type": "User Defined Load",
+        "Value": "\"USER\""
+      },
+      {
+        "No.": "2",
+        "Load Type": "Dead Load",
+        "Value": "\"D\""
+      },
+      {
+        "No.": "3",
+        "Load Type": "Dead Load of Component and Attachments",
+        "Value": "\"DC\""
+      },
+      {
+        "No.": "4",
+        "Load Type": "Dead Load of Wearing Surfaces and Utilities",
+        "Value": "\"DW\""
+      },
+      {
+        "No.": "5",
+        "Load Type": "Down Drag",
+        "Value": "\"DD\""
+      },
+      {
+        "No.": "6",
+        "Load Type": "Earth Pressure",
+        "Value": "\"EP\""
+      },
+      {
+        "No.": "7",
+        "Load Type": "Active Earth Pressure for Native Ground of Non-cohesive Soil",
+        "Value": "\"EANN\""
+      },
+      {
+        "No.": "8",
+        "Load Type": "Active Earth pressure for Native Ground of Cohesive Soil",
+        "Value": "\"EANC\""
+      },
+      {
+        "No.": "9",
+        "Load Type": "Active Earth Pressure for Made Ground of Non-cohesive Soil",
+        "Value": "\"EAMN\""
+      },
+      {
+        "No.": "10",
+        "Load Type": "Active Earth Pressure for Made Ground of Cohesive Soil",
+        "Value": "\"EAMC\""
+      },
+      {
+        "No.": "11",
+        "Load Type": "Passive Earth Pressure for Native Ground of Non-cohesive Soil",
+        "Value": "\"EPNN\""
+      },
+      {
+        "No.": "12",
+        "Load Type": "Passive Earth Pressure for Native Ground of Cohesive Soil",
+        "Value": "\"EPNC\""
+      },
+      {
+        "No.": "13",
+        "Load Type": "Passive Earth Pressure for Made Ground of Non-cohesive Soil",
+        "Value": "\"EPMN\""
+      },
+      {
+        "No.": "14",
+        "Load Type": "Passive Earth Pressure for Made Ground of Cohesive Soil",
+        "Value": "\"EPMC\""
+      },
+      {
+        "No.": "15",
+        "Load Type": "Horizontal Earth Pressure",
+        "Value": "\"EH\""
+      },
+      {
+        "No.": "16",
+        "Load Type": "Vertical Earth Pressure",
+        "Value": "\"EV\""
+      },
+      {
+        "No.": "17",
+        "Load Type": "Earth Surcharge Load",
+        "Value": "\"ES\""
+      },
+      {
+        "No.": "18",
+        "Load Type": "Locked in Erection Stresses",
+        "Value": "\"EL\""
+      },
+      {
+        "No.": "19",
+        "Load Type": "Live Load Surcharge",
+        "Value": "\"LS\""
+      },
+      {
+        "No.": "20",
+        "Load Type": "Trailer or Crawler Induced Surcharge",
+        "Value": "\"LSC\""
+      },
+      {
+        "No.": "21",
+        "Load Type": "Live Load",
+        "Value": "\"L\""
+      },
+      {
+        "No.": "22",
+        "Load Type": "Trailer or Crawler Induced Live Load",
+        "Value": "\"LC\""
+      },
+      {
+        "No.": "23",
+        "Load Type": "Overload Live Load",
+        "Value": "\"LP\""
+      },
+      {
+        "No.": "24",
+        "Load Type": "Live Load Impact",
+        "Value": "\"IL\""
+      },
+      {
+        "No.": "25",
+        "Load Type": "Overload Live Load Impact",
+        "Value": "\"ILP\""
+      },
+      {
+        "No.": "26",
+        "Load Type": "Centrifugal Force",
+        "Value": "\"CF\""
+      },
+      {
+        "No.": "27",
+        "Load Type": "Braking Load",
+        "Value": "\"BRK\""
+      },
+      {
+        "No.": "28",
+        "Load Type": "Longitudinal Force from Live Load",
+        "Value": "\"BK\""
+      },
+      {
+        "No.": "29",
+        "Load Type": "Crowd Load",
+        "Value": "\"CRL\""
+      },
+      {
+        "No.": "30",
+        "Load Type": "Prestress",
+        "Value": "\"PS\""
+      },
+      {
+        "No.": "31",
+        "Load Type": "Buoyancy",
+        "Value": "\"B\""
+      },
+      {
+        "No.": "32",
+        "Load Type": "Ground Water Pressure",
+        "Value": "\"WP\""
+      },
+      {
+        "No.": "33",
+        "Load Type": "Fluid Pressure",
+        "Value": "\"FP\""
+      },
+      {
+        "No.": "34",
+        "Load Type": "Stream Flow Pressure",
+        "Value": "\"SF\""
+      },
+      {
+        "No.": "35",
+        "Load Type": "Wave Pressure",
+        "Value": "\"WPR\""
+      },
+      {
+        "No.": "36",
+        "Load Type": "Wind Load on Structure",
+        "Value": "\"W\""
+      },
+      {
+        "No.": "37",
+        "Load Type": "Wind Load on Live Load",
+        "Value": "\"WL\""
+      },
+      {
+        "No.": "38",
+        "Load Type": "Settlement",
+        "Value": "\"STL\""
+      },
+      {
+        "No.": "39",
+        "Load Type": "Creep",
+        "Value": "\"CR\""
+      },
+      {
+        "No.": "40",
+        "Load Type": "Shrinkage",
+        "Value": "\"SH\""
+      },
+      {
+        "No.": "41",
+        "Load Type": "Temperature",
+        "Value": "\"T\""
+      },
+      {
+        "No.": "42",
+        "Load Type": "Temperature Gradient",
+        "Value": "\"TPG\""
+      },
+      {
+        "No.": "43",
+        "Load Type": "Collision Load",
+        "Value": "\"CO\""
+      },
+      {
+        "No.": "44",
+        "Load Type": "Vehicular Collision Force",
+        "Value": "\"CT\""
+      },
+      {
+        "No.": "45",
+        "Load Type": "Vessel Collision Force",
+        "Value": "\"CV\""
+      },
+      {
+        "No.": "46",
+        "Load Type": "Earthquake",
+        "Value": "\"E\""
+      },
+      {
+        "No.": "47",
+        "Load Type": "Friction",
+        "Value": "\"FR\""
+      },
+      {
+        "No.": "48",
+        "Load Type": "Ice Pressure",
+        "Value": "\"IP\""
+      },
+      {
+        "No.": "49",
+        "Load Type": "Construction Stage Load",
+        "Value": "\"CS\""
+      },
+      {
+        "No.": "50",
+        "Load Type": "Erection Load",
+        "Value": "\"ER\""
+      },
+      {
+        "No.": "51",
+        "Load Type": "Rib Shortening",
+        "Value": "\"RS\""
+      },
+      {
+        "No.": "52",
+        "Load Type": "Grade Effect",
+        "Value": "\"GE\""
+      },
+      {
+        "No.": "53",
+        "Load Type": "Roof Live Load",
+        "Value": "\"LR\""
+      },
+      {
+        "No.": "54",
+        "Load Type": "Snow Load",
+        "Value": "\"S\""
+      },
+      {
+        "No.": "55",
+        "Load Type": "Rain Load",
+        "Value": "\"R\""
+      },
+      {
+        "No.": "56",
+        "Load Type": "Longitudinal Force",
+        "Value": "\"LF\""
+      },
+      {
+        "No.": "57",
+        "Load Type": "RAKING Force",
+        "Value": "\"RF\""
+      },
+      {
+        "No.": "58",
+        "Load Type": "Movement of Foundation",
+        "Value": "\"GD\""
+      },
+      {
+        "No.": "59",
+        "Load Type": "Soil Heaving",
+        "Value": "\"SHV\""
+      },
+      {
+        "No.": "60",
+        "Load Type": "Derailment Load",
+        "Value": "\"DRL\""
+      },
+      {
+        "No.": "61",
+        "Load Type": "Across Wind Load",
+        "Value": "\"WA\""
+      },
+      {
+        "No.": "62",
+        "Load Type": "Torsional Wind Load",
+        "Value": "\"WT\""
+      },
+      {
+        "No.": "63",
+        "Load Type": "Vertical Earthquake",
+        "Value": "\"EVT\""
+      },
+      {
+        "No.": "64",
+        "Load Type": "Earthquake Earth Pressure",
+        "Value": "\"EEP\""
+      },
+      {
+        "No.": "65",
+        "Load Type": "Explosion Load",
+        "Value": "\"EX\""
+      },
+      {
+        "No.": "66",
+        "Load Type": "Imperfection Load",
+        "Value": "\"I\""
+      },
+      {
+        "No.": "67",
+        "Load Type": "Earthquake for Elastic",
+        "Value": "\"EE\""
+      }
+    ]
+  ],
+  "menu_name": "Static Load Cases"
+}

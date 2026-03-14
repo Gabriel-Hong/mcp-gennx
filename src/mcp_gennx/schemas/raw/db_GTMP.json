@@ -1,0 +1,222 @@
+{
+  "endpoint": "db/GTMP",
+  "title": "Temperature Gradient",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35954163821593-Temperature-Gradient",
+  "input_uri": "{base url} + db/GTMP",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "GTMP": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "GROUP_NAME": {
+                "description": "NameofLoadGroup",
+                "type": "string"
+              },
+              "TYPE": {
+                "description": "TemperatureType(Beam/Plate)",
+                "type": "integer"
+              },
+              "TZ": {
+                "description": "Tz",
+                "type": "number"
+              },
+              "USE_HZ": {
+                "description": "SetUsePropertyHz",
+                "type": "boolean"
+              },
+              "HZ": {
+                "description": "Hz",
+                "type": "number"
+              },
+              "TY": {
+                "description": "Ty(Beam/USE_PROP_HZ=false)",
+                "type": "number"
+              },
+              "USE_HY": {
+                "description": "SetUsePropertyHy",
+                "type": "boolean"
+              },
+              "HY": {
+                "description": "Hy(Beam/USE_PROP_HY=false)",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Temperature Gradient : Beam Type": {
+      "Assign": {
+        "2": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Temp(+)",
+              "GROUP_NAME": "",
+              "TYPE": 1,
+              "TZ": 10,
+              "USE_HZ": true,
+              "TY": -10,
+              "USE_HY": true
+            },
+            {
+              "ID": 2,
+              "LCNAME": "Temp(-)",
+              "GROUP_NAME": "",
+              "TYPE": 1,
+              "TZ": 10,
+              "USE_HZ": false,
+              "HZ": 1.2,
+              "TY": -10,
+              "USE_HY": false,
+              "HY": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "Temperature Gradient : Plate Type": {
+      "Assign": {
+        "21": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Temp(+)",
+              "GROUP_NAME": "",
+              "TYPE": 2,
+              "TZ": 10,
+              "USE_HZ": true
+            },
+            {
+              "ID": 2,
+              "LCNAME": "Temp(-)",
+              "GROUP_NAME": "",
+              "TYPE": 2,
+              "TZ": 10,
+              "USE_HZ": false,
+              "HZ": 0.2
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Temperature Gradient•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Element Type•\nBeam: 1•\nPlate: 2",
+        "Key": "TYPE",
+        "Value Type": "Integer",
+        "Default": "",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "T2z - T1z",
+        "Key": "TZ",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Use Section Hz",
+        "Key": "USE_HZ",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Hz value",
+        "Key": "HZ",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Element Type, \"TYPE\" is 1 (Beam)"
+      },
+      {
+        "No.": "(8)",
+        "Description": "T2y-T1y",
+        "Key": "TY",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Use Section Hy",
+        "Key": "USE_HY",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Hy value",
+        "Key": "HY",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Temperature Gradient"
+}

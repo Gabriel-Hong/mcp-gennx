@@ -1,0 +1,1529 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - SRC",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35845378225689-Section-Properties-SRC",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "DB_NAME": {
+                  "description": "DBName",
+                  "type": "string"
+                },
+                "SECT_NAME": {
+                  "description": "SectionName",
+                  "type": "string"
+                },
+                "SECT_NAME2": {
+                  "description": "SectionName2",
+                  "type": "string"
+                },
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "SECT_J": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "SRC_TYPE": {
+              "description": "SRCType",
+              "type": "integer"
+            },
+            "MATL_ELAST": {
+              "description": "Matl_Elast",
+              "type": "number"
+            },
+            "MATL_DENS": {
+              "description": "Matl_Density",
+              "type": "number"
+            },
+            "MATL_POIS_S": {
+              "description": "Matl_Poisson_S",
+              "type": "number"
+            },
+            "MATL_POIS_C": {
+              "description": "Matl_Poisson_C",
+              "type": "number"
+            },
+            "MATL_STIF_FACTOR": {
+              "description": "Matl_StiffFactor",
+              "type": "number"
+            },
+            "MATL_THERMAL": {
+              "description": "Matl_Thermal",
+              "type": "number"
+            },
+            "CELL_SHAPE": {
+              "description": "CellShape",
+              "type": "integer"
+            },
+            "CELL_TYPE": {
+              "description": "CellType",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Rect-Box-Open_DB": {
+      "Assign": {
+        "201": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Box-Open_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RBO",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "B40x40x1.6"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.06,
+                0.065
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Box-Open_User": {
+      "Assign": {
+        "202": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Box-Open_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RBO",
+            "SECT_I": {
+              "vSIZE": [
+                0.041,
+                0.042,
+                0.0016,
+                0.0017,
+                0.03,
+                0.0018,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.06,
+                0.065
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Box-Close_DB": {
+      "Assign": {
+        "203": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Box-Close_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RBC",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "B40x40x1.6"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.05,
+                0.051
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Box-Close_User": {
+      "Assign": {
+        "204": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Box-Close_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RBC",
+            "SECT_I": {
+              "vSIZE": [
+                0.041,
+                0.042,
+                0.0016,
+                0.0017,
+                0.03,
+                0.0018,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.05,
+                0.051
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Pipe-Open_DB": {
+      "Assign": {
+        "205": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Pipe-Open_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RPO",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "P21.7x2"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0.031
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Pipe-Open_User": {
+      "Assign": {
+        "206": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Pipe-Open_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RPO",
+            "SECT_I": {
+              "vSIZE": [
+                0.0217,
+                0.002,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0.031
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Pipe-Close_DB": {
+      "Assign": {
+        "207": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Pipe-Close_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RPC",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "P21.7x2"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0.031
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Pipe-Close_User": {
+      "Assign": {
+        "208": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-Pipe-Close_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RPC",
+            "SECT_I": {
+              "vSIZE": [
+                0.0217,
+                0.002,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0.031
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Box-Open_DB": {
+      "Assign": {
+        "209": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Box-Open_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CBO",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "B40x40x1.6"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.07,
+                0
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Box-Open_User": {
+      "Assign": {
+        "210": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Box-Open_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CBO",
+            "SECT_I": {
+              "vSIZE": [
+                0.041,
+                0.042,
+                0.0016,
+                0.0017,
+                0.03,
+                0.0018,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.07,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Box-Close_DB": {
+      "Assign": {
+        "211": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Box-Close_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CBC",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "B40x40x1.6"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.07,
+                0
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Box-Close_User": {
+      "Assign": {
+        "212": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Box-Close_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CBC",
+            "SECT_I": {
+              "vSIZE": [
+                0.041,
+                0.042,
+                0.0016,
+                0.0017,
+                0.03,
+                0.0018,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.07,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Pipe-Open_DB": {
+      "Assign": {
+        "213": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Pipe-Open_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CPO",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "P21.7x2"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Pipe-Open_User": {
+      "Assign": {
+        "214": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Pipe-Open_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CPO",
+            "SECT_I": {
+              "vSIZE": [
+                0.0217,
+                0.002,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Pipe-Close_DB": {
+      "Assign": {
+        "215": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Pipe-Close_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CPC",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "P21.7x2"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-Pipe-Close_User": {
+      "Assign": {
+        "216": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-Pipe-Close_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CPC",
+            "SECT_I": {
+              "vSIZE": [
+                0.0217,
+                0.002,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "SRC-Box_DB": {
+      "Assign": {
+        "217": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "SRC-Box_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "EBC",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "B40x40x1.6"
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "SRC-Box_User": {
+      "Assign": {
+        "218": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "SRC-Box_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "EBC",
+            "SECT_I": {
+              "vSIZE": [
+                0.041,
+                0.042,
+                0.0016,
+                0.0017,
+                0.03,
+                0.0018,
+                0,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "SRC-Pipe_DB": {
+      "Assign": {
+        "219": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "SRC-Pipe_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "EPC",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "P21.7x2"
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "SRC-Pipe_User": {
+      "Assign": {
+        "220": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "SRC-Pipe_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "EPC",
+            "SECT_I": {
+              "vSIZE": [
+                0.0217,
+                0.002,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-HBeam_DB": {
+      "Assign": {
+        "221": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-HBeam_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RHB",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.11,
+                0.12
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-HBeam_User": {
+      "Assign": {
+        "222": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-HBeam_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RHB",
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0.06,
+                0.008,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.11,
+                0.12
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-HBeam_DB": {
+      "Assign": {
+        "223": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-HBeam_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CHB",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.14,
+                0
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Circle-HBeam_User": {
+      "Assign": {
+        "224": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Circle-HBeam_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "CHB",
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0.06,
+                0.008,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.14,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Cross H_DB": {
+      "Assign": {
+        "225": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-CrossH_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RH2T",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7",
+              "SECT_NAME2": "T50x50x5/7"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.13,
+                0.14
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Cross H_User": {
+      "Assign": {
+        "226": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-CrossH_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RH2T",
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0.04,
+                0.06,
+                0.008,
+                0.009
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.13,
+                0.14
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Combined T_DB": {
+      "Assign": {
+        "227": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-CombinedT_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RHT",
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7",
+              "SECT_NAME2": "T50x50x5/7"
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.12,
+                0.13
+              ]
+            },
+            "SRC_TYPE": 1,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "Rect-Combined T_User": {
+      "Assign": {
+        "228": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "Rect-CombinedT_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "RHT",
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0.04,
+                0.06,
+                0.008,
+                0.009
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.12,
+                0.13
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1
+          }
+        }
+      }
+    },
+    "SRC-Box-Stiffener": {
+      "Assign": {
+        "229": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "SRC-Box-Stiffener",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SBSF",
+            "SECT_I": {
+              "vSIZE": [
+                1.2,
+                1.1,
+                0.04,
+                0.05,
+                0.2,
+                0.1,
+                0.03,
+                0.3,
+                0.2,
+                0.02
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1,
+            "CELL_SHAPE": 4,
+            "CELL_TYPE": 3
+          }
+        }
+      }
+    },
+    "SRC-Pipe-Stiffener": {
+      "Assign": {
+        "230": {
+          "SECTTYPE": "SRC",
+          "SECT_NAME": "SRC-Pipe-Stiffener",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SPSF",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.04,
+                0.1,
+                0.03,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SRC_TYPE": 2,
+            "MATL_ELAST": 9.045580902793098,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_STIF_FACTOR": 1,
+            "MATL_THERMAL": 1,
+            "CELL_SHAPE": 5
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Data",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "SRC Type•\nDB: 1•\nUser: 2",
+        "Key": "SRC_TYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Modulus of Elasticity Ratio of Steel Relative to Concrete",
+        "Key": "MATL_ELAST",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Specific Weight (Density) Ratio of Steel Relative to Concrete",
+        "Key": "MATL_DENS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Poisson's Ratio for Steel",
+        "Key": "MATL_POIS_S",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Poisson's Ratio for Concrete",
+        "Key": "MATL_POIS_C",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Stiffness Reduction Factor of Concrete",
+        "Key": "MATL_STIF_FACTOR",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Assign Steel to be the Reference When Calculating Stiffness of a Composite Section",
+        "Key": "MATL_THERMAL",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "ReadOnly"
+      },
+      {
+        "_condition": "DB Section"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Section Specifications - Steel",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. DB Name",
+        "Description": "\"DB_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Section Name of DB",
+        "Description": "\"SECT_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Section Name of DB•\nOnly for Rect-Cross H and Rec-Combined T",
+        "Description": "\"SECT_NAME2\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Section Specifications - Concrete",
+        "Key": "SECT_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾•\nNo use for SRC-Box and SRC-Pipe",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "_condition": "User Section"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Section Specifications - Steel",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Section Specifications - Concrete",
+        "Key": "SECT_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾•\nNo use for SRC-Box and SRC-Pipe",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(11)",
+        "Description": "Number of Stiffeners 1•\nSRC-Box/Pipe-Stiffener (N1)",
+        "Key": "CELL_SHAPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(12)",
+        "Description": "Number of Stiffeners 2•\nSRC-Box-Stiffener (N2)",
+        "Key": "CELL_TYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - SRC"
+}

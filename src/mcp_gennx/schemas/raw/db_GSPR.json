@@ -1,0 +1,93 @@
+{
+  "endpoint": "db/GSPR",
+  "title": "Assign General Spring Supports",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35946151002393-Assign-General-Spring-Supports",
+  "input_uri": "{base url} + db/GSPR",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "GSPR": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "GROUP_NAME": {
+                "description": "NameofBoundaryGroup",
+                "type": "string"
+              },
+              "TYPE_NAME": {
+                "description": "NameofType",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Assign General Spring Supports": {
+      "Assign": {
+        "14": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "TYPE_NAME": "GS_Stiff"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "General Spring•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Boundary Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Defined General Spring Name",
+        "Key": "TYPE_NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Assign General Spring Supports"
+}

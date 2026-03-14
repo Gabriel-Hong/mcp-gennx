@@ -1,0 +1,1304 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Tapered - DB/User",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35852806893593-Section-Properties-Tapered-DB-User",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_YJ": {
+              "description": "UserOffsetYJ",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_ZJ": {
+              "description": "UserOffsetZJ",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "TYPE": {
+              "description": "Type",
+              "type": "integer"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "DB_NAME": {
+                  "description": "DBName",
+                  "type": "string"
+                },
+                "SECT_NAME": {
+                  "description": "SectionName",
+                  "type": "string"
+                },
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "SECT_J": {
+              "type": "object",
+              "properties": {
+                "SECT_NAME": {
+                  "description": "SectionName",
+                  "type": "string"
+                },
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "Y_VAR": {
+              "description": "LyType",
+              "type": "integer"
+            },
+            "Z_VAR": {
+              "description": "LzType",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Angle_DB": {
+      "Assign": {
+        "501": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Angle_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "L",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "L25x3"
+            },
+            "SECT_J": {
+              "SECT_NAME": "L30x3"
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Angle_User": {
+      "Assign": {
+        "502": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Angle_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "L",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.025,
+                0.026,
+                0.003,
+                0.004,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0.035,
+                0.005,
+                0.006,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Channel_DB": {
+      "Assign": {
+        "506": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Channel_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "C",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "C75x40x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "C100x50x5/7.5"
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Channel_User": {
+      "Assign": {
+        "507": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Channel_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "C",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.075,
+                0.04,
+                0.005,
+                0.007,
+                0.04,
+                0.007,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.0075,
+                0.05,
+                0.0075,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "H-Section_DB": {
+      "Assign": {
+        "511": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "H-Section_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "H",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "H100x100x6/8"
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "H-Section_User": {
+      "Assign": {
+        "512": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "H-Section_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "H",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0.04,
+                0.006,
+                0.005,
+                0.004
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.1,
+                0.11,
+                0.006,
+                0.008,
+                0.09,
+                0.007,
+                0.005,
+                0.004
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "T-Section_DB": {
+      "Assign": {
+        "516": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "T-Section_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "T",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "T50x50x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "T50x100x6/8"
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "T-Section_User": {
+      "Assign": {
+        "517": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "T-Section_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "T",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.05,
+                0.06,
+                0.005,
+                0.007,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.05,
+                0.1,
+                0.006,
+                0.008,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Box_DB": {
+      "Assign": {
+        "521": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Box_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "B",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "B40x40x1.6"
+            },
+            "SECT_J": {
+              "SECT_NAME": "B40x40x2.3"
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 2
+          }
+        }
+      }
+    },
+    "Box_User": {
+      "Assign": {
+        "522": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Box_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "B",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.041,
+                0.042,
+                0.0016,
+                0.0017,
+                0.03,
+                0.0018,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.041,
+                0.042,
+                0.0023,
+                0.0024,
+                0.03,
+                0.0025,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 2
+          }
+        }
+      }
+    },
+    "Pipe_DB": {
+      "Assign": {
+        "526": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Pipe_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "P",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "P21.7x2"
+            },
+            "SECT_J": {
+              "SECT_NAME": "P27.2x2"
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Pipe_User": {
+      "Assign": {
+        "527": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Pipe_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "P",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.0217,
+                0.002,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.0272,
+                0.003,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Double Angle_DB": {
+      "Assign": {
+        "531": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "DoubleAngle_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2L",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "AISC",
+              "SECT_NAME": "2L8X8X1-1/8"
+            },
+            "SECT_J": {
+              "SECT_NAME": "2L8X8X1-1/8X3/8"
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 2
+          }
+        }
+      }
+    },
+    "Double Angle_User": {
+      "Assign": {
+        "532": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "DoubleAngle_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2L",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.2032,
+                0.2032,
+                0.028575,
+                0.028575,
+                0.02,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.2032,
+                0.2032,
+                0.028575,
+                0.028575,
+                0.009525,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 2
+          }
+        }
+      }
+    },
+    "Double Channel_DB": {
+      "Assign": {
+        "536": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "DoubleChannel_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2C",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "GB-YB05",
+              "SECT_NAME": "2C5"
+            },
+            "SECT_J": {
+              "SECT_NAME": "2C6.3"
+            },
+            "Y_VAR": 3,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Double Channel_User": {
+      "Assign": {
+        "537": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "DoubleChannel_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2C",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.05,
+                0.037,
+                0.0045,
+                0.007,
+                0.02,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.063,
+                0.04,
+                0.0048,
+                0.0075,
+                0.022,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 3,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Solid Rectangle_DB": {
+      "Assign": {
+        "541": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "SolidRectangle_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "SS",
+              "SECT_NAME": "FB3x12"
+            },
+            "SECT_J": {
+              "SECT_NAME": "FB3x16"
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Solid Rectangle_User": {
+      "Assign": {
+        "542": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "SolidRectangle_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.003,
+                0.012,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.003,
+                0.016,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Solid Round_DB": {
+      "Assign": {
+        "546": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "SolidRound_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SR",
+            "TYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "SR6"
+            },
+            "SECT_J": {
+              "SECT_NAME": "SR7"
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Solid Round_User": {
+      "Assign": {
+        "547": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "SolidRound_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SR",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.006,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.007,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Octagon_User": {
+      "Assign": {
+        "552": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Octagon_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "OCT",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.3,
+                0.4,
+                0.05,
+                0.06,
+                0.03,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.32,
+                0.42,
+                0.052,
+                0.062,
+                0.032,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3
+          }
+        }
+      }
+    },
+    "Solid Octagon_User": {
+      "Assign": {
+        "557": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "SolidOctagon_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SOCT",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.3,
+                0.4,
+                0.05,
+                0.06,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.32,
+                0.42,
+                0.052,
+                0.062,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Track_User": {
+      "Assign": {
+        "562": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "Track_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "TRK",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.3,
+                0.6,
+                0.02,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.32,
+                0.62,
+                0.022,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 2
+          }
+        }
+      }
+    },
+    "Solid Track_User": {
+      "Assign": {
+        "567": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "SolidTrack_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "STRK",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.3,
+                0.6,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.32,
+                0.62,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Half Track_User": {
+      "Assign": {
+        "572": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "HalfTrack_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HTRK",
+            "TYPE": 3,
+            "SECT_I": {
+              "vSIZE": [
+                0.3,
+                0.6,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.32,
+                0.62,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 2,
+            "Z_VAR": 1
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Data",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Tapered Type•\nDB: 1•\nUser: 2",
+        "Key": "TYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Y Axis Variations•\nLinear: 1•\nParabolic: 2•\nCubic: 3",
+        "Key": "Y_VAR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Z Axis Variations•\nLinear: 1•\nParabolic: 2•\nCubic: 3",
+        "Key": "Z_VAR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "DB Section"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Section Specifications - I",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. DB Name",
+        "Description": "\"DB_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Section Name of DB",
+        "Description": "\"SECT_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Section Specifications - J",
+        "Key": "SECT_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "ii. Section Name of DB",
+        "Description": "\"SECT_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "_condition": "User Section"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Section Specifications - I",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Section Specifications - J",
+        "Key": "SECT_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Tapered - DB/User"
+}

@@ -1,0 +1,37 @@
+{
+  "endpoint": "doc/OPEN",
+  "title": "Open Project",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35994112560793-Open-Project",
+  "input_uri": "{base url} + doc/OPEN",
+  "active_methods": [
+    "POST"
+  ],
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "doc/OPEN",
+    "type": "object",
+    "properties": {
+      "Argument": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": {
+    "Open Project": {
+      "Argument": "C:\\MIDAS\\FSM.mcb"
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Opened File Path",
+        "Key": "-",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "-"
+      }
+    ]
+  ],
+  "menu_name": "Open Project"
+}

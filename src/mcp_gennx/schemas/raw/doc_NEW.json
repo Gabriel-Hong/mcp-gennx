@@ -1,0 +1,38 @@
+{
+  "endpoint": "doc/NEW",
+  "title": "New Project",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35994078198681-New-Project",
+  "input_uri": "{base url} + doc/NEW",
+  "active_methods": [
+    "POST"
+  ],
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "doc/NEW",
+    "type": "object",
+    "properties": {
+      "Argument": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "examples": {
+    "New Project": {
+      "Argument": {}
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Empty Object",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      }
+    ]
+  ],
+  "menu_name": "New Project"
+}

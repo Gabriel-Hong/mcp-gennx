@@ -1,0 +1,150 @@
+{
+  "endpoint": "db/ACTL",
+  "title": "Main Control Data",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35409287717657-Main-Control-Data",
+  "input_uri": "{base url} + db/ACTL",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "ACTL": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ARDC": {
+          "description": "AutoConstraintRotation",
+          "type": "boolean"
+        },
+        "ANRC": {
+          "description": "AutoConstraintNormal",
+          "type": "boolean"
+        },
+        "ITER": {
+          "description": "Maximumnumberofiterations",
+          "type": "integer"
+        },
+        "TOL": {
+          "description": "Trusstolerance",
+          "type": "number"
+        },
+        "CSECF": {
+          "description": "ConsiderSecfBoolean",
+          "type": "boolean"
+        },
+        "TRS": {
+          "description": "TransferReacBoolean",
+          "type": "boolean"
+        },
+        "CRBAR": {
+          "description": "ConsiderRbarBoolean",
+          "type": "boolean"
+        },
+        "BMSTRESS": {
+          "description": "Calculateequivalentbeamstresses",
+          "type": "boolean"
+        },
+        "CLATS": {
+          "description": "ChangeLcAxOfTapSectBoolean",
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Main Control Data": {
+      "Assign": {
+        "1": {
+          "ARDC": true,
+          "ANRC": true,
+          "ITER": 20,
+          "TOL": 0.001,
+          "CSECF": false,
+          "TRS": true,
+          "CRBAR": false,
+          "BMSTRESS": false,
+          "CLATS": false
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Auto Rotational DOF Constraint for Truss / Plane Stress / Solid Elements",
+        "Key": "ARDC",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "2",
+        "Description": "Auto Normal Rotation Constraint for Plate Elements",
+        "Key": "ANRC",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Consider Section Stiffness Scale Factor for Stress Calculation",
+        "Key": "CSECF",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Transfer Reactions of Slave Node to the Master Node",
+        "Key": "TRS",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Calculate Equivalent Beam Stresses (Von-Mises and Max-Shear)",
+        "Key": "BMSTRESS",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Consider Reinforcement for Section Stiffness Calculation",
+        "Key": "CRBAR",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Change Local Axis of Tapered Section for Force / Stress Calculation",
+        "Key": "CLATS",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Number of Iterations / Load Case",
+        "Key": "ITER",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "9",
+        "Description": "Convergence Tolerance",
+        "Key": "TOL",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Main Control Data"
+}

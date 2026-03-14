@@ -1,0 +1,110 @@
+{
+  "endpoint": "db/PDEL",
+  "title": "P-Delta Analysis Control",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35989163268249-P-Delta-Analysis-Control",
+  "input_uri": "{base url} + db/PDEL",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "PDEL": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITER": {
+          "description": "IterationInteger",
+          "type": "integer"
+        },
+        "TOL": {
+          "description": "ToleranceDouble",
+          "type": "number"
+        },
+        "PDEL_CASES": {
+          "description": "LoadCases",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "LCNAME": {
+                "description": "LoadCaseName(Const)",
+                "type": "string"
+              },
+              "FACTOR": {
+                "description": "Factor",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "P-Delta Analysis Control": {
+      "Assign": {
+        "1": {
+          "ITER": 5,
+          "TOL": 1e-05,
+          "PDEL_CASES": [
+            {
+              "LCNAME": "A",
+              "FACTOR": 1
+            },
+            {
+              "LCNAME": "B",
+              "FACTOR": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Number of Iterations",
+        "Key": "ITER",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Convergence Tolerance",
+        "Key": "TOL",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Load Cases•\nInsert the data as an object",
+        "Key": "PDEL_CASES",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Scale Factor",
+        "Key": "FACTOR",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "P-Delta Analysis Control"
+}

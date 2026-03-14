@@ -1,0 +1,186 @@
+{
+  "endpoint": "db/LCOM",
+  "title": "Load Combinations - Steel Design",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35990929861913-Load-Combinations-Steel-Design",
+  "input_uri": "{base url} + db/LCOM-STEEL",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "LCOM-STEEL": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NO": {
+          "description": "CombinationNumber",
+          "type": "integer"
+        },
+        "NAME": {
+          "description": "CombinationName",
+          "type": "string"
+        },
+        "ACTIVE": {
+          "description": "ActiveType",
+          "type": "string"
+        },
+        "bCB": {
+          "description": "(ReadOnly)minmaxcbtype",
+          "type": "boolean"
+        },
+        "iTYPE": {
+          "description": "Sum.method",
+          "type": "integer"
+        },
+        "DESC": {
+          "description": "Description",
+          "type": "string"
+        },
+        "vCOMB": {
+          "description": "CombinationList",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ANAL": {
+                "description": "AnalysisType",
+                "type": "string"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "FACTOR": {
+                "description": "Factor",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Load Combinations (Steel Design)": {
+      "Assign": {
+        "1": {
+          "NO": 1,
+          "NAME": "sLCB1",
+          "ACTIVE": "STRENGTH",
+          "bCB": true,
+          "iTYPE": 0,
+          "DESC": "",
+          "vCOMB": [
+            {
+              "ANAL": "CS",
+              "LCNAME": "DeadLoad",
+              "FACTOR": 1
+            }
+          ]
+        },
+        "2": {
+          "NO": 2,
+          "NAME": "sLCB2",
+          "ACTIVE": "SERVICE",
+          "bCB": true,
+          "iTYPE": 0,
+          "DESC": "",
+          "vCOMB": [
+            {
+              "ANAL": "CS",
+              "LCNAME": "DeadLoad",
+              "FACTOR": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Combination Number",
+        "Key": "NO",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "ReadOnly"
+      },
+      {
+        "No.": "2",
+        "Description": "Combination Name",
+        "Key": "NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Active Type•\nInactive: \"INACTIVE\"•\nStrength/Stress: \"STRENGTH\"•\nServiceability: \"SERVICE\"",
+        "Key": "ACTIVE",
+        "Value Type": "String",
+        "Default": "\"ACTIVE\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Summation method•\nAdd: 0•\nEnvelope: 1•\nSRSS: 3",
+        "Key": "iTYPE",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Description",
+        "Key": "DESC",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Result Type•\nGeneral: false•\nMin/Max/All: true",
+        "Key": "bCB",
+        "Value Type": "Boolean",
+        "Default": "-",
+        "Required": "ReadOnly"
+      },
+      {
+        "No.": "7",
+        "Description": "Combinations List",
+        "Key": "vCOMB",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "•\nStatic Load Case: \"ST\"•\nConstruction Stage Case: \"CS\"•\nMoving Load Case: \"MV\"•\nSettlement Case: \"SM\"•\nResponse Spectrum Case: \"RS\"•\nTime History Cases: \"TH\"•\nGeneral Comb.: \"CB\"",
+        "Key": "ANAL",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Factor",
+        "Key": "FACTOR",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Load Combinations - Steel Design"
+}

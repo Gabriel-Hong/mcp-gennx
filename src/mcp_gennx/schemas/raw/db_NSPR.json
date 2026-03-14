@@ -1,0 +1,440 @@
+{
+  "endpoint": "db/NSPR",
+  "title": "Point Spring",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35945908301081-Point-Spring",
+  "input_uri": "{base url} + db/NSPR",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "NSPR": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "TYPE": {
+                "description": "Type",
+                "type": "string"
+              },
+              "F_S": {
+                "description": "F_SDx,F_SDy,F_SDz,F_SRx,F_SRy,F_SRz",
+                "type": "array",
+                "items": {
+                  "type": "boolean",
+                  "maxItems": 6
+                }
+              },
+              "SDR": {
+                "description": "SDxSDySDzSRxSRySRz",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 6
+                }
+              },
+              "DAMPING": {
+                "description": "Damping",
+                "type": "boolean"
+              },
+              "Cr": {
+                "description": "C_r",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 6
+                }
+              },
+              "GROUP_NAME": {
+                "description": "BoundaryGroupName",
+                "type": "string"
+              },
+              "FormType": {
+                "description": "nFromType",
+                "type": "integer"
+              },
+              "EFFAREA": {
+                "description": "EFFAREA",
+                "type": "number"
+              },
+              "DK": {
+                "description": "dKxdKydKz",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 3
+                }
+              },
+              "DIR": {
+                "description": "nDirection",
+                "type": "integer"
+              },
+              "DV": {
+                "description": "VxVyVz",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 3
+                }
+              },
+              "STIFF": {
+                "description": "Stiffness",
+                "type": "number"
+              },
+              "FUNCTION": {
+                "description": "Function",
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Linear Type": {
+      "Assign": {
+        "2": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "LINEAR",
+              "F_S": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "SDR": [
+                33000,
+                34000,
+                35000,
+                33000000,
+                34000000,
+                35000000
+              ],
+              "DAMPING": true,
+              "Cr": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "GROUP_NAME": "Service"
+            }
+          ]
+        },
+        "3": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "LINEAR",
+              "F_S": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ],
+              "SDR": [
+                33000,
+                34000,
+                35000,
+                33000000,
+                34000000,
+                35000000
+              ],
+              "DAMPING": true,
+              "Cr": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "GROUP_NAME": "Service"
+            }
+          ]
+        }
+      }
+    },
+    "Compression-Only Type": {
+      "Assign": {
+        "4": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "COMP",
+              "GROUP_NAME": "Service",
+              "DIR": 4,
+              "DV": [
+                0,
+                0,
+                0
+              ],
+              "STIFF": 1000000
+            }
+          ]
+        },
+        "5": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "COMP",
+              "GROUP_NAME": "Service",
+              "DIR": 6,
+              "DV": [
+                0,
+                -1,
+                -1
+              ],
+              "STIFF": 1000000
+            }
+          ]
+        }
+      }
+    },
+    "Tension-Only Type": {
+      "Assign": {
+        "6": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "TENS",
+              "GROUP_NAME": "Service",
+              "DIR": 4,
+              "DV": [
+                0,
+                0,
+                0
+              ],
+              "STIFF": 1000000
+            }
+          ]
+        },
+        "7": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "TENS",
+              "GROUP_NAME": "Service",
+              "DIR": 6,
+              "DV": [
+                0,
+                -1,
+                -1
+              ],
+              "STIFF": 1000000
+            }
+          ]
+        }
+      }
+    },
+    "Multi-Linear Type": {
+      "Assign": {
+        "8": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "MULTI",
+              "GROUP_NAME": "Service",
+              "DIR": 4,
+              "DV": [
+                0,
+                0,
+                0
+              ],
+              "FUNCTION": 1
+            }
+          ]
+        },
+        "9": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "TYPE": "MULTI",
+              "GROUP_NAME": "Service",
+              "DIR": 6,
+              "DV": [
+                0,
+                -1,
+                -1
+              ],
+              "FUNCTION": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Point Spring•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Spring Type•\nLinear: \"LINEAR\"•\nCompression-Only: \"COMP\"•\nTension-Only: \"TENS\"•\nMulti-Linear: \"MULTI\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Boundary Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Create Function Type•\nby Point Spring Function: 0•\nby Surface Spring Function: 1",
+        "Key": "FormType",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Linear Type"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Spring Stiffness•\n[SDx, SDy, SDz, SRx, SRy, SRz]",
+        "Key": "SDR",
+        "Value Type": "Array[Number,6]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Fixed Option•\n[SDx, SDy, SDz, SRx, SRy, SRz]",
+        "Key": "F_S",
+        "Value Type": "Array[Boolean,6]",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Damping Constant",
+        "Key": "DAMPING",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Damping•\n[Cx, Cy, Cz, CRx, CRy, CRz]",
+        "Key": "Cr",
+        "Value Type": "Array[Number,6]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Compression/Tension-Only Type"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Stiffness",
+        "Key": "STIFF",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Direction•\nDx (+): 0•\nDx (-): 1•\nDy (+): 2•\nDy (-): 3•\nDz (+): 4•\nDz (-): 5•\nVector: 6",
+        "Key": "DIR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Normal Vector•\nWhen \"DIR\" is 6",
+        "Key": "DV",
+        "Value Type": "Array[Number,3)",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Multi-Linear Type"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Defined Forces-Deformation Function ID Number",
+        "Key": "FUNCTION",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Direction•\nDx (+): 0•\nDx (-): 1•\nDy (+): 2•\nDy (-): 3•\nDz (+): 4•\nDz (-): 5•\nVector: 6",
+        "Key": "DIR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Normal Vector•\nWhen \"DIR\" is 6",
+        "Key": "DV",
+        "Value Type": "Array[Number,3)",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "By Surface Spring Functions (When \"FormType\" is 1)"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Width of Frame",
+        "Key": "EFFAREA",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Modulus of Subgrade Reaction•\n[Kx, Ky, Kz]",
+        "Key": "DK",
+        "Value Type": "Array[Number,3)",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Point Spring"
+}

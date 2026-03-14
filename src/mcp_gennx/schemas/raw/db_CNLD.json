@@ -1,0 +1,171 @@
+{
+  "endpoint": "db/CNLD",
+  "title": "Nodal Loads",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35952812160281-Nodal-Loads",
+  "input_uri": "{base url} + db/CNLD",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "CNLD": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "NodalLoadItems",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "GROUP_NAME": {
+                "description": "GroupName",
+                "type": "string"
+              },
+              "FX": {
+                "description": "FX",
+                "type": "number"
+              },
+              "FY": {
+                "description": "FY",
+                "type": "number"
+              },
+              "FZ": {
+                "description": "FZ",
+                "type": "number"
+              },
+              "MX": {
+                "description": "MX",
+                "type": "number"
+              },
+              "MY": {
+                "description": "MY",
+                "type": "number"
+              },
+              "MZ": {
+                "description": "MZ",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Nodal Loads": {
+      "Assign": {
+        "8": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "D",
+              "GROUP_NAME": "",
+              "FX": 10,
+              "FY": 20,
+              "FZ": 30,
+              "MX": -40,
+              "MY": -50,
+              "MZ": -60
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Nodal Load•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Nodal Load - FX",
+        "Key": "FX",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Nodal Load - FY",
+        "Key": "FY",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Nodal Load - FZ",
+        "Key": "FZ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Nodal Load - MX",
+        "Key": "MX",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Nodal Load - MY",
+        "Key": "MY",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Nodal Load - MZ",
+        "Key": "MZ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Nodal Loads"
+}

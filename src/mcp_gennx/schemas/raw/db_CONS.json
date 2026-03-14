@@ -1,0 +1,93 @@
+{
+  "endpoint": "db/CONS",
+  "title": "Constraint Support",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35944759597337-Constraint-Support",
+  "input_uri": "{base url} + db/CONS",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "CONS": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "GROUP_NAME": {
+                "description": "BoundaryGroupName",
+                "type": "string"
+              },
+              "CONSTRAINT": {
+                "description": "(DX,DY,DZ,RX,RY,RZ,RW)",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Define Supports": {
+      "Assign": {
+        "1": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "CONSTRAINT": "1111000"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Constraint Supports•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Boundary Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Constraint•\n[DX, DY, DZ, RX, RY, RZ, RW]◦\nConstraint: 1◦\nUnconstraint: 0◦ RW: Warping Torsion",
+        "Key": "CONSTRAINT",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Constraint Support"
+}

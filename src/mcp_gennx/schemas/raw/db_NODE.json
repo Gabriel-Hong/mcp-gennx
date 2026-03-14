@@ -1,0 +1,82 @@
+{
+  "endpoint": "db/NODE",
+  "title": "Node",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35806845654169-Node",
+  "input_uri": "{base url} + db/NODE",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "NODE": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "X": {
+          "description": "GLOBALX-POSITION",
+          "type": "number"
+        },
+        "Y": {
+          "description": "GLOBALY-POSITION",
+          "type": "number"
+        },
+        "Z": {
+          "description": "GLOBALZ-POSITION",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Node": {
+      "Assign": {
+        "1": {
+          "X": -1,
+          "Y": -1,
+          "Z": -1
+        },
+        "2": {
+          "X": -2,
+          "Y": -2,
+          "Z": -2
+        },
+        "3": {
+          "X": -3,
+          "Y": -3,
+          "Z": -3
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Coordinates - x",
+        "Key": "X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "2",
+        "Description": "Coordinates - y",
+        "Key": "Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Coordinates - z",
+        "Key": "Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Node"
+}

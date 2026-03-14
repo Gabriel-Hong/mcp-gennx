@@ -1,0 +1,111 @@
+{
+  "endpoint": "db/NMAS",
+  "title": "Nodal Masses",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35952994344985-Nodal-Masses",
+  "input_uri": "{base url} + db/NMAS",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "NMAS": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "mX": {
+          "description": "NodalMassType",
+          "type": "number"
+        },
+        "mY": {
+          "description": "NodalMassType",
+          "type": "number"
+        },
+        "mZ": {
+          "description": "NodalMassType",
+          "type": "number"
+        },
+        "rmX": {
+          "description": "NodalMassType",
+          "type": "number"
+        },
+        "rmY": {
+          "description": "NodalMassType",
+          "type": "number"
+        },
+        "rmZ": {
+          "description": "NodalMassType",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Nodal Masses": {
+      "Assign": {
+        "1": {
+          "mX": 1,
+          "mY": 2,
+          "mZ": 3,
+          "rmX": 4,
+          "rmY": 5,
+          "rmZ": 6
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Translational Lumped Mass in GCS X-direction",
+        "Key": "mX",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Translational Lumped Mass in GCS Y-direction",
+        "Key": "mY",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Translational Lumped Mass in GCS Z-direction",
+        "Key": "mZ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Rotational Mass Moment of Inertia about GCS X-axis",
+        "Key": "rmX",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Rotational Mass Moment of Inertia about GCS Y-axis",
+        "Key": "rmY",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Rotational Mass Moment of Inertia about GCS Z-axis",
+        "Key": "rmZ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Nodal Masses"
+}

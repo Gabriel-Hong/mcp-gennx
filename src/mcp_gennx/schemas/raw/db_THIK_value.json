@@ -1,0 +1,161 @@
+{
+  "endpoint": "db/THIK",
+  "title": "Thickness - Value",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35942236652697-Thickness-Value",
+  "input_uri": "{base url} + db/THIK",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "THIK": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "description": "Name",
+          "type": "string"
+        },
+        "TYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "bINOUT": {
+          "description": "ThickType",
+          "type": "boolean"
+        },
+        "T_IN": {
+          "description": "Thick_In",
+          "type": "number"
+        },
+        "T_OUT": {
+          "description": "Thick_Out",
+          "type": "number"
+        },
+        "OFFSET": {
+          "description": "OFFSET:NONE,RATIO,VALUE",
+          "type": "integer"
+        },
+        "O_VALUE": {
+          "description": "Value",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "examples": {
+    "In-plane & Out-of-plane has same value": {
+      "Assign": {
+        "1": {
+          "NAME": "1",
+          "TYPE": "VALUE",
+          "bINOUT": false,
+          "T_IN": 0.1,
+          "T_OUT": 0,
+          "O_VALUE": 0
+        }
+      }
+    },
+    "In-plane & Out-of plane has each value": {
+      "Assign": {
+        "2": {
+          "NAME": "2",
+          "TYPE": "VALUE",
+          "bINOUT": true,
+          "T_IN": 0.1,
+          "T_OUT": 0.1,
+          "O_VALUE": 0
+        }
+      }
+    },
+    "Plate Offset with Thickness Ratio": {
+      "Assign": {
+        "3": {
+          "NAME": "3",
+          "TYPE": "VALUE",
+          "bINOUT": true,
+          "T_IN": 0.1,
+          "T_OUT": 0.1,
+          "OFFSET": 1,
+          "O_VALUE": 0.05
+        }
+      }
+    },
+    "Plate Offset with Value": {
+      "Assign": {
+        "4": {
+          "NAME": "4",
+          "TYPE": "VALUE",
+          "bINOUT": true,
+          "T_IN": 0.1,
+          "T_OUT": 0.1,
+          "OFFSET": 2,
+          "O_VALUE": 0.05
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Thickness Name",
+        "Key": "NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Thickness Type•\nValue: \"VALUE\"•\nStiffened: \"STIFFENED\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Plane•\nIn-plane & Out-of-plane: false•\nIn-plane / Out-of-plane: true",
+        "Key": "bINOUT",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "In-plane Thickness",
+        "Key": "T_IN",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "5",
+        "Description": "Out-of-plane Thickness•\nWhen \"bINOUT\" is True",
+        "Key": "T_OUT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "6",
+        "Description": "Plate Offset Option•\nNone: 0•\nThickness Ratio: 1•\nValue: 2",
+        "Key": "OFFSET",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Local z Direction Offset Value•\nWhen \"OFFSET\" is 1 or 2",
+        "Key": "O_VALUE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Thickness - Value"
+}

@@ -1,0 +1,176 @@
+{
+  "endpoint": "db/BUCK",
+  "title": "Buckling Analysis Control",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35989190592537-Buckling-Analysis-Control",
+  "input_uri": "{base url} + db/BUCK",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "BUCK": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "MODE_NUM": {
+          "description": "NumberofModes",
+          "type": "integer"
+        },
+        "OPT_POSITIVE": {
+          "description": "UsePositiveValueOnly",
+          "type": "boolean"
+        },
+        "OPT_CONSIDER_AXIAL_ONLY": {
+          "description": "ConsiderAxialOnly",
+          "type": "boolean"
+        },
+        "LOAD_FACTOR_FROM": {
+          "description": "Searchfrom",
+          "type": "number"
+        },
+        "LOAD_FACTOR_TO": {
+          "description": "Searchto",
+          "type": "number"
+        },
+        "OPT_STURM_SEQ": {
+          "description": "CheckSturmSequence",
+          "type": "boolean"
+        },
+        "ITEMS": {
+          "description": "BucklingCombination",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "FACTOR": {
+                "description": "ScaleFactor",
+                "type": "number"
+              },
+              "LOAD_TYPE": {
+                "description": "LoadType",
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Buckling Analysis Control": {
+      "Assign": {
+        "1": {
+          "MODE_NUM": 12,
+          "OPT_POSITIVE": true,
+          "OPT_CONSIDER_AXIAL_ONLY": true,
+          "LOAD_FACTOR_FROM": 0,
+          "LOAD_FACTOR_TO": 0,
+          "OPT_STURM_SEQ": true,
+          "ITEMS": [
+            {
+              "LCNAME": "A",
+              "FACTOR": 1,
+              "LOAD_TYPE": 0
+            },
+            {
+              "LCNAME": "B",
+              "FACTOR": 1,
+              "LOAD_TYPE": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Number of Modes",
+        "Key": "MODE_NUM",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Load Factor Range Type•\nPositive Value Only: true•\nSearch: false",
+        "Key": "OPT_POSITIVE",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Search From•\nWhen the \"OPT_POSITIVE\" is false",
+        "Key": "LOAD_FACTOR_FROM",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Search To•\nWhen the \"OPT_POSITIVE\" is false",
+        "Key": "LOAD_FACTOR_TO",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Check Sturm Sequence",
+        "Key": "OPT_STURM_SEQ",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Frame Geometric Stiffness Option•\nConsider Axial Only",
+        "Key": "OPT_CONSIDER_AXIAL_ONLY",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Load Cases•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Scale Factor",
+        "Key": "FACTOR",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Load Type•\nVariable: 0•\nConstant: 1",
+        "Key": "LOAD_TYPE",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Buckling Analysis Control"
+}
