@@ -1,0 +1,762 @@
+{
+  "endpoint": "db/NLCT",
+  "title": "Nonlinear Analysis Control Data",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35990229420441-Nonlinear-Analysis-Control-Data",
+  "input_uri": "{base url} + db/NLCT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "NLCT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NONLINEAR_TYPE": {
+          "description": "NonlinearType",
+          "type": "string"
+        },
+        "ITERATION_METHOD": {
+          "description": "IterationMethod",
+          "type": "string"
+        },
+        "NUMBER_STEPS": {
+          "description": "NumberofLoad/DisplacementSteps",
+          "type": "integer"
+        },
+        "MAX_ITERATIONS": {
+          "description": "MaximumNumberofIterations/LoadStep",
+          "type": "integer"
+        },
+        "INITIAL_FORCE_RATIO_ARC_LEN": {
+          "description": "InitialForceRatioforUnitArc-Length",
+          "type": "number"
+        },
+        "MASTER_NODE": {
+          "description": "MasterNode",
+          "type": "integer"
+        },
+        "DIRECTION": {
+          "description": "Direction",
+          "type": "integer"
+        },
+        "MAXIMUM_DISPLACEMENT": {
+          "description": "MaximumDisplacement",
+          "type": "number"
+        },
+        "OPT_ENERGY_NORM": {
+          "description": "EnergyNormBoolean",
+          "type": "boolean"
+        },
+        "ENERGY_NORM": {
+          "description": "EnergyNorm",
+          "type": "number"
+        },
+        "OPT_DISPLACEMENT_NORM": {
+          "description": "DisplacementNormBoolean",
+          "type": "boolean"
+        },
+        "DISPLACEMENT_NORM": {
+          "description": "DisplacementNorm",
+          "type": "number"
+        },
+        "OPT_FORCE_NORM": {
+          "description": "ForceNormBoolean",
+          "type": "boolean"
+        },
+        "FORCE_NORM": {
+          "description": "ForceNorm",
+          "type": "number"
+        },
+        "NEWTON_ITEMS": {
+          "description": "NewtonItems",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ITERATION_METHOD": {
+                "description": "IterationMethod",
+                "type": "string"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "NUMBER_STEPS": {
+                "description": "NumberofDisplacementSteps",
+                "type": "number"
+              },
+              "MAX_ITERATIONS": {
+                "description": "MaximimNumberofIterations/IncrementStep",
+                "type": "integer"
+              },
+              "LOAD_FACTORS": {
+                "description": "MasterNodeDisplacementList",
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "ARCLEN_ITEMS": {
+          "description": "ArclenItems",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ITERATION_METHOD": {
+                "description": "IterationMethod",
+                "type": "string"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "INITIAL_FORCE_RATIO_ARC_LEN": {
+                "description": "InitialForceRatioforUnitArc-Length",
+                "type": "number"
+              },
+              "NUMBER_STEPS": {
+                "description": "NumberofDisplacementSteps",
+                "type": "number"
+              },
+              "MAX_ITERATIONS": {
+                "description": "MaximimNumberofIterations/IncrementStep",
+                "type": "integer"
+              },
+              "MAXIMUM_DISPLACEMENT": {
+                "description": "MaximumDisplacement",
+                "type": "number"
+              }
+            }
+          }
+        },
+        "DISPCT_ITEMS": {
+          "description": "DispctItems",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ITERATION_METHOD": {
+                "description": "IterationMethod",
+                "type": "string"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "NUMBER_STEPS": {
+                "description": "NumberofDisplacementSteps",
+                "type": "number"
+              },
+              "MAX_ITERATIONS": {
+                "description": "MaximimNumberofIterations/IncrementStep",
+                "type": "integer"
+              },
+              "MASTER_NODE": {
+                "description": "MasterNode",
+                "type": "integer"
+              },
+              "DIRECTION": {
+                "description": "Direction",
+                "type": "integer"
+              },
+              "MAXIMUM_DISPLACEMENT": {
+                "description": "MaximumDisplacement",
+                "type": "number"
+              },
+              "LOAD_FACTORS": {
+                "description": "MasterNodeDisplacementList",
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Iteration Method : Newton-Raphson": {
+      "Assign": {
+        "1": {
+          "NONLINEAR_TYPE": "GEOM+MATL",
+          "ITERATION_METHOD": "NEWTON",
+          "NUMBER_STEPS": 1,
+          "MAX_ITERATIONS": 30,
+          "OPT_ENERGY_NORM": true,
+          "ENERGY_NORM": 0.001,
+          "OPT_DISPLACEMENT_NORM": true,
+          "DISPLACEMENT_NORM": 0.001,
+          "OPT_FORCE_NORM": true,
+          "FORCE_NORM": 0.001,
+          "NEWTON_ITEMS": [
+            {
+              "ITERATION_METHOD": "NEWTON",
+              "LCNAME": "A",
+              "NUMBER_STEPS": 1,
+              "MAX_ITERATIONS": 30,
+              "LOAD_FACTORS": [
+                1
+              ]
+            }
+          ],
+          "DISPCT_ITEMS": [
+            {
+              "ITERATION_METHOD": "DISP",
+              "LCNAME": "B",
+              "NUMBER_STEPS": 1,
+              "MAX_ITERATIONS": 10,
+              "MASTER_NODE": 1,
+              "DIRECTION": 0,
+              "MAXIMUM_DISPLACEMENT": 0.1,
+              "LOAD_FACTORS": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Iteration Method : Arc-Length": {
+      "Assign": {
+        "1": {
+          "NONLINEAR_TYPE": "GEOM+MATL",
+          "ITERATION_METHOD": "ARC",
+          "NUMBER_STEPS": 100,
+          "MAX_ITERATIONS": 10,
+          "INITIAL_FORCE_RATIO_ARC_LEN": 5,
+          "MAXIMUM_DISPLACEMENT": 0,
+          "OPT_ENERGY_NORM": true,
+          "ENERGY_NORM": 0.001,
+          "OPT_DISPLACEMENT_NORM": true,
+          "DISPLACEMENT_NORM": 0.001,
+          "OPT_FORCE_NORM": true,
+          "FORCE_NORM": 0.001,
+          "ARCLEN_ITEMS": [
+            {
+              "ITERATION_METHOD": "ARC",
+              "LCNAME": "A",
+              "INITIAL_FORCE_RATIO_ARC_LEN": 5,
+              "NUMBER_STEPS": 100,
+              "MAX_ITERATIONS": 10,
+              "MAXIMUM_DISPLACEMENT": 1
+            }
+          ]
+        }
+      }
+    },
+    "Iteration Method : Displacement-Control": {
+      "Assign": {
+        "1": {
+          "NONLINEAR_TYPE": "GEOM+MATL",
+          "ITERATION_METHOD": "DISP",
+          "NUMBER_STEPS": 1,
+          "MAX_ITERATIONS": 10,
+          "MASTER_NODE": 1,
+          "DIRECTION": 0,
+          "MAXIMUM_DISPLACEMENT": 0.1,
+          "OPT_ENERGY_NORM": true,
+          "ENERGY_NORM": 0.001,
+          "OPT_DISPLACEMENT_NORM": true,
+          "DISPLACEMENT_NORM": 0.001,
+          "OPT_FORCE_NORM": true,
+          "FORCE_NORM": 0.001,
+          "NEWTON_ITEMS": [
+            {
+              "ITERATION_METHOD": "NEWTON",
+              "LCNAME": "A",
+              "NUMBER_STEPS": 1,
+              "MAX_ITERATIONS": 30,
+              "LOAD_FACTORS": [
+                1
+              ]
+            }
+          ],
+          "DISPCT_ITEMS": [
+            {
+              "ITERATION_METHOD": "DISP",
+              "LCNAME": "B",
+              "NUMBER_STEPS": 1,
+              "MAX_ITERATIONS": 10,
+              "MASTER_NODE": 1,
+              "DIRECTION": 0,
+              "MAXIMUM_DISPLACEMENT": 0.1,
+              "LOAD_FACTORS": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Nonlinear Type•\nGeometry Nonlinear: \"GEOM\"•\nMaterial Nonlinear: \"MATL\"•\nGeometry/Material Nonlinear: \"GEOM+MATL\"",
+        "Key": "NONLINEAR_TYPE",
+        "Value Type": "String",
+        "Default": "\"GEOM\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "2",
+        "Description": "Iteration Method•\nNewton-Raphson: \"NEWTON\"•\nArc-Length: \"ARC\"•\nDisplacement-Control: \"DISP\"",
+        "Key": "ITERATION_METHOD",
+        "Value Type": "String",
+        "Default": "\"NEWTON\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Energy Norm•\nActive/Inactive",
+        "Key": "OPT_ENERGY_NORM",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Energy Norm",
+        "Key": "ENERGY_NORM",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "5",
+        "Description": "Displacement Norm•\nActive/Inactive",
+        "Key": "OPT_DISPLACEMENT_NORM",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Displacement Norm",
+        "Key": "DISPLACEMENT_NORM",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Force Norm•\nActive/Inactive",
+        "Key": "OPT_FORCE_NORM",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Force Norm",
+        "Key": "FORCE_NORM",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Iteration Method: Newton-Raphson"
+      },
+      {
+        "No.": "9",
+        "Description": "Number of Load Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "10",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "11",
+        "Description": "Load Case Specific Nonlinear Analysis Control Data - Newton-Raphson•\nInsert the data as an object",
+        "Key": "NEWTON_ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Iteration Method•\nNewton-Raphson: \"NEWTON\"",
+        "Key": "ITERATION_METHOD",
+        "Value Type": "String",
+        "Default": "\"NEWTON\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Number of Load Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Load Factor•\nIndex: Step",
+        "Key": "LOAD_FACTORS",
+        "Value Type": "Array[Number]",
+        "Default": "1",
+        "Required": "Optional"
+      },
+      {
+        "No.": "12",
+        "Description": "Load Case Specific Nonlinear Analysis Control Data - Displacement-Control•\nInsert the data as an object",
+        "Key": "DISPCT_ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Iteration Method•\nNewton-Raphson: \"DISP\"",
+        "Key": "ITERATION_METHOD",
+        "Value Type": "String",
+        "Default": "\"DISP\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Number of Displacement Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Master Node ID Number",
+        "Key": "MASTER_NODE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Direction•\nDx: 0•\nDy: 1•\nDz: 2",
+        "Key": "DIRECTION",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Maximum Displacement",
+        "Key": "MAXIMUM_DISPLACEMENT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Master Node Displacement•\nIndex: Step",
+        "Key": "LOAD_FACTORS",
+        "Value Type": "Array[Number]",
+        "Default": "1",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Iteration Method: Arc-Length"
+      },
+      {
+        "No.": "9",
+        "Description": "Number of Load Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "10",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "11",
+        "Description": "Initial Force Ratio for Unit Arc-Length",
+        "Key": "INITIAL_FORCE_RATIO_ARC_LEN",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "12",
+        "Description": "Maximum Displacement Boundary",
+        "Key": "MAXIMUM_DISPLACEMENT",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "13",
+        "Description": "Load Case Specific Nonlinear Analysis Control Data - Arc-Length•\nInsert the data as an object",
+        "Key": "ARCLEN_ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Iteration Method•\nArc-Length: \"ARC\"",
+        "Key": "ITERATION_METHOD",
+        "Value Type": "String",
+        "Default": "\"ARC\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Number of Load Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Initial Force Ratio for Unit Arc-Length",
+        "Key": "INITIAL_FORCE_RATIO_ARC_LEN",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Maximum Displacement Boundary",
+        "Key": "MAXIMUM_DISPLACEMENT",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Iteration Method: Displacement-Control"
+      },
+      {
+        "No.": "9",
+        "Description": "Number of Load Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "10",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "11",
+        "Description": "Master Node ID Number",
+        "Key": "MASTER_NODE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "12",
+        "Description": "Direction•\nDx: 0•\nDy: 1•\nDz: 2",
+        "Key": "DIRECTION",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "13",
+        "Description": "Maximum Displacement",
+        "Key": "MAXIMUM_DISPLACEMENT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "14",
+        "Description": "Load Case Specific Nonlinear Analysis Control Data - Newton-Raphson•\nInsert the data as an object",
+        "Key": "NEWTON_ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Iteration Method•\nNewton-Raphson: \"NEWTON\"",
+        "Key": "ITERATION_METHOD",
+        "Value Type": "String",
+        "Default": "\"NEWTON\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Number of Load Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Load Factor•\nIndex: Step",
+        "Key": "LOAD_FACTORS",
+        "Value Type": "Array[Number]",
+        "Default": "1",
+        "Required": "Optional"
+      },
+      {
+        "No.": "15",
+        "Description": "Load Case Specific Nonlinear Analysis Control Data - Displacement-Control•\nInsert the data as an object",
+        "Key": "DISPCT_ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Iteration Method•\nNewton-Raphson: \"DISP\"",
+        "Key": "ITERATION_METHOD",
+        "Value Type": "String",
+        "Default": "\"DISP\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Number of Displacement Steps",
+        "Key": "NUMBER_STEPS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Maximum Number of Iterations/Load Step",
+        "Key": "MAX_ITERATIONS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Master Node ID Number",
+        "Key": "MASTER_NODE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Direction•\nDx: 0•\nDy: 1•\nDz: 2",
+        "Key": "DIRECTION",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Maximum Displacement",
+        "Key": "MAXIMUM_DISPLACEMENT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Master Node Displacement•\nIndex: Step",
+        "Key": "LOAD_FACTORS",
+        "Value Type": "Array[Number]",
+        "Default": "1",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Nonlinear Analysis Control Data"
+}

@@ -1,0 +1,114 @@
+{
+  "endpoint": "db/RIGD",
+  "title": "Rigid Link",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35946584247193-Rigid-Link",
+  "input_uri": "{base url} + db/RIGD",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "RIGD": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "GROUP_NAME": {
+                "description": "BoundaryGroupName",
+                "type": "string"
+              },
+              "DOF": {
+                "description": "SubType",
+                "type": "integer"
+              },
+              "S_NODE": {
+                "description": "SubNode",
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Rigid Link": {
+      "Assign": {
+        "1": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "DOF": 110001,
+              "S_NODE": [
+                2,
+                3,
+                4,
+                5
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Rigid Link•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Boundary Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Degree of Freedom•\nRigid: 1, Free: 0◦\n6th decimal place: DX◦\n5th decimal place: DY◦\n4th decimal place: DZ◦\n3rd decimal place: RX◦\n2nd decimal place: RY◦\n1st decimal place: RZ",
+        "Key": "DOF",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Slave Nodes ID Number",
+        "Key": "S_NODE",
+        "Value Type": "Array[Integer]",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Rigid Link"
+}

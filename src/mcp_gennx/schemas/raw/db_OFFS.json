@@ -1,0 +1,226 @@
+{
+  "endpoint": "db/OFFS",
+  "title": "Beam End Offsets",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35947465569049-Beam-End-Offsets",
+  "input_uri": "{base url} + db/OFFS",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "OFFS": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "GROUP_NAME": {
+                "description": "NameofBoundaryGroup",
+                "type": "string"
+              },
+              "TYPE": {
+                "description": "TypeofOffset",
+                "type": "string"
+              },
+              "RGDXi": {
+                "description": "GLOBAL:RGDXi",
+                "type": "number"
+              },
+              "RGDYi": {
+                "description": "GLOBAL:RGDYi/ELEMENT:RGDYi(Mzi)",
+                "type": "number"
+              },
+              "RGDZi": {
+                "description": "GLOBAL:RGDZi/ELEMENT:RGDZi(Myi)",
+                "type": "number"
+              },
+              "RGDXj": {
+                "description": "GLOBAL:RGDXj",
+                "type": "number"
+              },
+              "RGDYj": {
+                "description": "GLOBAL:RGDYj/ELEMENT:RGDYj(Mzj)",
+                "type": "number"
+              },
+              "RGDZj": {
+                "description": "GLOBAL:RGDZj/ELEMENT:RGDzj(Myj)",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Global Type": {
+      "Assign": {
+        "8": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "TYPE": "GLOBAL",
+              "RGDXi": 0.11,
+              "RGDYi": 0.12,
+              "RGDZi": 0.13,
+              "RGDXj": 0.21,
+              "RGDYj": 0.22,
+              "RGDZj": 0.23
+            }
+          ]
+        }
+      }
+    },
+    "Element Type": {
+      "Assign": {
+        "7": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "TYPE": "ELEMENT",
+              "RGDYi": 0.11,
+              "RGDZi": 0.12,
+              "RGDYj": 0.21,
+              "RGDZj": 0.22
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Beam End Offsets•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Reference Coordinate System•\nGlobal : \"GLOBAL\"•\nElement : \"ELEMENT\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Global¹⁾"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Vector of the End Offset Distance at N1 end in GCS X-Direction",
+        "Key": "RGDXi",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Vector of the End Offset Distance at N1 end in GCS Y-Direction",
+        "Key": "RGDYi",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Vector of the End Offset Distance at N1 end in GCS Z-Direction",
+        "Key": "RGDZi",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Vector of the End Offset Distance at N2 end in GCS X-Direction",
+        "Key": "RGDXj",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Vector of the End Offset Distance at N2 end in GCS Y-Direction",
+        "Key": "RGDYj",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Vector of the End Offset Distance at N2 end in GCS Z-Direction",
+        "Key": "RGDZj",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Element¹⁾"
+      },
+      {
+        "No.": "(4)",
+        "Description": "End Offset Distance in the Element’s Local (+) X-Y Plane at N1 end",
+        "Key": "RGDYi",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "End Offset Distance in the Element’s Local (+) X-Z Plane at N1 end",
+        "Key": "RGDZi",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "End Offset Distance in the Element’s Local (+) X-Y Plane at N2 end",
+        "Key": "RGDYj",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "End Offset Distance in the Element’s Local (+) X-Z Plane at N2 end",
+        "Key": "RGDZj",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Beam End Offsets"
+}

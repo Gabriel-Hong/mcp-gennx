@@ -1,0 +1,361 @@
+{
+  "endpoint": "db/BMLD",
+  "title": "Beam Loads",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35952826746521-Beam-Loads",
+  "input_uri": "{base url} + db/BMLD",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "BMLD": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "BeamLoadItems",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "GROUP_NAME": {
+                "description": "GroupName",
+                "type": "string"
+              },
+              "CMD": {
+                "description": "ElementType",
+                "type": "string"
+              },
+              "TYPE": {
+                "description": "LoadTYPE",
+                "type": "string"
+              },
+              "DIRECTION": {
+                "description": "LoadDirection",
+                "type": "string"
+              },
+              "VX": {
+                "description": "VectorX",
+                "type": "number"
+              },
+              "VY": {
+                "description": "VectorY",
+                "type": "number"
+              },
+              "VZ": {
+                "description": "VectorZ",
+                "type": "number"
+              },
+              "USE_PROJECTION": {
+                "description": "UseProjection",
+                "type": "boolean"
+              },
+              "USE_ECCEN": {
+                "description": "IsEccentricity",
+                "type": "boolean"
+              },
+              "ECCEN_TYPE": {
+                "description": "EccentricityType",
+                "type": "integer"
+              },
+              "ECCEN_DIR": {
+                "description": "EccentricityDirection",
+                "type": "string"
+              },
+              "I_END": {
+                "description": "DistanceI",
+                "type": "number"
+              },
+              "J_END": {
+                "description": "DistanceJ",
+                "type": "number"
+              },
+              "USE_J_END": {
+                "description": "UseDistanceJ",
+                "type": "boolean"
+              },
+              "D": {
+                "description": "DistanceRatio",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 4
+                }
+              },
+              "P": {
+                "description": "ForceType",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 4
+                }
+              },
+              "USE_ADDITIONAL": {
+                "description": "UseAdditional",
+                "type": "boolean"
+              },
+              "ADDITIONAL_I_END": {
+                "description": "AdditionalDistanceI",
+                "type": "number"
+              },
+              "ADDITIONAL_J_END": {
+                "description": "AdditionalDistanceJ",
+                "type": "number"
+              },
+              "USE_ADDITIONAL_J_END": {
+                "description": "UseAdditionalDistanceJ",
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Beam Loads": {
+      "Assign": {
+        "115": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "L",
+              "GROUP_NAME": "",
+              "CMD": "BEAM",
+              "TYPE": "UNILOAD",
+              "DIRECTION": "GZ",
+              "USE_PROJECTION": false,
+              "USE_ECCEN": false,
+              "D": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "P": [
+                -50,
+                -50,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Beam Loads with Eccentricity": {
+      "Assign": {
+        "115": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "L",
+              "GROUP_NAME": "",
+              "CMD": "BEAM",
+              "TYPE": "UNILOAD",
+              "DIRECTION": "GZ",
+              "USE_PROJECTION": false,
+              "USE_ECCEN": true,
+              "ECCEN_TYPE": 1,
+              "ECCEN_DIR": "GX",
+              "I_END": 0.5,
+              "J_END": 0.6,
+              "USE_J_END": true,
+              "D": [
+                0.18,
+                0.54,
+                0.7,
+                0.9
+              ],
+              "P": [
+                -50,
+                -50,
+                -30,
+                -30
+              ],
+              "USE_ADDITIONAL": false,
+              "ADDITIONAL_I_END": 0,
+              "ADDITIONAL_J_END": 0,
+              "USE_ADDITIONAL_J_END": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Beam Loads•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Load Classification•\nElement Beam Loads: \"BEAM\"•\nLine Beam Loads: \"LINE\"•\nTypical Beam Loads: \"TYPICAL\"",
+        "Key": "CMD",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Load Type•\nConcentrated Forces: \"CONLOAD\"•\nConcentrated Moments / Torsions: \"CONMOMENT\"•\nUniform Loads: \"UNILOAD\"•\nUniform Moments / Torsions: \"UNIMOMENT\"•\nTrapezoidal Loads: \"UNILOAD\"•\nTrapezoidal Moments / Torsions: \"UNIMOMENT\"•\nUniform Pressure: \"PRESSURE\"•\nTrapezoidal Pressure: \"PRESSURE\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Direction•\nLocal x: \"LX\"•\nLocal y: \"LY\"•\nLocal z: \"LZ\"•\nGlobal X: \"GX\"•\nGlobal Y: \"GY\"•\nGlobal Z: \"GZ\"",
+        "Key": "DIRECTION",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Projection",
+        "Key": "USE_PROJECTION",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Distance•\n[x1, x2, x3, x4]",
+        "Key": "D",
+        "Value Type": "Array[Number,4]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Load•\n[v1, v2, v3, v4]",
+        "Key": "P",
+        "Value Type": "Array[Number,4]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Eccentricity",
+        "Key": "USE_ECCEN",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(11)",
+        "Description": "Eccentricity Type•\nCentroid: 0•\nOffset: 1",
+        "Key": "ECCEN_TYPE",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(12)",
+        "Description": "Eccentricity Direction•\nLocal y: \"LY\"•\nLocal z: \"LZ\"•\nGlobal X: \"GX\"•\nGlobal Y: \"GY\"•\nGlobal Z: \"GZ\"",
+        "Key": "ECCEN_DIR",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(13)",
+        "Description": "Distance I-End",
+        "Key": "I_END",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(14)",
+        "Description": "J-End Option",
+        "Key": "USE_J_END",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(15)",
+        "Description": "Distance J-End",
+        "Key": "J_END",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(16)",
+        "Description": "Additional H from Top Option",
+        "Key": "USE_ADDITIONAL",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(17)",
+        "Description": "Distance I-End",
+        "Key": "ADDITIONAL_I_END",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(18)",
+        "Description": "J-End Option",
+        "Key": "USE_ADDITIONAL_J_END",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(19)",
+        "Description": "Distance J-End",
+        "Key": "ADDITIONAL_J_END",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Beam Loads"
+}

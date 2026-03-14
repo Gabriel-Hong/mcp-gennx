@@ -1,0 +1,708 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Common",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35808653964185-Section-Properties-Common",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "description": "SectBefore",
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_YJ": {
+              "description": "UserOffsetYJ",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_ZJ": {
+              "description": "UserOffsetZJ",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Offset : Left-Top": {
+      "Assign": {
+        "6001": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "LT_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "LT",
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6002": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "LT_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "LT",
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_YI": 1.1,
+            "USERDEF_OFFSET_YJ": 1.2,
+            "VERT_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_ZI": 2.1,
+            "USERDEF_OFFSET_ZJ": 2.2,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Center-Top": {
+      "Assign": {
+        "6003": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "CT_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CT",
+            "OFFSET_CENTER": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6004": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "CT_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CT",
+            "OFFSET_CENTER": 1,
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_ZI": 2.1,
+            "USERDEF_OFFSET_ZJ": 2.2,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Right-Top": {
+      "Assign": {
+        "6005": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "RT_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "RT",
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6006": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "RT_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "RT",
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_YI": 1.1,
+            "USERDEF_OFFSET_YJ": 1.2,
+            "VERT_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_ZI": 2.1,
+            "USERDEF_OFFSET_ZJ": 2.2,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Left-Center": {
+      "Assign": {
+        "6007": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "LC_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "LC",
+            "OFFSET_CENTER": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6008": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "LC_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "LC",
+            "OFFSET_CENTER": 1,
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_YI": 1.1,
+            "USERDEF_OFFSET_YJ": 1.2,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Center-Center": {
+      "Assign": {
+        "6009": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "CC_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6010": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "CC_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 1,
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Right-Center": {
+      "Assign": {
+        "6011": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "RC_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "RC",
+            "OFFSET_CENTER": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6012": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "RC_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "RC",
+            "OFFSET_CENTER": 1,
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_YI": 1.1,
+            "USERDEF_OFFSET_YJ": 1.2,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Left-Bottom": {
+      "Assign": {
+        "6013": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "LB_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "LB",
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6014": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "LB_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "LB",
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_YI": 1.1,
+            "USERDEF_OFFSET_YJ": 1.2,
+            "VERT_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_ZI": 2.1,
+            "USERDEF_OFFSET_ZJ": 2.2,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Center-Bottom": {
+      "Assign": {
+        "6015": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "CB_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CB",
+            "OFFSET_CENTER": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6016": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "CB_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CB",
+            "OFFSET_CENTER": 1,
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_ZI": 2.1,
+            "USERDEF_OFFSET_ZJ": 2.2,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    },
+    "Offset : Right-Bottom": {
+      "Assign": {
+        "6017": {
+          "SECTTYPE": "DBUSER",
+          "SECT_NAME": "RB_Const",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "RB",
+            "HORZ_OFFSET_OPT": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USE_SHEAR_DEFORM": false,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "SB",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "6018": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "RB_Tapared",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "RB",
+            "USER_OFFSET_REF": 1,
+            "HORZ_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_YI": 1.1,
+            "USERDEF_OFFSET_YJ": 1.2,
+            "VERT_OFFSET_OPT": 1,
+            "USERDEF_OFFSET_ZI": 2.1,
+            "USERDEF_OFFSET_ZJ": 2.2,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "TYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                1,
+                1
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 1
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Section Data Type¹⁾",
+        "Key": "SECTTYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Name",
+        "Key": "SECT_NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Section Data - Before",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Section Shape²⁾",
+        "Key": "SHAPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Offset Setting³⁾"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Offset Direction",
+        "Key": "OFFSET_PT",
+        "Value Type": "String",
+        "Default": "\"CC\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Center Location•\nCentroid: 0•\nCenter of Section: 1",
+        "Key": "OFFSET_CENTER",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Horizontal Offset Option•\nto Extreme Fiber: 0•\nUser: 1",
+        "Key": "HORZ_OFFSET_OPT",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Horizontal Offset Value for I•\nfor User Type",
+        "Key": "USERDEF_OFFSET_YI",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Horizontal Offset Value for J•\nfor User Type and Tapered Section",
+        "Key": "USERDEF_OFFSET_YJ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Vertical Offset Option•\nto Extreme Fiber: 0•\nUser: 1",
+        "Key": "VERT_OFFSET_OPT",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Vertical Offset Value for I•\nfor User Type",
+        "Key": "USERDEF_OFFSET_ZI",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Vertical Offset Value for J•\nfor User Type and Tapered Section",
+        "Key": "USERDEF_OFFSET_ZJ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "User Type Offset Reference Position•\nCentroid: 0•\nExtreme Fiber(s): 1",
+        "Key": "USER_OFFSET_REF",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Additional Option"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Consider Shear Deformation",
+        "Key": "USE_SHEAR_DEFORM",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Consider Warping Effect",
+        "Key": "USE_WARPING_EFFECT",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Common"
+}

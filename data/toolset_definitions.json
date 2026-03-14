@@ -1,0 +1,20 @@
+{
+  "default": [
+    "modeling_core",
+    "boundary_core",
+    "loads_core",
+    "analysis_core",
+    "project"
+  ],
+  "all": [
+    "modeling_core",
+    "modeling_advanced",
+    "boundary_core",
+    "boundary_advanced",
+    "loads_core",
+    "loads_advanced",
+    "analysis_core",
+    "analysis_advanced",
+    "project"
+  ]
+}

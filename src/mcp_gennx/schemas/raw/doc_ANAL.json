@@ -1,0 +1,59 @@
+{
+  "endpoint": "doc/ANAL",
+  "title": "Perform Analysis",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35685160815897-Perform-Analysis",
+  "input_uri": "{base url} + doc/ANAL",
+  "active_methods": [
+    "POST"
+  ],
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "doc/ANAL",
+    "type": "object",
+    "properties": {
+      "Argument": {
+        "type": "object",
+        "properties": {
+          "TYPE": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Perfom Analysis": {},
+    "Pushover Analysis": {
+      "Argument": {
+        "TYPE": "Pushover"
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "_condition": "Perform Analysis"
+      },
+      {
+        "No.": "1",
+        "Description": "Empty Object",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "_condition": "Pushover Analysis"
+      },
+      {
+        "No.": "1",
+        "Description": "Input Analysis Type•\n\"Pushover\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Perform Analysis"
+}

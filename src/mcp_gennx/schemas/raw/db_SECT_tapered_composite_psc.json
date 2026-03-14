@@ -1,0 +1,769 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Tapered - Composite PSC",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35941514067225-Section-Properties-Tapered-Composite-PSC",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_YJ": {
+              "description": "UserOffsetYJ",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USERDEF_OFFSET_ZJ": {
+              "description": "UserOffsetZJ",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "TYPE": {
+              "description": "Type",
+              "type": "integer"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_A": {
+                  "description": "forOnlyPSCSectionISIZE-A",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_B": {
+                  "description": "forOnlyPSCSectionISIZE-B",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_C": {
+                  "description": "forOnlyPSCSectionISIZE-C",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "vSIZE_PSC_D": {
+                  "description": "forOnlyPSCSectionISIZE-D",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "Y_VAR": {
+              "description": "LyType",
+              "type": "integer"
+            },
+            "Z_VAR": {
+              "description": "LzType",
+              "type": "integer"
+            },
+            "MATL_ELAST": {
+              "description": "Matl_Elast",
+              "type": "number"
+            },
+            "MATL_DENS": {
+              "description": "Matl_Density",
+              "type": "number"
+            },
+            "MATL_POIS_S": {
+              "description": "Matl_Poisson_S",
+              "type": "number"
+            },
+            "MATL_POIS_C": {
+              "description": "Matl_Poisson_C",
+              "type": "number"
+            },
+            "MATL_THERMAL": {
+              "description": "Matl_Thermal",
+              "type": "number"
+            },
+            "USE_SYMMETRIC": {
+              "description": "Symmetric",
+              "type": "boolean"
+            },
+            "USE_MULTI_ELAST": {
+              "description": "UseMultipleELastic",
+              "type": "boolean"
+            },
+            "LONGTERM_ESEC": {
+              "description": "LongTermESEC",
+              "type": "number"
+            },
+            "SHRINK_ESEC": {
+              "description": "ShrinkageESEC",
+              "type": "number"
+            },
+            "PSC_OPT1": {
+              "description": "PSCOption1",
+              "type": "string"
+            },
+            "PSC_OPT2": {
+              "description": "PSCOption2",
+              "type": "string"
+            },
+            "JOINT": {
+              "description": "Joint",
+              "type": "array",
+              "items": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "SECT_AFTER": {
+          "type": "object",
+          "properties": {
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "BUILT_FLAG": {
+                  "description": "BuiltUpFlag",
+                  "type": "integer"
+                }
+              }
+            },
+            "SLAB": {
+              "description": "SlabforOnlyCompositeSection",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "COMPOSITE_J": {
+          "type": "object",
+          "properties": {
+            "vSIZE": {
+              "description": "Size",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "vSIZE_PSC_A": {
+              "description": "forOnlyPSCSectionISIZE-A",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "vSIZE_PSC_B": {
+              "description": "forOnlyPSCSectionISIZE-B",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "vSIZE_PSC_C": {
+              "description": "forOnlyPSCSectionISIZE-C",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "vSIZE_PSC_D": {
+              "description": "forOnlyPSCSectionISIZE-D",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "PSC-I": {
+      "Assign": {
+        "617": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-I",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "CPCI",
+            "TYPE": 12,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0,
+                0.26,
+                0.44,
+                0,
+                0,
+                1.13,
+                0.4,
+                0,
+                0,
+                0.27
+              ],
+              "vSIZE_PSC_B": [
+                0.16,
+                1.36,
+                0,
+                0,
+                0.8,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.26,
+                0.44,
+                0,
+                0,
+                1.13,
+                0.4,
+                0,
+                0,
+                0.27
+              ],
+              "vSIZE_PSC_D": [
+                0.16,
+                1.36,
+                0,
+                0,
+                0.8,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1,
+            "USE_SYMMETRIC": true,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2,
+            "PSC_OPT1": "",
+            "PSC_OPT2": "",
+            "JOINT": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "BUILT_FLAG": 1
+            },
+            "SLAB": [
+              2.2,
+              0.3,
+              0.15
+            ]
+          },
+          "COMPOSITE_J": {
+            "vSIZE_PSC_A": [
+              0,
+              0.26,
+              0.44,
+              0,
+              0,
+              1.13,
+              0.4,
+              0,
+              0,
+              0.27
+            ],
+            "vSIZE_PSC_B": [
+              0.16,
+              1.36,
+              0,
+              0,
+              0.8,
+              0,
+              0
+            ],
+            "vSIZE_PSC_C": [
+              0.26,
+              0.44,
+              0,
+              0,
+              1.13,
+              0.4,
+              0,
+              0,
+              0.27
+            ],
+            "vSIZE_PSC_D": [
+              0.16,
+              1.36,
+              0,
+              0,
+              0.8,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "PSC-T": {
+      "Assign": {
+        "618": {
+          "SECTTYPE": "TAPERED",
+          "SECT_NAME": "PSC-T",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "USERDEF_OFFSET_YJ": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USERDEF_OFFSET_ZJ": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "CPCT",
+            "TYPE": 13,
+            "SECT_I": {
+              "vSIZE_PSC_A": [
+                0,
+                0.29,
+                0.13,
+                1.8,
+                0.21,
+                0.13,
+                1.63,
+                1.83
+              ],
+              "vSIZE_PSC_B": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vSIZE_PSC_C": [
+                0.29,
+                0.13,
+                1.8,
+                0.21,
+                0.13,
+                1.63,
+                1.83
+              ],
+              "vSIZE_PSC_D": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "Y_VAR": 1,
+            "Z_VAR": 3,
+            "MATL_ELAST": 6.573673240339907,
+            "MATL_DENS": 3.1399101630016366,
+            "MATL_POIS_S": 0.3,
+            "MATL_POIS_C": 0.18,
+            "MATL_THERMAL": 1,
+            "USE_SYMMETRIC": true,
+            "USE_MULTI_ELAST": true,
+            "LONGTERM_ESEC": 1.1,
+            "SHRINK_ESEC": 1.2,
+            "PSC_OPT1": "",
+            "PSC_OPT2": "",
+            "JOINT": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "BUILT_FLAG": 1
+            },
+            "SLAB": [
+              2.2,
+              0.3,
+              0.15
+            ]
+          },
+          "COMPOSITE_J": {
+            "vSIZE_PSC_A": [
+              0,
+              0.29,
+              0.13,
+              1.8,
+              0.21,
+              0.13,
+              1.63,
+              1.83
+            ],
+            "vSIZE_PSC_B": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "vSIZE_PSC_C": [
+              0.29,
+              0.13,
+              1.8,
+              0.21,
+              0.13,
+              1.63,
+              1.83
+            ],
+            "vSIZE_PSC_D": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Data•\nMaterial and Concrete Girder",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Tapered Type•\nPSC-I: 12•\nPSC-T: 13",
+        "Key": "TYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Y Axis Variations•\nLinear: 1•\nParabolic: 2•\nCubic: 3",
+        "Key": "Y_VAR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Z Axis Variations•\nLinear: 1•\nParabolic: 2•\nCubic: 3",
+        "Key": "Z_VAR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Section Specifications - I",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Outer-Height¹⁾",
+        "Description": "\"vSIZE_PSC_A\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Outer-Breadth¹⁾",
+        "Description": "\"vSIZE_PSC_B\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Inner-Height¹⁾",
+        "Description": "\"vSIZE_PSC_C\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iv. Inner-Breadth¹⁾",
+        "Description": "\"vSIZE_PSC_D\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Modulus Ratio, Steel to Concrete",
+        "Key": "MATL_ELAST",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Density Ratio, Steel to Concrete",
+        "Key": "MATL_DENS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Poisson's Ratio of Steel",
+        "Key": "MATL_POIS_S",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Poisson's Ratio of Concrete",
+        "Key": "MATL_POIS_C",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Ratio of Thermal Expansion Coefficient of Steel and Concrete",
+        "Key": "MATL_THERMAL",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Multiple Modulus of Elasticity Options",
+        "Key": "USE_MULTI_ELAST",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(11)",
+        "Description": "Long-term Es/Ec",
+        "Key": "LONGTERM_ESEC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(12)",
+        "Description": "Shrinkage Es/Ec",
+        "Key": "SHRINK_ESEC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(13)",
+        "Description": "Shape Option 1¹⁾",
+        "Key": "PSC_OPT1",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(14)",
+        "Description": "Shape Option 2¹⁾",
+        "Key": "PSC_OPT2",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(15)",
+        "Description": "Joint On/Off¹⁾",
+        "Key": "JOINT",
+        "Value Type": "Array[Boolean]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Section Data•\nSlab",
+        "Key": "SECT_AFTER",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Slab Dimensions•\n[Bc, tc, Hh]",
+        "Key": "SLAB",
+        "Value Type": "Array [Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Section Specifications",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Built-Up Section•\n1",
+        "Description": "\"BUILT_FLAG\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Section Specifications - J",
+        "Key": "COMPOSITE_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Outer-Height¹⁾",
+        "Key": "vSIZE_PSC_A",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Outer-Breadth¹⁾",
+        "Key": "vSIZE_PSC_B",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Inner-Height¹⁾",
+        "Key": "vSIZE_PSC_C",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Inner-Breadth¹⁾",
+        "Key": "vSIZE_PSC_D",
+        "Value Type": "Array[Number]",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Tapered - Composite PSC"
+}

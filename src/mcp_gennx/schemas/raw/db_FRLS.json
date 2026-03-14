@@ -1,0 +1,198 @@
+{
+  "endpoint": "db/FRLS",
+  "title": "Beam End Release",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35947184258585-Beam-End-Release",
+  "input_uri": "{base url} + db/FRLS",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "FRLS": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "GROUP_NAME": {
+                "description": "BoundaryGroupName",
+                "type": "string"
+              },
+              "bVALUE": {
+                "description": "IsValue?",
+                "type": "boolean"
+              },
+              "FLAG_I": {
+                "description": "IFlag",
+                "type": "string"
+              },
+              "VALUE_I": {
+                "description": "IFxi,Fyi,Fzi,Mxi,Myi,Mzi,Mbi",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 7
+                }
+              },
+              "FLAG_J": {
+                "description": "JFlag",
+                "type": "string"
+              },
+              "VALUE_J": {
+                "description": "JFxj,Fyj,Fzj,Mxj,Myj,Mzj,Mbj",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxItems": 7
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Beam End Release": {
+      "Assign": {
+        "9": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "bVALUE": true,
+              "FLAG_I": "1111111",
+              "VALUE_I": [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7
+              ],
+              "FLAG_J": "1111111",
+              "VALUE_J": [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7
+              ]
+            }
+          ]
+        },
+        "10": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "bVALUE": false,
+              "FLAG_I": "1111111",
+              "VALUE_I": [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7
+              ],
+              "FLAG_J": "1111111",
+              "VALUE_J": [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Beam End Release•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Input Method•\nRelative: false•\nValue: true",
+        "Key": "bVALUE",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Release i-Node",
+        "Key": "FLAG_I",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Partial Fixity for i-Node• [Fx, Fy, Fz, Mx, My, Mz, Mb]",
+        "Key": "VALUE_I",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Release j-Node",
+        "Key": "FLAG_J",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Partial Fixity for j-Node• [Fx, Fy, Fz, Mx, My, Mz, Mb]",
+        "Key": "VALUE_J",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Beam End Release"
+}

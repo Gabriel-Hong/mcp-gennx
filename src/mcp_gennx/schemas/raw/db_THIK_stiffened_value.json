@@ -1,0 +1,486 @@
+{
+  "endpoint": "db/THIK",
+  "title": "Thickness - Stiffened Value",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35942739673369-Thickness-Stiffened-Value",
+  "input_uri": "{base url} + db/THIK",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "THIK": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "TYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "STYPE": {
+          "description": "SubType",
+          "type": "string"
+        },
+        "RIB_POS": {
+          "description": "RibPosition",
+          "type": "string"
+        },
+        "VALUE": {
+          "type": "object",
+          "properties": {
+            "WEIGHT": {
+              "description": "Weight",
+              "type": "number"
+            },
+            "XZ": {
+              "type": "object",
+              "properties": {
+                "SHAPE": {
+                  "description": "Shape",
+                  "type": "string"
+                },
+                "T_IN": {
+                  "description": "Thick_In",
+                  "type": "number"
+                },
+                "T_OUT": {
+                  "description": "Thick_Out",
+                  "type": "number"
+                },
+                "HU": {
+                  "description": "Hu",
+                  "type": "number"
+                },
+                "HL": {
+                  "description": "Hl",
+                  "type": "number"
+                }
+              }
+            },
+            "YZ": {
+              "type": "object",
+              "properties": {
+                "SHAPE": {
+                  "description": "Shape",
+                  "type": "string"
+                },
+                "T_IN": {
+                  "description": "Thick_In",
+                  "type": "number"
+                },
+                "T_OUT": {
+                  "description": "Thick_Out",
+                  "type": "number"
+                },
+                "HU": {
+                  "description": "Hu",
+                  "type": "number"
+                },
+                "HL": {
+                  "description": "Hl",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Stiffened Value Example 1": {
+      "Assign": {
+        "301": {
+          "TYPE": "STIFFENED",
+          "STYPE": "VALUE",
+          "RIB_POS": "LOWER",
+          "VALUE": {
+            "WEIGHT": 0.5026324999999999,
+            "XZ": {
+              "SHAPE": "C",
+              "T_IN": 0.5021625,
+              "T_OUT": 0.502860957921411,
+              "HU": 0.2512380827919249,
+              "HL": 0.32376191720807507
+            },
+            "YZ": {
+              "SHAPE": "L",
+              "T_IN": 0.50047,
+              "T_OUT": 0.5005380547750857,
+              "HU": 0.2502513537274962,
+              "HL": 0.27474864627250384
+            }
+          }
+        }
+      }
+    },
+    "Stiffened Value Example 2": {
+      "Assign": {
+        "302": {
+          "TYPE": "STIFFENED",
+          "STYPE": "VALUE",
+          "RIB_POS": "LOWER",
+          "VALUE": {
+            "WEIGHT": 0.5053622935672342,
+            "XZ": {
+              "SHAPE": "T",
+              "T_IN": 0.5014125,
+              "T_OUT": 0.5018539528056019,
+              "HU": 0.2508084536185276,
+              "HL": 0.29919154638147244
+            },
+            "YZ": {
+              "SHAPE": "H",
+              "T_IN": 0.5039497935672342,
+              "T_OUT": 0.5056783863672673,
+              "HU": 0.2523513018266812,
+              "HL": 0.3476486981733189
+            }
+          }
+        }
+      }
+    },
+    "Stiffened Value Example 3": {
+      "Assign": {
+        "303": {
+          "TYPE": "STIFFENED",
+          "STYPE": "VALUE",
+          "RIB_POS": "LOWER",
+          "VALUE": {
+            "WEIGHT": 0.5011286468763786,
+            "XZ": {
+              "SHAPE": "P",
+              "T_IN": 0.5003094468763786,
+              "T_OUT": 0.5003366972381165,
+              "HU": 0.250161338583965,
+              "HL": 0.27153866141603505
+            },
+            "YZ": {
+              "SHAPE": "B",
+              "T_IN": 0.5008192,
+              "T_OUT": 0.5009553521848519,
+              "HU": 0.250441644409799,
+              "HL": 0.28955835559020104
+            }
+          }
+        }
+      }
+    },
+    "Stiffened Value Example 4": {
+      "Assign": {
+        "304": {
+          "TYPE": "STIFFENED",
+          "STYPE": "VALUE",
+          "RIB_POS": "LOWER",
+          "VALUE": {
+            "WEIGHT": 0.56952,
+            "XZ": {
+              "SHAPE": "2C",
+              "T_IN": 0.5285599999999999,
+              "T_OUT": 0.5657917667004954,
+              "HU": 0.27161344029060086,
+              "HL": 0.5283865597093992
+            },
+            "YZ": {
+              "SHAPE": "2L",
+              "T_IN": 0.54096,
+              "T_OUT": 0.5823081784561129,
+              "HU": 0.279838903677413,
+              "HL": 0.42016109632258697
+            }
+          }
+        }
+      }
+    },
+    "Stiffened Value Example 5": {
+      "Assign": {
+        "305": {
+          "TYPE": "STIFFENED",
+          "STYPE": "VALUE",
+          "RIB_POS": "LOWER",
+          "VALUE": {
+            "WEIGHT": 0.50021,
+            "XZ": {
+              "SHAPE": "SB",
+              "T_IN": 0.50009,
+              "T_OUT": 0.5000910513462656,
+              "HU": 0.2500452618528665,
+              "HL": 0.2529547381471334
+            },
+            "YZ": {
+              "SHAPE": "SB",
+              "T_IN": 0.50012,
+              "T_OUT": 0.5001213871482924,
+              "HU": 0.2500603455170759,
+              "HL": 0.252939654482924
+            }
+          }
+        }
+      }
+    },
+    "Stiffened Value Example 6": {
+      "Assign": {
+        "306": {
+          "TYPE": "STIFFENED",
+          "STYPE": "VALUE",
+          "RIB_POS": "LOWER",
+          "VALUE": {
+            "WEIGHT": 0.5001649336143135,
+            "XZ": {
+              "SHAPE": "SR",
+              "T_IN": 0.5000706858347057,
+              "T_OUT": 0.5000723743088041,
+              "HU": 0.2500357619766308,
+              "HL": 0.2559642380233692
+            },
+            "YZ": {
+              "SHAPE": "SR",
+              "T_IN": 0.5000942477796076,
+              "T_OUT": 0.5000964898783434,
+              "HU": 0.25004768038893993,
+              "HL": 0.2559523196110601
+            }
+          }
+        }
+      }
+    },
+    "Stiffened Value Example 7": {
+      "Assign": {
+        "307": {
+          "TYPE": "STIFFENED",
+          "STYPE": "VALUE",
+          "RIB_POS": "LOWER",
+          "VALUE": {
+            "WEIGHT": 0.5162558344713645,
+            "XZ": {
+              "SHAPE": "URIB",
+              "T_IN": 0.5100655469507779,
+              "T_OUT": 0.525192891571082,
+              "HU": 0.25792933427383286,
+              "HL": 0.48207066572616714
+            },
+            "YZ": {
+              "SHAPE": "CC",
+              "T_IN": 0.5061902875205866,
+              "T_OUT": 0.514219469106165,
+              "HU": 0.25458593907755594,
+              "HL": 0.49541406092244406
+            }
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Thickness Type•\nValue: \"VALUE\"•\nStiffened: \"STIFFENED\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Stiffened Thickness Type•\nValue: \"VALUE\"•\nUser: \"USER\"•\nDB: \"DB\"",
+        "Key": "STYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Rib Position•\n\"LOWER\"•\n\"UPPER\"",
+        "Key": "RIB_POS",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Defined Properties",
+        "Key": "VALUE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Thickness weight data of plate element",
+        "Key": "WEIGHT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "XZ SECT",
+        "Key": "XZ",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "i. Shape¹⁾",
+        "Description": "\"SHAPE\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "ii. Equivalent thickness (h) used for the calculation of stiffness in the in-plane direction",
+        "Description": "\"T_IN\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "iii. Equivalent thickness (h) used for the calculation of stiffness in the out-of-plane direction",
+        "Description": "\"T_OUT\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "iv. Distance from the neutral axis to the extreme fiber of the plate",
+        "Description": "\"HU\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "v. Distance from the neutral axis to the extreme fiber of the rib",
+        "Description": "\"HL\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "YZ SECT",
+        "Key": "YZ",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "i) Shape¹⁾",
+        "Description": "\"SHAPE\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "ii) In-Plane: Equivalent thickness (h) used for the calculation of stiffness in the in-plane direction",
+        "Description": "\"T_IN\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "iii) Out-of-Plane: Equivalent thickness (h) used for the calculation of stiffness in the out-of-plane direction",
+        "Description": "\"T_OUT\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "iv) Hu: Distance from the neutral axis to the extreme fiber of the plate",
+        "Description": "\"HU\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "v) Hl: Distance from the neutral axis to the extreme fiber of the rib",
+        "Description": "\"HL\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Optional"
+      }
+    ],
+    [
+      {
+        "No.": "0",
+        "Shape Type": "1",
+        "\"SHAPE\"": "2",
+        "Array Index": "3"
+      },
+      {
+        "No.": "1",
+        "Shape Type": "Angle",
+        "\"SHAPE\"": "\"L\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "2",
+        "Shape Type": "Channel",
+        "\"SHAPE\"": "\"C\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "3",
+        "Shape Type": "H-Section",
+        "\"SHAPE\"": "\"H\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "4",
+        "Shape Type": "T-Section",
+        "\"SHAPE\"": "\"T\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "5",
+        "Shape Type": "BOX",
+        "\"SHAPE\"": "\"B\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "6",
+        "Shape Type": "PIPE",
+        "\"SHAPE\"": "\"P\"",
+        "Array Index": "D"
+      },
+      {
+        "No.": "7",
+        "Shape Type": "Double Angle",
+        "\"SHAPE\"": "\"2L\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "8",
+        "Shape Type": "Double Channel",
+        "\"SHAPE\"": "\"2C\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "9",
+        "Shape Type": "Solid Rectangle",
+        "\"SHAPE\"": "\"SB\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "10",
+        "Shape Type": "Solid Round",
+        "\"SHAPE\"": "\"SR\"",
+        "Array Index": "D"
+      },
+      {
+        "No.": "11",
+        "Shape Type": "Cold Formed Channel",
+        "\"SHAPE\"": "\"CC\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "12",
+        "Shape Type": "U-RIB",
+        "\"SHAPE\"": "\"URIB\"",
+        "Array Index": "H"
+      }
+    ]
+  ],
+  "menu_name": "Thickness - Stiffened Value"
+}

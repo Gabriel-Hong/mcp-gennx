@@ -1,0 +1,37 @@
+{
+  "endpoint": "doc/SAVEAS",
+  "title": "Save As",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35994277012377-Save-As",
+  "input_uri": "{base url} + doc/SAVEAS",
+  "active_methods": [
+    "POST"
+  ],
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "doc/SAVEAS",
+    "type": "object",
+    "properties": {
+      "Argument": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": {
+    "Save as": {
+      "Argument": "C:\\MIDAS\\FSM.mcb"
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Save File Path",
+        "Key": "-",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "-"
+      }
+    ]
+  ],
+  "menu_name": "Save As"
+}

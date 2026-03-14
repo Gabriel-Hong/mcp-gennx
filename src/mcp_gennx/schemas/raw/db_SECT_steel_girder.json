@@ -1,0 +1,1106 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Steel Girder",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35939506348697-Section-Properties-Steel-Girder",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "USE_SYM_CALC": {
+                  "description": "SymmetricAutoCalculator",
+                  "type": "boolean"
+                },
+                "SODSTIFF": {
+                  "type": "object",
+                  "properties": {
+                    "TOSTIFNOS": {
+                      "description": "Definedstiffenernumber",
+                      "type": "integer"
+                    },
+                    "SHAPE": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "NAME": {
+                            "description": "Name",
+                            "type": "string"
+                          },
+                          "SHAPE_TYPE": {
+                            "description": "Type",
+                            "type": "integer"
+                          },
+                          "SIZE": {
+                            "description": "Size",
+                            "type": "array",
+                            "items": {
+                              "type": "number",
+                              "maxItems": 8
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "DECKSTIFFNO": {
+                      "description": "Totaldeck&Stiffnumber",
+                      "type": "integer"
+                    },
+                    "SUB": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "DECK_POS": {
+                            "description": "DeckPosition",
+                            "type": "integer"
+                          },
+                          "DECK_PART": {
+                            "description": "DeckPart",
+                            "type": "integer"
+                          },
+                          "REF_POS": {
+                            "description": "ReferencePosition",
+                            "type": "integer"
+                          },
+                          "NUM": {
+                            "description": "Stiffenernumber",
+                            "type": "integer"
+                          },
+                          "DECK_NAME": {
+                            "description": "DeckName",
+                            "type": "string"
+                          },
+                          "EACHSTIFFNOS": {
+                            "description": "Appliedstiffenernumber",
+                            "type": "integer"
+                          },
+                          "DATA": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "USE_CALC": {
+                                  "description": "UseCalculation",
+                                  "type": "boolean"
+                                },
+                                "SPACING": {
+                                  "description": "Spacing",
+                                  "type": "number"
+                                },
+                                "STIF_POS": {
+                                  "description": "Position",
+                                  "type": "integer"
+                                },
+                                "SHAPE_NAME": {
+                                  "description": "ShapeName",
+                                  "type": "string"
+                                },
+                                "STIF_NAME": {
+                                  "description": "StiffName",
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "SECT_AFTER": {
+          "type": "object",
+          "properties": {
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Steel Girder Box": {
+      "Assign": {
+        "801": {
+          "SECTTYPE": "SOD",
+          "SECT_NAME": "SteelGirderBox",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "STLB",
+            "SECT_I": {
+              "vSIZE": [
+                0.71,
+                0.91,
+                0.72,
+                0.81,
+                0.83,
+                0.82,
+                1.2,
+                0.023,
+                0.025,
+                0.031,
+                0.032
+              ],
+              "USE_SYM_CALC": false,
+              "SODSTIFF": {
+                "TOSTIFNOS": 0,
+                "DECKSTIFFNO": 0
+              }
+            }
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.2,
+                0.3
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Steel Girder Box with Stiffener": {
+      "Assign": {
+        "802": {
+          "SECTTYPE": "SOD",
+          "SECT_NAME": "SteelGirderBox-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "STLB",
+            "SECT_I": {
+              "vSIZE": [
+                0.71,
+                0.91,
+                0.72,
+                0.81,
+                0.83,
+                0.82,
+                1.2,
+                0.023,
+                0.025,
+                0.031,
+                0.032
+              ],
+              "USE_SYM_CALC": false,
+              "SODSTIFF": {
+                "TOSTIFNOS": 3,
+                "SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "DECKSTIFFNO": 8,
+                "SUB": [
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.11,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Center",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TC1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TC2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TC3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 2,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.23,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TR3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 1,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Web-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.3,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "LW1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "LW2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.25,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "LW3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 2,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Web-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.31,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "RW1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.25,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "RW2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.32,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "RW3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Center",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BC1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BC2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BC3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 3,
+                    "DECK_PART": 2,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.22,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BR3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.2,
+                0.3
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Steel Girder I": {
+      "Assign": {
+        "803": {
+          "SECTTYPE": "SOD",
+          "SECT_NAME": "SteelGirderI",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "STLI",
+            "SECT_I": {
+              "vSIZE": [
+                0.78,
+                0.79,
+                0.81,
+                0.82,
+                1.1,
+                0.023,
+                0.024,
+                0.025
+              ],
+              "USE_SYM_CALC": false,
+              "SODSTIFF": {
+                "TOSTIFNOS": 0,
+                "DECKSTIFFNO": 0
+              }
+            }
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.41,
+                0.62
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Steel Girder I with Stiffener": {
+      "Assign": {
+        "804": {
+          "SECTTYPE": "SOD",
+          "SECT_NAME": "SteelGirderI-Stiff",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "STLI",
+            "SECT_I": {
+              "vSIZE": [
+                0.78,
+                0.79,
+                0.81,
+                0.82,
+                1.1,
+                0.023,
+                0.024,
+                0.025
+              ],
+              "USE_SYM_CALC": false,
+              "SODSTIFF": {
+                "TOSTIFNOS": 3,
+                "SHAPE": [
+                  {
+                    "NAME": "Flat",
+                    "SHAPE_TYPE": 0,
+                    "SIZE": [
+                      0.15,
+                      0.018,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "Tee",
+                    "SHAPE_TYPE": 1,
+                    "SIZE": [
+                      0.12,
+                      0.11,
+                      0.021,
+                      0.022,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "NAME": "U-Rib",
+                    "SHAPE_TYPE": 2,
+                    "SIZE": [
+                      0.12,
+                      0.14,
+                      0.1,
+                      0.016,
+                      0.008,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "DECKSTIFFNO": 5,
+                "SUB": [
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 0,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Top-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "TR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "TR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 1,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "TR3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 1,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Web",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.3,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "W1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "W2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 2,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "W3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 2,
+                    "DECK_PART": 0,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Left",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BL1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BL2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BL3"
+                      }
+                    ]
+                  },
+                  {
+                    "DECK_POS": 2,
+                    "DECK_PART": 1,
+                    "REF_POS": 0,
+                    "NUM": 3,
+                    "DECK_NAME": "Bottom-Right",
+                    "EACHSTIFFNOS": 3,
+                    "DATA": [
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.1,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Flat",
+                        "STIF_NAME": "BR1"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.15,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "Tee",
+                        "STIF_NAME": "BR2"
+                      },
+                      {
+                        "USE_CALC": true,
+                        "SPACING": 0.21,
+                        "STIF_POS": 0,
+                        "SHAPE_NAME": "U-Rib",
+                        "STIF_NAME": "BR3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "SECT_AFTER": {
+            "SECT_I": {
+              "vSIZE": [
+                0.41,
+                0.62
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Data•\nSteel Girder",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Section Specifications",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "Symmetric Section Auto Calculation",
+        "Description": "\"USE_SYM_CALC\"",
+        "Key": "Boolean",
+        "Value Type": "false",
+        "Default": "Optional"
+      },
+      {
+        "No.": "Stiffener²⁾",
+        "Description": "\"SODSTIFF\"",
+        "Key": "Object",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Section Data•\nReference Line",
+        "Key": "SECT_AFTER",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Section Specifications",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "Distance from Reference Line•\n[Top, Bottom]",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Description": "Stiffener",
+        "Key": "SODSTIFF",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Number of defined Stiffeners Shape",
+        "Key": "TOSTIFNOS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Number of defined Stiffeners Positions",
+        "Key": "DECKSTIFFNO",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Stiffener Shape•\nInsert the data as an object",
+        "Key": "SHAPE",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "i. Stiffener Name•\nUser defined",
+        "Description": "\"NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "ii. Stiffener Shape Type•\nFlat: 0•\nTee: 1•\nU-Rib: 2",
+        "Description": "\"SHAPE_TYPE\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iii. Stiffener Size•\nFlat: [H, B]•\nTee: [H, B, tw, tf]•\nU-Rib: [H, B1, B2, t, R]",
+        "Description": "\"SIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Stiffener Positions•\nInsert the data as an object",
+        "Key": "SUB",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "i. Deck Positions<strong>•\n</strong>Steel-Box◦\nTop flange: 0◦\nLeft web: 1◦\nRight web: 2◦\nBottom flange: 3",
+        "Description": "\"DECK_POS\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "ii. Deck Part•\nDeck1, Web: 0•\nDeck2: 1•\nDeck3: 2",
+        "Description": "\"DECK_PART\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iii. Reference Positions•\nLeft, Top: 0•\nRight, Bottom: 1",
+        "Description": "\"REF_POS\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "iv. Number of Stiffeners",
+        "Description": "\"NUM\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "v. Deck Name•\nDECK_POS/DECK_PART: \"Deck Name\"•\nSteel Box•\nSteel-I•\nSteel-Tub",
+        "Description": "\"DECK_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vi. Number of Stiffeners in a Deck Positions",
+        "Description": "\"EACHSTIFFNOS\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii. Stiffeners Data at Positions•\nInsert the data as an object",
+        "Description": "\"DATA\"",
+        "Key": "Array[Object]",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-1. Considering for the section property calculations",
+        "Description": "\"USE_CALC\"",
+        "Key": "Boolean",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-2. Stiffener Spacing",
+        "Description": "\"SPACING\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-3. Stiffener Positions•\nTop flange/Bottom: 1•\nWeb/Left: 0•\nWeb/Right: 1•\nWeb/Both: 2•\nBottom flange/Top: 0",
+        "Description": "\"STIF_POS\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-4. Stiffener Shape Name",
+        "Description": "\"SHAPE_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      },
+      {
+        "No.": "vii-5. Stiffener Name",
+        "Description": "\"STIF_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "-"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Steel Girder"
+}

@@ -1,0 +1,333 @@
+{
+  "endpoint": "view/CAPTURE",
+  "title": "Capture",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35996023805337-Capture",
+  "input_uri": "{base url} + view/CAPTURE",
+  "active_methods": [
+    "POST"
+  ],
+  "json_schema": {
+    "CAPTURE": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "Argument": {
+          "type": "object",
+          "properties": {
+            "FIGURE_NAME": {
+              "type": "string"
+            },
+            "EXPORT_PATH": {
+              "type": "string"
+            },
+            "WIDTH": {
+              "type": "integer"
+            },
+            "HEIGHT": {
+              "type": "integer"
+            },
+            "STAGE_NAME": {
+              "type": "string"
+            },
+            "SET_MODE": {
+              "type": "string"
+            },
+            "SET_HIDDEN": {
+              "type": "boolean"
+            },
+            "ACTIVE": {
+              "type": "object",
+              "description": "Veiw/Active"
+            },
+            "ANGLE": {
+              "type": "object",
+              "description": "Veiw/Angle"
+            },
+            "DISPLAY": {
+              "type": "object",
+              "description": "Veiw/Display"
+            },
+            "RESULT_GRAPHIC": {
+              "type": "object",
+              "description": "Veiw/Result Graphic"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Capture": {
+      "Argument": {
+        "SET_MODE": "post",
+        "SET_HIDDEN": false,
+        "EXPORT_PATH": "C:\\MIDAS\\CaptureTest\\image.jpg",
+        "HEIGHT": 1000,
+        "WIDTH": 1000,
+        "ACTIVE": {
+          "ACTIVE_MODE": "Active",
+          "N_LIST": [
+            104,
+            125,
+            151,
+            153
+          ],
+          "E_LIST": [
+            196,
+            228,
+            229,
+            231,
+            232,
+            269,
+            270,
+            279,
+            280,
+            291,
+            292,
+            349,
+            350
+          ]
+        },
+        "ANGLE": {
+          "HORIZONTAL": 45,
+          "VERTICAL": 60
+        },
+        "DISPLAY": {
+          "NODE": {
+            "NODE": true,
+            "NODE_NUMBER": true
+          },
+          "PERSPECTIVE": true,
+          "ZOOM_LEVEL": 150,
+          "BGCOLOR_TOP": {
+            "R": 255,
+            "G": 125,
+            "B": 125
+          }
+        },
+        "RESULT_GRAPHIC": {
+          "CURRENT_MODE": "beam diagrams",
+          "LOAD_CASE_COMB": {
+            "TYPE": "ST",
+            "NAME": "DL"
+          },
+          "COMPONENTS": {
+            "PART": "total",
+            "COMP": "Fx"
+          },
+          "DISPLAY_OPTIONS": {
+            "FIDELITY": "Exact",
+            "FILL": "line fill",
+            "SCALE": 1.0
+          },
+          "TYPE_OF_DISPLAY": {
+            "CONTOUR": {
+              "OPT_CHECK": true
+            },
+            "DEFORM": {
+              "OPT_CHECK": true
+            },
+            "LEGEND": {
+              "OPT_CHECK": true
+            },
+            "VALUES": {
+              "OPT_CHECK": true
+            }
+          },
+          "OUTPUT_SECT_LOCATION": {
+            "OPT_I": true,
+            "OPT_CENTER_MID": true,
+            "OPT_J": true
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "_condition": "Smart(Dynamic) Report"
+      },
+      {
+        "No.": "1",
+        "Description": "Image File Save Path & File Name",
+        "Key": "EXPORT_PATH",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Smart Report Image Name",
+        "Key": "FIGURE_NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "User Setting"
+      },
+      {
+        "No.": "1",
+        "Description": "Image File Save Path & File Name",
+        "Key": "EXPORT_PATH",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Construction Stage Name",
+        "Key": "STAGE_NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Select Analysis Mode•\nPre-Mode: \"pre\"•\nPost-Mode: \"post\"",
+        "Key": "SET_MODE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Hidden option•\nHidden: true•\nNot Hidden: false",
+        "Key": "SET_HIDDEN",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Image Height’s Pixel Size",
+        "Key": "HEIGHT",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Image Width’s Pixel Size",
+        "Key": "WIDTH",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Viewpoint• refer to \"view/ANGLE\" manual",
+        "Key": "ANGLE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Active• refer to \"view/ACTIVE\" manual",
+        "Key": "ACTIVE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Display• refer to \"view/DISPLAY\" manual",
+        "Key": "DISPLAY",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "10",
+        "Description": "Perspective",
+        "Key": "PERSPECTIVE",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "11",
+        "Description": "Zoom Level• Zoom Out: 25 <= value < 100• Zoom Fit: 100• Zoom in: 100 < value < 200",
+        "Key": "ZOOM_LEVEL",
+        "Value Type": "Number",
+        "Default": "100",
+        "Required": "Optional"
+      },
+      {
+        "No.": "12",
+        "Description": "Background Color Top",
+        "Key": "BGCOLOR_TOP",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Red",
+        "Key": "R",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Green",
+        "Key": "G",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Blue",
+        "Key": "B",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "13",
+        "Description": "Background Color Bottom",
+        "Key": "BGCOLOR_BOTTOM",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Red",
+        "Key": "R",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Green",
+        "Key": "G",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Blue",
+        "Key": "B",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "14",
+        "Description": "Result Display• refer to \"view/RESULTGRAPHIC\" manual",
+        "Key": "RESULT_GRAPHIC",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Capture"
+}

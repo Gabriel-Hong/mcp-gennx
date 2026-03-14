@@ -1,0 +1,252 @@
+{
+  "endpoint": "db/MCON",
+  "title": "Linear Constraints",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35948507217689-Linear-Constraints",
+  "input_uri": "{base url} + db/MCON",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "MCON": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "GROUP_NAME": {
+                "description": "BoundaryGroupName",
+                "type": "string"
+              },
+              "SLAVE_TYPE": {
+                "description": "SlaveType",
+                "type": "string"
+              },
+              "TYPE": {
+                "description": "ConstraintType",
+                "type": "string"
+              },
+              "SLAVES": {
+                "description": "Slave",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "NODE_KEY": {
+                      "description": "NodeKey",
+                      "type": "integer"
+                    },
+                    "COEFF": {
+                      "description": "Coeff.",
+                      "type": "number"
+                    },
+                    "WEIGHT": {
+                      "description": "Weight",
+                      "type": "number"
+                    },
+                    "DOF": {
+                      "description": "Node",
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Explicit": {
+      "Assign": {
+        "21": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "SLAVE_TYPE": "100000",
+              "TYPE": "EX",
+              "SLAVES": [
+                {
+                  "NODE_KEY": 22,
+                  "COEFF": 0.5,
+                  "DOF": 0
+                },
+                {
+                  "NODE_KEY": 23,
+                  "COEFF": 0.5,
+                  "DOF": 1
+                },
+                {
+                  "NODE_KEY": 32,
+                  "COEFF": 0.5,
+                  "DOF": 2
+                },
+                {
+                  "NODE_KEY": 33,
+                  "COEFF": 0.5,
+                  "DOF": 3
+                },
+                {
+                  "NODE_KEY": 34,
+                  "COEFF": 0.5,
+                  "DOF": 4
+                },
+                {
+                  "NODE_KEY": 35,
+                  "COEFF": 0.5,
+                  "DOF": 5
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Weighted Displacement": {
+      "Assign": {
+        "24": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "GROUP_NAME": "Service",
+              "SLAVE_TYPE": "110001",
+              "TYPE": "WD",
+              "SLAVES": [
+                {
+                  "NODE_KEY": 25,
+                  "WEIGHT": 10
+                },
+                {
+                  "NODE_KEY": 26,
+                  "WEIGHT": 10
+                },
+                {
+                  "NODE_KEY": 36,
+                  "WEIGHT": 10
+                },
+                {
+                  "NODE_KEY": 37,
+                  "WEIGHT": 10
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Linear Constraints•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "DOF of Constraint Node•\n6th decimal place: DX•\n5th decimal place: DY•\n4th decimal place: DZ•\n3rd decimal place: RX•\n2nd decimal place: RY•\n1st decimal place: RZ",
+        "Key": "SLAVE_TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Constraint Type•\nExplicit: \"EX\"•\nWeighted Displacement: \"WD\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Explicit"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Independent Nodes•\nInsert the data as an object",
+        "Key": "SLAVES",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Node ID Number",
+        "Description": "\"NODE_KEY\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Coefficient",
+        "Description": "\"COEFF\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Degree of Freedom•\nDX: 0•\nDY: 1•\nDZ: 2•\nRX: 3•\nRY: 4•\nRZ: 5",
+        "Description": "\"DOF\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "_condition": "Weighted Displacement"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Independent Nodes•\nInsert the data as an object",
+        "Key": "SLAVES",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Node ID Number",
+        "Description": "\"NODE_KEY\"",
+        "Key": "Integer",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Weight",
+        "Description": "\"WEIGHT\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Linear Constraints"
+}

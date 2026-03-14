@@ -1,0 +1,182 @@
+{
+  "endpoint": "db/STYP",
+  "title": "Structure Type",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35802404495257-Structure-Type",
+  "input_uri": "{base url} + db/STYP",
+  "active_methods": [
+    "GET",
+    "PUT"
+  ],
+  "json_schema": {
+    "STYP": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "STYP": {
+          "description": "StructureType",
+          "type": "integer"
+        },
+        "MASS": {
+          "description": "MassType",
+          "type": "integer"
+        },
+        "bMASSOFFSET": {
+          "description": "ConsiderOffset",
+          "type": "boolean"
+        },
+        "bSELFWEIGHT": {
+          "description": "ConvertSelfWeigth",
+          "type": "boolean"
+        },
+        "SMASS": {
+          "description": "StructureMassType",
+          "type": "integer"
+        },
+        "GRAV": {
+          "description": "Gravity",
+          "type": "number"
+        },
+        "TEMP": {
+          "description": "InitialTemperature",
+          "type": "number"
+        },
+        "bALIGNBEAM": {
+          "description": "AlignTopofBeamSection",
+          "type": "boolean"
+        },
+        "bALIGNSLAB": {
+          "description": "AlignTopofSlab(Plate)",
+          "type": "boolean"
+        },
+        "bROTRIGID": {
+          "description": "ConsideringRotationalRigid",
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Lumped Mass": {
+      "Assign": {
+        "1": {
+          "STYP": 0,
+          "MASS": 1,
+          "bMASSOFFSET": false,
+          "bSELFWEIGHT": false,
+          "GRAV": 9.806,
+          "TEMP": 0,
+          "bALIGNBEAM": false,
+          "bALIGNSLAB": false,
+          "bROTRIGID": false
+        }
+      }
+    },
+    "Consistent Mass + Convert Self-weight into Masses (Convert to X, Y)": {
+      "Assign": {
+        "1": {
+          "STYP": 0,
+          "MASS": 2,
+          "bMASSOFFSET": false,
+          "bSELFWEIGHT": true,
+          "SMASS": 2,
+          "GRAV": 9.806,
+          "TEMP": 0,
+          "bALIGNBEAM": false,
+          "bALIGNSLAB": false,
+          "bROTRIGID": true
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Structure Type•\n3-D: 0•\nX-Z Plane: 1•\nY-Z Plane: 2•\nX-Y Plane: 3•\nConstraint RZ: 4",
+        "Key": "STYP",
+        "Value Type": "Integer",
+        "Default": "System",
+        "Required": "Optional"
+      },
+      {
+        "No.": "2",
+        "Description": "Mass Type•\nLumped Mass: 1•\nConsistent Mass: 2",
+        "Key": "MASS",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Gravity Acceleration",
+        "Key": "GRAV",
+        "Value Type": "Number",
+        "Default": "System",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Initial Temperature",
+        "Key": "TEMP",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Align Top of Beam Section",
+        "Key": "bALIGNBEAM",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Align the Top of the Slab (Plate)",
+        "Key": "bALIGNSLAB",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Lumped Mass, \"MASS\" is 1"
+      },
+      {
+        "No.": "7",
+        "Description": "Consider Off-diagonal Masses",
+        "Key": "bMASSOFFSET",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Considering Rotational Rigid Body Mode for Modal Participation Factor",
+        "Key": "bROTRIGID",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Convert Self-weight into Masses",
+        "Key": "bSELFWEIGHT",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Convert Self-weight into Masses, \"bSELFWEIGHT\" is True"
+      },
+      {
+        "No.": "10",
+        "Description": "Structure Mass Type•\nConvert to X, Y, Z: 1•\nConvert to X, Y: 2•\nConvert to Z: 3",
+        "Key": "SMASS",
+        "Value Type": "Integer",
+        "Default": "1",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Structure Type"
+}

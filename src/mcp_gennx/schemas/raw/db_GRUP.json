@@ -1,0 +1,102 @@
+{
+  "endpoint": "db/GRUP",
+  "title": "Structure Group",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35802441712921-Structure-Group",
+  "input_uri": "{base url} + db/GRUP",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT"
+  ],
+  "json_schema": {
+    "GRUP": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "description": "GroupName",
+          "type": "string"
+        },
+        "P_TYPE": {
+          "description": "PlaneType",
+          "type": "integer"
+        },
+        "N_LIST": {
+          "description": "NodeList",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "E_LIST": {
+          "description": "ElementList",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Structure Group": {
+      "Assign": {
+        "1": {
+          "NAME": "CENTER_",
+          "P_TYPE": 0,
+          "N_LIST": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "E_LIST": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Structure Group Name",
+        "Key": "NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Plane Type",
+        "Key": "P_TYPE",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Node List",
+        "Key": "N_LIST",
+        "Value Type": "Array[Integer]",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Element List",
+        "Key": "E_LIST",
+        "Value Type": "Array[Integer]",
+        "Default": "-",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Structure Group"
+}

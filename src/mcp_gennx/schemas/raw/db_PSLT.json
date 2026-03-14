@@ -1,0 +1,465 @@
+{
+  "endpoint": "db/PSLT",
+  "title": "Define Pressure Load Type",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35953165879833-Define-Pressure-Load-Type",
+  "input_uri": "{base url} + db/PSLT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "PSLT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "description": "Name",
+          "type": "string"
+        },
+        "DESC": {
+          "description": "Description",
+          "type": "string"
+        },
+        "ELEM_TYPE": {
+          "description": "ElemType",
+          "type": "string"
+        },
+        "PRESSURE_LOAD_ITEMS": {
+          "description": "PressureLoadItems",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "LOADCASENAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "LOADTYPE": {
+                "description": "LoadType",
+                "type": "string"
+              },
+              "LOAD_P1": {
+                "description": "dLoadP1",
+                "type": "number"
+              },
+              "LOAD_P2": {
+                "description": "dLoadP2",
+                "type": "number"
+              },
+              "LOAD_P3": {
+                "description": "dLoadP3",
+                "type": "number"
+              },
+              "LOAD_P4": {
+                "description": "dLoadP4",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Plate/Plane Stress(face)": {
+      "Assign": {
+        "1": {
+          "NAME": "Element_Type1",
+          "DESC": "Plate/PlaneStress(Face)",
+          "ELEM_TYPE": "Plate/PlaneStress(Face)",
+          "PRESSURE_LOAD_ITEMS": [
+            {
+              "LOADCASENAME": "DC",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -20
+            },
+            {
+              "LOADCASENAME": "DW",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -1,
+              "LOAD_P2": -2,
+              "LOAD_P3": -3,
+              "LOAD_P4": 4
+            },
+            {
+              "LOADCASENAME": "SIDL",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -15
+            },
+            {
+              "LOADCASENAME": "LL",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -4,
+              "LOAD_P2": -5,
+              "LOAD_P3": -4,
+              "LOAD_P4": -5
+            },
+            {
+              "LOADCASENAME": "EV",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 20
+            },
+            {
+              "LOADCASENAME": "EH",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 10,
+              "LOAD_P2": 10,
+              "LOAD_P3": 11,
+              "LOAD_P4": 12
+            },
+            {
+              "LOADCASENAME": "BR",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 6
+            },
+            {
+              "LOADCASENAME": "CR",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 7,
+              "LOAD_P2": 8,
+              "LOAD_P3": 9,
+              "LOAD_P4": 10
+            }
+          ]
+        }
+      }
+    },
+    "Plate/Plane Stress(Edge)": {
+      "Assign": {
+        "2": {
+          "NAME": "Element_Type2",
+          "DESC": "Plate/PlaneStress(Edge)",
+          "ELEM_TYPE": "Plate/PlaneStress(Edge)",
+          "PRESSURE_LOAD_ITEMS": [
+            {
+              "LOADCASENAME": "DC",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -20
+            },
+            {
+              "LOADCASENAME": "DW",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -1,
+              "LOAD_P2": -2
+            },
+            {
+              "LOADCASENAME": "SIDL",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -15
+            },
+            {
+              "LOADCASENAME": "LL",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -4,
+              "LOAD_P2": -5
+            },
+            {
+              "LOADCASENAME": "EV",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 20
+            },
+            {
+              "LOADCASENAME": "EH",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 10,
+              "LOAD_P2": 10
+            },
+            {
+              "LOADCASENAME": "BR",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 6
+            },
+            {
+              "LOADCASENAME": "CR",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 7,
+              "LOAD_P2": 8
+            }
+          ]
+        }
+      }
+    },
+    "Solid(face)": {
+      "Assign": {
+        "3": {
+          "NAME": "Element_Type3",
+          "DESC": "Solid(face)",
+          "ELEM_TYPE": "Solid(Face)",
+          "PRESSURE_LOAD_ITEMS": [
+            {
+              "LOADCASENAME": "DC",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -20
+            },
+            {
+              "LOADCASENAME": "DW",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -1,
+              "LOAD_P2": -2,
+              "LOAD_P3": -3,
+              "LOAD_P4": 4
+            },
+            {
+              "LOADCASENAME": "SIDL",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -15
+            },
+            {
+              "LOADCASENAME": "LL",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -4,
+              "LOAD_P2": -5,
+              "LOAD_P3": -4,
+              "LOAD_P4": -5
+            },
+            {
+              "LOADCASENAME": "EV",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 20
+            },
+            {
+              "LOADCASENAME": "EH",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 10,
+              "LOAD_P2": 10,
+              "LOAD_P3": 11,
+              "LOAD_P4": 12
+            },
+            {
+              "LOADCASENAME": "BR",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 6
+            },
+            {
+              "LOADCASENAME": "CR",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 7,
+              "LOAD_P2": 8,
+              "LOAD_P3": 9,
+              "LOAD_P4": 10
+            }
+          ]
+        }
+      }
+    },
+    "Plane Strain(Edge)": {
+      "Assign": {
+        "4": {
+          "NAME": "Element_Type4",
+          "DESC": "Plane_Strain(Edge)",
+          "ELEM_TYPE": "PlaneStrain(Edge)",
+          "PRESSURE_LOAD_ITEMS": [
+            {
+              "LOADCASENAME": "DC",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -20
+            },
+            {
+              "LOADCASENAME": "DW",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -1,
+              "LOAD_P2": -2
+            },
+            {
+              "LOADCASENAME": "SIDL",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -15
+            },
+            {
+              "LOADCASENAME": "LL",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -4,
+              "LOAD_P2": -5
+            },
+            {
+              "LOADCASENAME": "EV",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 20
+            },
+            {
+              "LOADCASENAME": "EH",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 10,
+              "LOAD_P2": 10
+            },
+            {
+              "LOADCASENAME": "BR",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 6
+            },
+            {
+              "LOADCASENAME": "CR",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 7,
+              "LOAD_P2": 8
+            }
+          ]
+        }
+      }
+    },
+    "Axisymmetric(Edge)": {
+      "Assign": {
+        "5": {
+          "NAME": "Element_Type5",
+          "DESC": "Axisymmetric(Edge)",
+          "ELEM_TYPE": "Axisymmetric(Edge)",
+          "PRESSURE_LOAD_ITEMS": [
+            {
+              "LOADCASENAME": "DC",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -20
+            },
+            {
+              "LOADCASENAME": "DW",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -1,
+              "LOAD_P2": -2
+            },
+            {
+              "LOADCASENAME": "SIDL",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -15
+            },
+            {
+              "LOADCASENAME": "LL",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -4,
+              "LOAD_P2": -5
+            },
+            {
+              "LOADCASENAME": "EV",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 20
+            },
+            {
+              "LOADCASENAME": "EH",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 10,
+              "LOAD_P2": 10
+            },
+            {
+              "LOADCASENAME": "BR",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": 6
+            },
+            {
+              "LOADCASENAME": "CR",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": 7,
+              "LOAD_P2": 8
+            }
+          ]
+        }
+      }
+    },
+    "Wall(Edge)": {
+      "Assign": {
+        "6": {
+          "NAME": "Element_Type6",
+          "DESC": "Wall(Edge)",
+          "ELEM_TYPE": "Wall (Edge)",
+          "PRESSURE_LOAD_ITEMS": [
+            {
+              "LOADCASENAME": "DL",
+              "LOADTYPE": "Uniform",
+              "LOAD_P1": -20
+            },
+            {
+              "LOADCASENAME": "LL",
+              "LOADTYPE": "Linear",
+              "LOAD_P1": -1,
+              "LOAD_P2": -2
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Pressure Load Type Name",
+        "Key": "NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Description",
+        "Key": "DESC",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Element Type•\n\"Plate/Plane Stress (Face)\"•\n\"Plate/Plane Stress (Edge)\"•\n\"Solid (Face)\"•\n\"Plane Strain (Edge)\"•\n\"Axisymmetric (Edge)\"• \"Wall (Edge)\"",
+        "Key": "ELEM_TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Pressure Load•\nInsert the data as an object",
+        "Key": "PRESSURE_LOAD_ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Load Case Name",
+        "Key": "CMD",
+        "Value Type": "String",
+        "Default": "0",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Type•\n\"Uniform\"•\n\"Linear\"",
+        "Key": "LOADTYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Load: P1¹⁾",
+        "Key": "LOAD_P1",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Load: P2¹⁾",
+        "Key": "LOAD_P2",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Load: P3¹⁾",
+        "Key": "LOAD_P3",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Load: P4¹⁾",
+        "Key": "LOAD_P4",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Define Pressure Load Type"
+}

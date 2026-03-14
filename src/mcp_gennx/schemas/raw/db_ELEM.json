@@ -1,0 +1,1029 @@
+{
+  "endpoint": "db/ELEM",
+  "title": "Element",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35806934300825-Element",
+  "input_uri": "{base url} + db/ELEM",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "ELEM": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "TYPE": {
+          "description": "ELEMENTTYPE",
+          "type": "string"
+        },
+        "MATL": {
+          "description": "MATERIALNUM",
+          "type": "integer"
+        },
+        "SECT": {
+          "description": "SECTIONNUM",
+          "type": "integer"
+        },
+        "NODE": {
+          "description": "NODENUM",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "maxItems": 8
+          }
+        },
+        "ANGLE": {
+          "description": "ELEMENTANGLE",
+          "type": "number"
+        },
+        "STYPE": {
+          "description": "ELEMENTSUBTYPE",
+          "type": "integer"
+        },
+        "TENS": {
+          "description": "TENSFORCE",
+          "type": "number"
+        },
+        "T_LIMIT": {
+          "description": "TENSLIMIT",
+          "type": "number"
+        },
+        "T_bLMT": {
+          "description": "USETENSLIMIT?",
+          "type": "boolean"
+        },
+        "NON_LEN": {
+          "description": "NONLINIARLENGTH",
+          "type": "number"
+        },
+        "CABLE": {
+          "description": "CABLEOPTION",
+          "type": "integer"
+        },
+        "C_RAT": {
+          "description": "CABLELENGTHRATIO",
+          "type": "number"
+        },
+        "WALL": {
+          "description": "WALLID",
+          "type": "integer"
+        },
+        "W_CON": {
+          "description": "CONNECTEDNODENUM",
+          "type": "integer"
+        },
+        "W_TYPE": {
+          "description": "WALLTYPE",
+          "type": "integer"
+        },
+        "LCAXIS": {
+          "description": "LOCALAXIS",
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Beam Type": {
+      "Assign": {
+        "198": {
+          "TYPE": "BEAM",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            30,
+            74
+          ],
+          "ANGLE": 0
+        }
+      }
+    },
+    "Truss": {
+      "Assign": {
+        "13": {
+          "TYPE": "TRUSS",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            24,
+            25
+          ],
+          "ANGLE": 0
+        }
+      }
+    },
+    "Tension only": {
+      "Assign": {
+        "6": {
+          "TYPE": "TENSTR",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            11,
+            12
+          ],
+          "ANGLE": 0,
+          "STYPE": 3,
+          "TENS": 0.5,
+          "CABLE": 1
+        }
+      }
+    },
+    "Hook": {
+      "Assign": {
+        "7": {
+          "TYPE": "TENSTR",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            25,
+            26
+          ],
+          "ANGLE": -45,
+          "STYPE": 2,
+          "NON_LEN": 0.25
+        }
+      }
+    },
+    "Cable": {
+      "Assign": {
+        "8": {
+          "TYPE": "TENSTR",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            15,
+            37
+          ],
+          "ANGLE": 0,
+          "STYPE": 3,
+          "NON_LEN": 1.35,
+          "CABLE": 3
+        }
+      }
+    },
+    "Compression Only": {
+      "Assign": {
+        "22": {
+          "TYPE": "COMPTR",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            50,
+            51
+          ],
+          "ANGLE": 0,
+          "STYPE": 1,
+          "TENS": 27,
+          "T_LIMIT": -15,
+          "T_bLMT": true
+        }
+      }
+    },
+    "Gap": {
+      "Assign": {
+        "25": {
+          "TYPE": "COMPTR",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            54,
+            55
+          ],
+          "ANGLE": 30,
+          "STYPE": 2,
+          "NON_LEN": 0.25
+        }
+      }
+    },
+    "Wall": {
+      "Assign": {
+        "1": {
+          "TYPE": "WALL",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            1,
+            2,
+            4,
+            3
+          ],
+          "STYPE": 1,
+          "WALL": 1,
+          "W_CON": 0,
+          "W_TYPE": 0
+        }
+      }
+    },
+    "3 Nodes Thick Plate": {
+      "Assign": {
+        "26": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            38,
+            16,
+            17
+          ],
+          "ANGLE": 30,
+          "STYPE": 1
+        }
+      }
+    },
+    "3 Nodes Thick Plate with Drilling DOF": {
+      "Assign": {
+        "27": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            41,
+            20,
+            21
+          ],
+          "ANGLE": 30,
+          "STYPE": 3
+        }
+      }
+    },
+    "3 Nodes Thin Plate": {
+      "Assign": {
+        "28": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            18,
+            40,
+            19
+          ],
+          "ANGLE": 30,
+          "STYPE": 2
+        }
+      }
+    },
+    "3 Nodes Thin Plate with Drilling DOF": {
+      "Assign": {
+        "29": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            35,
+            14,
+            36
+          ],
+          "ANGLE": 30,
+          "STYPE": 4
+        }
+      }
+    },
+    "4 Nodes Thick Plate": {
+      "Assign": {
+        "30": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            56,
+            69,
+            70,
+            57
+          ],
+          "ANGLE": 0,
+          "STYPE": 1
+        }
+      }
+    },
+    "4 Nodes Thick Plate with Drilling DOF": {
+      "Assign": {
+        "32": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            59,
+            72,
+            73,
+            60
+          ],
+          "ANGLE": 30,
+          "STYPE": 3
+        }
+      }
+    },
+    "4 Nodes Thin Plate": {
+      "Assign": {
+        "31": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            57,
+            70,
+            71,
+            58
+          ],
+          "ANGLE": 0,
+          "STYPE": 2
+        }
+      }
+    },
+    "4 Nodes Thin Plate with Drilling DOF": {
+      "Assign": {
+        "33": {
+          "TYPE": "PLATE",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            60,
+            73,
+            74,
+            61,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ANGLE": 30,
+          "STYPE": 4
+        }
+      }
+    },
+    "3 Nodes Plane Stress": {
+      "Assign": {
+        "36": {
+          "TYPE": "PLSTRS",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            54,
+            69,
+            55
+          ],
+          "ANGLE": 30,
+          "STYPE": 1
+        }
+      }
+    },
+    "3 Nodes Plane Stress with Drilling DOF": {
+      "Assign": {
+        "37": {
+          "TYPE": "PLSTRS",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            55,
+            69,
+            56
+          ],
+          "ANGLE": 30,
+          "STYPE": 2
+        }
+      }
+    },
+    "4 Nodes Plane Stress": {
+      "Assign": {
+        "35": {
+          "TYPE": "PLSTRS",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            63,
+            76,
+            77,
+            64,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ANGLE": 30,
+          "STYPE": 1
+        }
+      }
+    },
+    "4 Nodes Plane Stress with Drilling DOF": {
+      "Assign": {
+        "34": {
+          "TYPE": "PLSTRS",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            62,
+            75,
+            76,
+            63
+          ],
+          "ANGLE": 30,
+          "STYPE": 2
+        }
+      }
+    },
+    "3 Nodes Plane Strain": {
+      "Assign": {
+        "38": {
+          "TYPE": "PLSTRN",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            82,
+            2,
+            1
+          ],
+          "ANGLE": 0
+        }
+      }
+    },
+    "4 Nodes Plane Strain": {
+      "Assign": {
+        "39": {
+          "TYPE": "PLSTRN",
+          "MATL": 1,
+          "SECT": 1,
+          "NODE": [
+            2,
+            83,
+            84,
+            3
+          ],
+          "ANGLE": 0
+        }
+      }
+    },
+    "4 Nodes Solid Type": {
+      "Assign": {
+        "40": {
+          "TYPE": "SOLID",
+          "MATL": 1,
+          "SECT": 0,
+          "NODE": [
+            90,
+            86,
+            87,
+            23
+          ]
+        }
+      }
+    },
+    "6 Nodes Solid Type": {
+      "Assign": {
+        "41": {
+          "TYPE": "SOLID",
+          "MATL": 1,
+          "SECT": 0,
+          "NODE": [
+            25,
+            4,
+            26,
+            89,
+            85,
+            112
+          ]
+        }
+      }
+    },
+    "8 Nodes Solid Type": {
+      "Assign": {
+        "42": {
+          "TYPE": "SOLID",
+          "MATL": 1,
+          "SECT": 0,
+          "NODE": [
+            27,
+            6,
+            7,
+            28,
+            113,
+            107,
+            108,
+            114
+          ]
+        }
+      }
+    },
+    "3 Nodes Axisymmetric": {
+      "Assign": {
+        "43": {
+          "TYPE": "AXISYM",
+          "MATL": 1,
+          "SECT": 0,
+          "NODE": [
+            82,
+            1,
+            2
+          ],
+          "ANGLE": 0
+        }
+      }
+    },
+    "4 Nodes Axisymmetric": {
+      "Assign": {
+        "44": {
+          "TYPE": "AXISYM",
+          "MATL": 1,
+          "SECT": 0,
+          "NODE": [
+            82,
+            1,
+            2,
+            83
+          ],
+          "ANGLE": 0
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "_condition": "Common Keys and Solid"
+      },
+      {
+        "No.": "1",
+        "Description": "Element Type¹⁾",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "\"BEAM\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "2",
+        "Description": "Material No.",
+        "Key": "MATL",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Section / Thickness No.",
+        "Key": "SECT",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Node No.²⁾",
+        "Key": "NODE",
+        "Value Type": "Array[Integer]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Beam, Truss, Plane Strain, Axisymmetric"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Tension only - Truss"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype•\nTruss: 1",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Allowable Compression•\nNegative Value Only",
+        "Key": "TENS",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Tension Limit Value•\nPositive Value Only",
+        "Key": "T_LIMIT",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Tension Limit",
+        "Key": "T_bLMT",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Tension only - Hook"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype³⁾•\nHook: 2",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Hook Length",
+        "Key": "NON_LEN",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Tension only - Cable"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype•\nCable: 3",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Cable Type•\nPretension: 1•\nHorizontal: 2•\nLu: 3",
+        "Key": "CABLE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "8",
+        "Description": "Pretension / Horizontal",
+        "Key": "TENS",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Lu•\nRange: 0.5~1.5",
+        "Key": "NON_LEN",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Compression only - Truss"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype•\nTruss: 1",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Allowable Tension•\nPositive Value Only",
+        "Key": "TENS",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Compression Limit",
+        "Key": "T_bLMT",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Compression Limit value•\nNegative Value Only",
+        "Key": "T_LIMIT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Compression only - Gap"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype•\nGap: 2",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Gap",
+        "Key": "NON_LEN",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Wall"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype•\nMembrane: 1•\nPlate: 2",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Wall ID",
+        "Key": "WALL",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "8",
+        "Description": "Orientation (Wall Beta Angle Only)•\nBeta Angle: 0•\nRef Point: 1•\nRef Vector: 2",
+        "Key": "W_CON",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "9",
+        "Description": "Wall Type•\nPlate base: 0•\nCRB - Pin: 1•\nCRB - Fixed: 2",
+        "Key": "W_TYPE",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Plate"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype•\nThick: 1•\nThin: 2•\nThick with Drilling DOF: 3•\nThin with Drilling DOF: 4",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Plane Stress"
+      },
+      {
+        "No.": "5",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Element Subtype•\nwith Drilling DOF Inactive: 1•\nwith Drilling DOF Active: 2",
+        "Key": "STYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Element Type": "General Beam/Tapered Beam",
+        "“TYPE”": "\"BEAM\""
+      },
+      {
+        "No.": "2",
+        "Element Type": "Truss",
+        "“TYPE”": "\"TRUSS\""
+      },
+      {
+        "No.": "3",
+        "Element Type": "Tension only/Hook/Cable",
+        "“TYPE”": "\"TENSTR\""
+      },
+      {
+        "No.": "4",
+        "Element Type": "Compression only/Gap",
+        "“TYPE”": "\"COMPTR\""
+      },
+      {
+        "No.": "5",
+        "Element Type": "Plate",
+        "“TYPE”": "\"PLATE\""
+      },
+      {
+        "No.": "6",
+        "Element Type": "Wall",
+        "“TYPE”": "\"WALL\""
+      },
+      {
+        "No.": "7",
+        "Element Type": "Plane stress",
+        "“TYPE”": "\"PLSTRS\""
+      },
+      {
+        "No.": "8",
+        "Element Type": "Plane strain",
+        "“TYPE”": "\"PLSTRN\""
+      },
+      {
+        "No.": "9",
+        "Element Type": "Axisymmetric",
+        "“TYPE”": "\"AXISYM\""
+      },
+      {
+        "No.": "10",
+        "Element Type": "Solid",
+        "“TYPE”": "\"SOLID\""
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Element Type": "General Beam/Tapered Beam",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "0",
+        "Node 4": "0",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "2",
+        "Element Type": "Truss",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "0",
+        "Node 4": "0",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "3",
+        "Element Type": "Tension only/Hook/Cable",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "0",
+        "Node 4": "0",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "4",
+        "Element Type": "Compression only/Gap",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "0",
+        "Node 4": "0",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "5",
+        "Element Type": "Plate",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "Integer",
+        "Node 4": "Integer",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "6",
+        "Element Type": "Wall",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "Integer",
+        "Node 4": "Integer",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "7",
+        "Element Type": "Plane stress",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "Integer",
+        "Node 4": "Integer",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "8",
+        "Element Type": "Plane strain",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "Integer",
+        "Node 4": "Integer",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "9",
+        "Element Type": "Axisymmetric",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "Integer",
+        "Node 4": "Integer",
+        "Node 5": "0",
+        "Node 6": "0",
+        "Node 7": "0",
+        "Node 8": "0"
+      },
+      {
+        "No.": "10",
+        "Element Type": "Solid",
+        "Node 1": "Integer",
+        "Node 2": "Integer",
+        "Node 3": "Integer",
+        "Node 4": "Integer",
+        "Node 5": "Integer",
+        "Node 6": "Integer",
+        "Node 7": "Integer",
+        "Node 8": "Integer"
+      }
+    ]
+  ],
+  "menu_name": "Element"
+}

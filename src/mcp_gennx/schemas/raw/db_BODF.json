@@ -1,0 +1,80 @@
+{
+  "endpoint": "db/BODF",
+  "title": "Self-Weight",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35952708909337-Self-Weight",
+  "input_uri": "{base url} + db/BODF",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "BODF": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "LCNAME": {
+          "description": "StaticLoadCaseName",
+          "type": "string"
+        },
+        "GROUP_NAME": {
+          "description": "GroupName",
+          "type": "string"
+        },
+        "FV": {
+          "description": "AutoType",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "maxItems": 3
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Self-Weight": {
+      "Assign": {
+        "2": {
+          "LCNAME": "D",
+          "GROUP_NAME": "",
+          "FV": [
+            0,
+            0,
+            -1
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Self-Weight Factor•\n[X, Y, Z]",
+        "Key": "FV",
+        "Value Type": "Array[Number, 3]",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Self-Weight"
+}

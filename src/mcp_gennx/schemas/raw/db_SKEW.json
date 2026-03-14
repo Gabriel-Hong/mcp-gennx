@@ -1,0 +1,478 @@
+{
+  "endpoint": "db/SKEW",
+  "title": "Node Local Axis",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35807178748569-Node-Local-Axis",
+  "input_uri": "{base url} + db/SKEW",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SKEW": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "iMETHOD": {
+          "description": "Inputmethod",
+          "type": "integer"
+        },
+        "ANGLE_X": {
+          "description": "Anglex",
+          "type": "number"
+        },
+        "ANGLE_Y": {
+          "description": "Angley",
+          "type": "number"
+        },
+        "ANGLE_Z": {
+          "description": "Anglez",
+          "type": "number"
+        },
+        "P0X": {
+          "description": "PointCoordinatex",
+          "type": "number"
+        },
+        "P0Y": {
+          "description": "PointCoordinatey",
+          "type": "number"
+        },
+        "P0Z": {
+          "description": "PointCoordinatez",
+          "type": "number"
+        },
+        "P1X": {
+          "description": "PointCoordinatex",
+          "type": "number"
+        },
+        "P1Y": {
+          "description": "PointCoordinatey",
+          "type": "number"
+        },
+        "P1Z": {
+          "description": "PointCoordinatez",
+          "type": "number"
+        },
+        "P2X": {
+          "description": "PointCoordinatex",
+          "type": "number"
+        },
+        "P2Y": {
+          "description": "PointCoordinatey",
+          "type": "number"
+        },
+        "P2Z": {
+          "description": "PointCoordinatez",
+          "type": "number"
+        },
+        "V1X": {
+          "description": "DirectionVectorx",
+          "type": "number"
+        },
+        "V1Y": {
+          "description": "DirectionVectory",
+          "type": "number"
+        },
+        "V1Z": {
+          "description": "DirectionVectorz",
+          "type": "number"
+        },
+        "V2X": {
+          "description": "DirectionVectorx",
+          "type": "number"
+        },
+        "V2Y": {
+          "description": "DirectionVectory",
+          "type": "number"
+        },
+        "V2Z": {
+          "description": "DirectionVectorz",
+          "type": "number"
+        },
+        "LV0X": {
+          "description": "DirectionVectorx",
+          "type": "number"
+        },
+        "LV0Y": {
+          "description": "DirectionVectory",
+          "type": "number"
+        },
+        "LV0Z": {
+          "description": "DirectionVectorz",
+          "type": "number"
+        },
+        "LV1X": {
+          "description": "DirectionVectorx",
+          "type": "number"
+        },
+        "LV1Y": {
+          "description": "DirectionVectory",
+          "type": "number"
+        },
+        "LV1Z": {
+          "description": "DirectionVectorz",
+          "type": "number"
+        },
+        "LV2X": {
+          "description": "DirectionVectorx",
+          "type": "number"
+        },
+        "LV2Y": {
+          "description": "DirectionVectory",
+          "type": "number"
+        },
+        "LV2Z": {
+          "description": "DirectionVectorz",
+          "type": "number"
+        },
+        "REFTYPE": {
+          "description": "ReferenceType",
+          "type": "integer"
+        },
+        "G_DIR": {
+          "description": "GlobalDirection",
+          "type": "integer"
+        },
+        "L_DIR": {
+          "description": "LocalDirection",
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Angle Type": {
+      "Assign": {
+        "1": {
+          "iMETHOD": 1,
+          "ANGLE_X": 45,
+          "ANGLE_Y": 0,
+          "ANGLE_Z": 90
+        }
+      }
+    },
+    "3 Points Type": {
+      "Assign": {
+        "2": {
+          "iMETHOD": 2,
+          "P0X": 130,
+          "P0Y": 3.35,
+          "P0Z": 0,
+          "P1X": 127,
+          "P1Y": 3.35,
+          "P1Z": 0,
+          "P2X": 127,
+          "P2Y": -3.35,
+          "P2Z": 0
+        }
+      }
+    },
+    "Vector Type": {
+      "Assign": {
+        "3": {
+          "iMETHOD": 3,
+          "V1X": 0,
+          "V1Y": -2.95,
+          "V1Z": 0,
+          "V2X": -3,
+          "V2Y": 0,
+          "V2Z": 0
+        }
+      }
+    },
+    "Line Vector": {
+      "Assign": {
+        "4": {
+          "iMETHOD": 4,
+          "P0X": 18.288,
+          "P0Y": 10.9728,
+          "P0Z": 0,
+          "P1X": 0,
+          "P1Y": 0,
+          "P1Z": -3,
+          "P2X": 0,
+          "P2Y": 0,
+          "P2Z": 0,
+          "LV0X": 0,
+          "LV0Y": 1,
+          "LV0Z": 0,
+          "LV1X": 0.7071067811865476,
+          "LV1Y": 0,
+          "LV1Z": -0.7071067811865476,
+          "LV2X": -0.7071067811865476,
+          "LV2Y": 0,
+          "LV2Z": -0.7071067811865476,
+          "REFTYPE": 1,
+          "G_DIR": 0,
+          "L_DIR": 1
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Input Method•\nAngle: 1•\n3 points: 2•\nVector: 3•\nLine Vector: 4",
+        "Key": "iMETHOD",
+        "Value Type": "Integer",
+        "Default": "\"ANGLE\"",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Input Method, \"iMETHOD\" is 1 (Angle)"
+      },
+      {
+        "No.": "2",
+        "Description": "About x",
+        "Key": "ANGLE_X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "About y",
+        "Key": "ANGLE_Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "About z",
+        "Key": "ANGLE_Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Input Method, \"iMETHOD\" is 2 (3 Points)"
+      },
+      {
+        "No.": "2",
+        "Description": "P0 Coordinate - X",
+        "Key": "P0X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "P0 Coordinate - Y",
+        "Key": "P0Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "P0 Coordinate - Z",
+        "Key": "P0Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "P1 Coordinate - X",
+        "Key": "P1X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "P1 Coordinate - Y",
+        "Key": "P1Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "P1 Coordinate - Z",
+        "Key": "P1Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "P2 Coordinate - X",
+        "Key": "P2X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "P2 Coordinate - Y",
+        "Key": "P2Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "10",
+        "Description": "P2 Coordinate - Z",
+        "Key": "P2Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Input Method, \"iMETHOD\" is 3 (Vector)"
+      },
+      {
+        "No.": "2",
+        "Description": "Direction Vector V1-x",
+        "Key": "V1X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Direction Vector V1-y",
+        "Key": "V1Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Direction Vector V1-z",
+        "Key": "V1Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Direction Vector V2-x",
+        "Key": "V2X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Direction Vector V2-y",
+        "Key": "V2Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Direction Vector V2-z",
+        "Key": "V2Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "When Input Method, \"iMETHOD\" is 4 (Line Vector)"
+      },
+      {
+        "No.": "2",
+        "Description": "Direction Vector V0-x",
+        "Key": "LV0X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Direction Vector V0-y",
+        "Key": "LV0Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Direction Vector V0-z",
+        "Key": "LV0Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Direction Vector V1-x",
+        "Key": "LV1X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Direction Vector V1-y",
+        "Key": "LV1Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Direction Vector V1-z",
+        "Key": "LV1Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Direction Vector V2-x",
+        "Key": "LV2X",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Direction Vector V2-y",
+        "Key": "LV2Y",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "10",
+        "Description": "Direction Vector V2-z",
+        "Key": "LV2Z",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "11",
+        "Description": "Reference Type•\nRef. Point: 1Required P0, P1 Point•\nGlobal Direction: 2Required P0 Point",
+        "Key": "REFTYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "12",
+        "Description": "Global Direction•\nGlobal X: 0•\nGlobal Y: 1•\nGlobal Z: 2",
+        "Key": "G_DIR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "13",
+        "Description": "Local Direction•\nLocal x: 0•\nLocal y: 1•\nLocal z: 2",
+        "Key": "L_DIR",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Node Local Axis"
+}

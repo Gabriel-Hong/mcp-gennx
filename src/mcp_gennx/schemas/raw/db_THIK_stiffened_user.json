@@ -1,0 +1,495 @@
+{
+  "endpoint": "db/THIK",
+  "title": "Thickness - Stiffened User",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35942603029401-Thickness-Stiffened-User",
+  "input_uri": "{base url} + db/THIK",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "THIK": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "TYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "STYPE": {
+          "description": "SubType",
+          "type": "string"
+        },
+        "RIB_POS": {
+          "description": "RibPosition",
+          "type": "string"
+        },
+        "SECTION": {
+          "type": "object",
+          "properties": {
+            "THIKNESS": {
+              "description": "thicknessdataofplateelement",
+              "type": "number"
+            },
+            "XZ": {
+              "type": "object",
+              "properties": {
+                "bRIB": {
+                  "description": "UseRibAttached",
+                  "type": "boolean"
+                },
+                "SHAPE": {
+                  "description": "Shape",
+                  "type": "string"
+                },
+                "DIST": {
+                  "description": "Distance",
+                  "type": "number"
+                },
+                "SIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "YZ": {
+              "type": "object",
+              "properties": {
+                "bRIB": {
+                  "description": "UseRibAttached",
+                  "type": "boolean"
+                },
+                "SHAPE": {
+                  "description": "Shape",
+                  "type": "string"
+                },
+                "DIST": {
+                  "description": "Distance",
+                  "type": "number"
+                },
+                "SIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Stiffened User Example 1": {
+      "Assign": {
+        "201": {
+          "TYPE": "STIFFENED",
+          "STYPE": "USER",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "C",
+              "DIST": 0.4,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.011,
+                0.012,
+                0.23,
+                0.013
+              ]
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "L",
+              "DIST": 0.5,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.031,
+                0.032
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Stiffened User Example 2": {
+      "Assign": {
+        "202": {
+          "TYPE": "STIFFENED",
+          "STYPE": "USER",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "T",
+              "DIST": 0.4,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.011,
+                0.012
+              ]
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "H",
+              "DIST": 0.5,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.011,
+                0.012,
+                0.23,
+                0.013
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Stiffened User Example 3": {
+      "Assign": {
+        "203": {
+          "TYPE": "STIFFENED",
+          "STYPE": "USER",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "P",
+              "DIST": 0.5,
+              "SIZE": [
+                0.12,
+                0.011
+              ]
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "B",
+              "DIST": 0.4,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.011,
+                0.012,
+                0.11,
+                0.013
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Stiffened User Example 4": {
+      "Assign": {
+        "204": {
+          "TYPE": "STIFFENED",
+          "STYPE": "USER",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "2C",
+              "DIST": 0.4,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.011,
+                0.012,
+                0.11
+              ]
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "2L",
+              "DIST": 0.5,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.011,
+                0.012,
+                0.11
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Stiffened User Example 5": {
+      "Assign": {
+        "205": {
+          "TYPE": "STIFFENED",
+          "STYPE": "USER",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "SR",
+              "DIST": 0.5,
+              "SIZE": [
+                0.21
+              ]
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "SB",
+              "DIST": 0.4,
+              "SIZE": [
+                0.21,
+                0.22
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Stiffened User Example 6": {
+      "Assign": {
+        "206": {
+          "TYPE": "STIFFENED",
+          "STYPE": "USER",
+          "RIB_POS": "LOWER",
+          "SECTION": {
+            "THIKNESS": 0.5,
+            "XZ": {
+              "bRIB": true,
+              "SHAPE": "URIB",
+              "DIST": 0.5,
+              "SIZE": [
+                0.21,
+                0.23,
+                0.2,
+                0.012,
+                0.011
+              ]
+            },
+            "YZ": {
+              "bRIB": true,
+              "SHAPE": "CC",
+              "DIST": 0.4,
+              "SIZE": [
+                0.21,
+                0.22,
+                0.012,
+                0.011,
+                0.05
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Thickness Type•\nValue: \"VALUE\"•\nStiffened: \"STIFFENED\"",
+        "Key": "TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Stiffened Thickness Type•\nValue: \"VALUE\"•\nUser: \"USER\"•\nDB: \"DB\"",
+        "Key": "STYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "Rib Position•\n\"LOWER\"•\n\"UPPER\"",
+        "Key": "RIB_POS",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Defined Stiffener",
+        "Key": "SECTION",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Thickness data of plate element",
+        "Key": "THIKNESS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "XZ Section",
+        "Key": "XZ",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i) Use Rib Attached",
+        "Description": "\"bRIB\"",
+        "Key": "Boolean",
+        "Value Type": "False",
+        "Default": "Optional"
+      },
+      {
+        "No.": "ii) Shape¹⁾",
+        "Description": "\"SHAPE\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii) Distance between Ribs",
+        "Description": "\"DIST\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iv) Size",
+        "Description": "\"SIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "YZ Section",
+        "Key": "YZ",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i) Use Rib Attached",
+        "Description": "\"bRIB\"",
+        "Key": "Boolean",
+        "Value Type": "False",
+        "Default": "Optional"
+      },
+      {
+        "No.": "ii) Shape¹⁾",
+        "Description": "\"SHAPE\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii) Distance between Ribs",
+        "Description": "\"DIST\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iv) Size",
+        "Description": "\"SIZE\"",
+        "Key": "Number",
+        "Value Type": "-",
+        "Default": "Required"
+      }
+    ],
+    [
+      {
+        "No.": "0",
+        "Shape Type": "1",
+        "\"SHAPE\"": "2",
+        "Array Index": "3"
+      },
+      {
+        "No.": "1",
+        "Shape Type": "Angle",
+        "\"SHAPE\"": "\"L\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "2",
+        "Shape Type": "Channel",
+        "\"SHAPE\"": "\"C\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "3",
+        "Shape Type": "H-Section",
+        "\"SHAPE\"": "\"H\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "4",
+        "Shape Type": "T-Section",
+        "\"SHAPE\"": "\"T\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "5",
+        "Shape Type": "BOX",
+        "\"SHAPE\"": "\"B\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "6",
+        "Shape Type": "PIPE",
+        "\"SHAPE\"": "\"P\"",
+        "Array Index": "D"
+      },
+      {
+        "No.": "7",
+        "Shape Type": "Double Angle",
+        "\"SHAPE\"": "\"2L\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "8",
+        "Shape Type": "Double Channel",
+        "\"SHAPE\"": "\"2C\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "9",
+        "Shape Type": "Solid Rectangle",
+        "\"SHAPE\"": "\"SB\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "10",
+        "Shape Type": "Solid Round",
+        "\"SHAPE\"": "\"SR\"",
+        "Array Index": "D"
+      },
+      {
+        "No.": "11",
+        "Shape Type": "Cold Formed Channel",
+        "\"SHAPE\"": "\"CC\"",
+        "Array Index": "H"
+      },
+      {
+        "No.": "12",
+        "Shape Type": "U-RIB",
+        "\"SHAPE\"": "\"URIB\"",
+        "Array Index": "H"
+      }
+    ]
+  ],
+  "menu_name": "Thickness - Stiffened User"
+}

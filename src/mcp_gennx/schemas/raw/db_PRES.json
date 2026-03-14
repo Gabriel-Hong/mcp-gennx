@@ -1,0 +1,516 @@
+{
+  "endpoint": "db/PRES",
+  "title": "Assign Pressure Loads",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35953322434457-Assign-Pressure-Loads",
+  "input_uri": "{base url} + db/PRES",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "PRES": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ITEMS": {
+          "description": "Items",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "ID",
+                "type": "integer"
+              },
+              "LCNAME": {
+                "description": "LoadCaseName",
+                "type": "string"
+              },
+              "GROUP_NAME": {
+                "description": "LoadGroupName",
+                "type": "string"
+              },
+              "CMD": {
+                "description": "CommandType",
+                "type": "string"
+              },
+              "ELEM_TYPE": {
+                "description": "ElementType",
+                "type": "string"
+              },
+              "FACE_EDGE_TYPE": {
+                "description": "Face/Edge",
+                "type": "string"
+              },
+              "DIRECTION": {
+                "description": "Direction",
+                "type": "string"
+              },
+              "VECTORS": {
+                "description": "VectorArray",
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "OPT_PROJECTION": {
+                "description": "ProjectionBoolean",
+                "type": "boolean"
+              },
+              "FORCES": {
+                "description": "ForceArray",
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "EDGE_LOADS": {
+                "description": "EdgeLoadArray",
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "PSLT_KEY": {
+                "description": "PsltKey",
+                "type": "integer"
+              },
+              "EDGE_FACE": {
+                "description": "EdgeFace",
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Plate/Plane Stress(Face) : Uniform": {
+      "Assign": {
+        "116": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type1",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLATE",
+              "FACE_EDGE_TYPE": "FACE",
+              "DIRECTION": "LZ",
+              "FORCES": [
+                -10,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Plate/Plane Stress(Face) : Linear": {
+      "Assign": {
+        "117": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type1",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLATE",
+              "FACE_EDGE_TYPE": "FACE",
+              "DIRECTION": "LZ",
+              "FORCES": [
+                0,
+                -5,
+                -6,
+                -7,
+                -8
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Plate/Plane Stress(Face) : Linear in vectors direction": {
+      "Assign": {
+        "118": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type1",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLATE",
+              "FACE_EDGE_TYPE": "FACE",
+              "DIRECTION": "VECTOR",
+              "VECTORS": [
+                0,
+                0,
+                -1
+              ],
+              "FORCES": [
+                0,
+                5,
+                6,
+                7,
+                8
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Plate/Plane Stress(Edge) : Uniform": {
+      "Assign": {
+        "119": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type2",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLATE",
+              "FACE_EDGE_TYPE": "EDGE",
+              "DIRECTION": "NORMAL",
+              "EDGE_LOADS": [
+                5,
+                0,
+                0
+              ],
+              "EDGE_FACE": 3
+            }
+          ]
+        }
+      }
+    },
+    "Plate/Plane Stress(Edge) : Linear in vectors direction": {
+      "Assign": {
+        "120": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type2",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLATE",
+              "FACE_EDGE_TYPE": "EDGE",
+              "DIRECTION": "VECTOR",
+              "VECTORS": [
+                0,
+                0,
+                -1
+              ],
+              "EDGE_LOADS": [
+                0,
+                1,
+                2
+              ],
+              "EDGE_FACE": 3
+            }
+          ]
+        }
+      }
+    },
+    "Plate/Plane Stress(Edge) : Linear with projection": {
+      "Assign": {
+        "121": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type2",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLATE",
+              "FACE_EDGE_TYPE": "EDGE",
+              "DIRECTION": "GZ",
+              "OPT_PROJECTION": true,
+              "EDGE_LOADS": [
+                0,
+                -3,
+                -4
+              ],
+              "EDGE_FACE": 1
+            }
+          ]
+        }
+      }
+    },
+    "Solid(Face) : Uniform": {
+      "Assign": {
+        "316": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type3",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "SOLID",
+              "FACE_EDGE_TYPE": "PRES",
+              "DIRECTION": "NORMAL",
+              "FORCES": [
+                1.2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "EDGE_FACE": 6
+            }
+          ]
+        }
+      }
+    },
+    "Solid(Face) : Linear in vector direction": {
+      "Assign": {
+        "317": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type3",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "SOLID",
+              "FACE_EDGE_TYPE": "PRES",
+              "DIRECTION": "VECTOR",
+              "VECTORS": [
+                0,
+                1,
+                0
+              ],
+              "FORCES": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "EDGE_FACE": 5
+            }
+          ]
+        }
+      }
+    },
+    "Plane Strain(Edge) : Uniform in vector direction": {
+      "Assign": {
+        "416": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type4",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLANE",
+              "FACE_EDGE_TYPE": "EDGE",
+              "DIRECTION": "VECTOR",
+              "VECTORS": [
+                0,
+                0,
+                1
+              ],
+              "EDGE_LOADS": [
+                10,
+                0,
+                0
+              ],
+              "EDGE_FACE": 1
+            }
+          ]
+        }
+      }
+    },
+    "Plane Strain(Edge) : Linear": {
+      "Assign": {
+        "417": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type4",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLANE",
+              "FACE_EDGE_TYPE": "EDGE",
+              "DIRECTION": "LY",
+              "EDGE_LOADS": [
+                0,
+                1.5,
+                1.6
+              ],
+              "EDGE_FACE": 3
+            }
+          ]
+        }
+      }
+    },
+    "Axisymmetric(Edge) : Unfiorm in vector direction": {
+      "Assign": {
+        "426": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type5",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLANE",
+              "FACE_EDGE_TYPE": "EDGE",
+              "DIRECTION": "VECTOR",
+              "VECTORS": [
+                1,
+                0,
+                0
+              ],
+              "EDGE_LOADS": [
+                -12.5,
+                0,
+                0
+              ],
+              "EDGE_FACE": 4
+            }
+          ]
+        }
+      }
+    },
+    "Axisymmetric(Edge) : Linear": {
+      "Assign": {
+        "427": {
+          "ITEMS": [
+            {
+              "ID": 1,
+              "LCNAME": "Element_Type5",
+              "GROUP_NAME": "",
+              "CMD": "PRES",
+              "ELEM_TYPE": "PLANE",
+              "FACE_EDGE_TYPE": "EDGE",
+              "DIRECTION": "LY",
+              "EDGE_LOADS": [
+                0,
+                1,
+                2
+              ],
+              "EDGE_FACE": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Pressure Loads•\nInsert the data as an object",
+        "Key": "ITEMS",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Serial Number",
+        "Key": "ID",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Load Case Name",
+        "Key": "LCNAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Load Group Name",
+        "Key": "GROUP_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Command Type•\nPressure Loads: \"PRES\"",
+        "Key": "CMD",
+        "Value Type": "String",
+        "Default": "\"PRES\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Element Type•\nPlate/Plane Stress: \"PLATE\"•\nSolid: \"SOLID\"•\nPlane Strain: \"PLANE\"•\nAxisymmetric: \"PLANE\"• Wall: \"PLATE\"",
+        "Key": "ELEM_TYPE",
+        "Value Type": "String",
+        "Default": "\"PLATE\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Pressure Type•\nPressure Face: \"FACE\"•\nPressure Edge: \"EDGE\"•\nSolid: \"PRES\"",
+        "Key": "FACE_EDGE_TYPE",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Direction¹⁾•\nNormal: \"NORMAL\"•\nLocal x: \"LX\"•\nLocal y: \"LY\"•\nLocal z: \"LZ\"•\nGlobal X: \"GX\"•\nGlobal Y: \"GY\"•\nGlobal Z: \"GZ\"•\nVector: \"VECTOR\"",
+        "Key": "DIRECTION",
+        "Value Type": "String",
+        "Default": "\"NORMAL\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Vector•\nif \"DIRECTION\" is \"VECTOR\"•\n[X, Y, Z]",
+        "Key": "VECTORS",
+        "Value Type": "Array[Number, 3]",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Projection Option•\nGX, GY, GZ only",
+        "Key": "OPT_PROJECTION",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Element Type: Solid•\nFace #1: 1•\nFace #2: 2•\nFace #3: 3•\nFace #4: 4•\nFace #5: 5•\nFace #6: 6Element Type: Plate/Plane•\nEdge #1: 1•\nEdge #2: 2•\nEdge #3: 3•\nEdge #4: 4",
+        "Key": "EDGE_FACE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "When Pressure Type, \"FACE_EDGE_TYPE\" is \"FACE\" or \"PRES\""
+      },
+      {
+        "No.": "(11)",
+        "Description": "Uniform Load•\n[PU, 0, 0, 0, 0]Linear Load•\n[0, P1, P2, P3, P4]",
+        "Key": "FORCES",
+        "Value Type": "Array[Number, 5]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "When Pressure Type, \"FACE_EDGE_TYPE\" is \"EDGE\""
+      },
+      {
+        "No.": "(11)",
+        "Description": "Uniform Load•\n[EPU, 0, 0]Linear Load•\n[0, EP1, EP2]",
+        "Key": "EDGE_LOADS",
+        "Value Type": "Array[Number, 3]",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Assign Pressure Loads"
+}

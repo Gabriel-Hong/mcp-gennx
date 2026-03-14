@@ -1,0 +1,438 @@
+{
+  "endpoint": "db/ELNK",
+  "title": "Elastic Link",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35946439146649-Elastic-Link",
+  "input_uri": "{base url} + db/ELNK",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "ELNK": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NODE": {
+          "description": "NODES",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "maxItems": 2
+          }
+        },
+        "LINK": {
+          "description": "SubOption",
+          "type": "string"
+        },
+        "ANGLE": {
+          "description": "Angle",
+          "type": "number"
+        },
+        "R_S": {
+          "description": "R_SDxR_SDyR_SDzR_SRxR_SRyR_SRz",
+          "type": "array",
+          "items": {
+            "type": "boolean",
+            "maxItems": 6
+          }
+        },
+        "SDR": {
+          "description": "SDxSDySDzSRxSRySRz",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "maxItems": 6
+          }
+        },
+        "bSHEAR": {
+          "description": "SHEAR",
+          "type": "boolean"
+        },
+        "DR": {
+          "description": "DRyDRz",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "maxItems": 2
+          }
+        },
+        "BNGR_NAME": {
+          "description": "BoundaryGroupName",
+          "type": "string"
+        },
+        "DIR": {
+          "description": "Direction",
+          "type": "integer"
+        },
+        "MLFC": {
+          "description": "Function",
+          "type": "integer"
+        },
+        "RLFC": {
+          "description": "RailTrackInteractionFunction",
+          "type": "integer"
+        },
+        "DRENDI": {
+          "description": "DistRatioEndI",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "examples": {
+    "General Type": {
+      "Assign": {
+        "1": {
+          "NODE": [
+            1,
+            2
+          ],
+          "LINK": "GEN",
+          "ANGLE": 0,
+          "R_S": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "SDR": [
+            1100,
+            1200,
+            1300,
+            1100000,
+            1200000,
+            1300000
+          ],
+          "bSHEAR": true,
+          "DR": [
+            0.5,
+            0.5
+          ],
+          "BNGR_NAME": "Service"
+        },
+        "2": {
+          "NODE": [
+            2,
+            3
+          ],
+          "LINK": "GEN",
+          "ANGLE": 0,
+          "R_S": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "SDR": [
+            1100,
+            1200,
+            1300,
+            1100000,
+            1200000,
+            1300000
+          ],
+          "bSHEAR": true,
+          "DR": [
+            0.5,
+            0.5
+          ],
+          "BNGR_NAME": "Service"
+        }
+      }
+    },
+    "Rigid Type": {
+      "Assign": {
+        "3": {
+          "NODE": [
+            3,
+            4
+          ],
+          "LINK": "RIGID",
+          "ANGLE": 0,
+          "BNGR_NAME": "Service"
+        }
+      }
+    },
+    "Tension-Only Type": {
+      "ELNK": {
+        "4": {
+          "NODE": [
+            4,
+            5
+          ],
+          "LINK": "TENS",
+          "ANGLE": 0,
+          "SDR": [
+            1100,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "BNGR_NAME": "Service"
+        }
+      }
+    },
+    "Compression-Only Type": {
+      "Assign": {
+        "5": {
+          "NODE": [
+            5,
+            6
+          ],
+          "LINK": "COMP",
+          "ANGLE": 0,
+          "SDR": [
+            1100,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "BNGR_NAME": "Service"
+        }
+      }
+    },
+    "Multi-Linear Type": {
+      "Assign": {
+        "6": {
+          "NODE": [
+            6,
+            7
+          ],
+          "LINK": "MULTILINEAR",
+          "ANGLE": 0,
+          "BNGR_NAME": "Service",
+          "DIR": 1,
+          "MLFC": 1,
+          "DRENDI": 0.5
+        }
+      }
+    },
+    "Saddle Type": {
+      "Assign": {
+        "7": {
+          "NODE": [
+            7,
+            8
+          ],
+          "LINK": "SADDLE",
+          "ANGLE": 0,
+          "BNGR_NAME": "Service"
+        }
+      }
+    },
+    "Rail Track Interaction Type": {
+      "Assign": {
+        "8": {
+          "NODE": [
+            8,
+            9
+          ],
+          "LINK": "RAILINTERACT",
+          "ANGLE": 0,
+          "bSHEAR": true,
+          "BNGR_NAME": "Service",
+          "DIR": 1,
+          "RLFC": 1
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Assigned Node Number•\n[i Node, j Node]",
+        "Key": "NODE",
+        "Value Type": "Array[Integer,2]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Boundary Group Name",
+        "Key": "BNGR_NAME",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Beta Angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "General Type"
+      },
+      {
+        "No.": "4",
+        "Description": "Elastic Link type•\nGeneral: \"GEN\"",
+        "Key": "LINK",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "5",
+        "Description": "Stiffness•\n[SDx, SDy, SDz, SRx, SRy, SRz]",
+        "Key": "SDR",
+        "Value Type": "Array[Number, 6]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "6",
+        "Description": "Stiffness Rigid•\n[SDx, SDy, SDz, SRx, SRy, SRz]",
+        "Key": "R_S",
+        "Value Type": "Array[Boolean, 6]",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "7",
+        "Description": "Shear Spring Location",
+        "Key": "bSHEAR",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Distance Ratio from End I•\n[SDy, SDz]",
+        "Key": "DR",
+        "Value Type": "Array[Number, 2]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Rigid/Saddle Type"
+      },
+      {
+        "No.": "4",
+        "Description": "Elastic Link type•\nRigid: \"RIGID\"• Saddle: \"SADDLE\"",
+        "Key": "LINK",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Tension/Compression-Only Type"
+      },
+      {
+        "No.": "4",
+        "Description": "Elastic Link type•\nTension-Only: \"TENS\"•\nCompression-Only: \"COMP\"",
+        "Key": "LINK",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "5",
+        "Description": "Stiffness•\n[SDx, 0, 0, 0, 0, 0]",
+        "Key": "SDR",
+        "Value Type": "Array[Number, 6]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Multi-Linear Type"
+      },
+      {
+        "No.": "4",
+        "Description": "Elastic Link type•\nMulti-Linear: \"MULTI LINEAR\"",
+        "Key": "LINK",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "5",
+        "Description": "Direction•\nDx: 0•\nDy: 1•\nDz: 2•\nRx: 3•\nRy: 4•\nRz: 5",
+        "Key": "DIR",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Defined Force-Deformation Function ID Number",
+        "Key": "MLFC",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Shear Spring Location•\nDirection: Dy, Dz, Ry, Rz only",
+        "Key": "bSHEAR",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Distance Ratio from End I",
+        "Key": "DRENDI",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Rail Track Interaction Type"
+      },
+      {
+        "No.": "4",
+        "Description": "Elastic Link type• Rail Track Interaction: \"RAIL INTERACT\"",
+        "Key": "LINK",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "5",
+        "Description": "Direction•\nDy: 1•\nDz: 2",
+        "Key": "DIR",
+        "Value Type": "Integer",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "6",
+        "Description": "Defined Rail-Track Interaction Function ID Number",
+        "Key": "RLFC",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Shear Spring Location•\nDirection: Dy, Dz, Ry, Rz only",
+        "Key": "bSHEAR",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "8",
+        "Description": "Distance Ratio from End I",
+        "Key": "DRENDI",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Elastic Link"
+}

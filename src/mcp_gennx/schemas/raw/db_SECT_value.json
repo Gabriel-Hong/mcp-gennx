@@ -1,0 +1,2268 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Value",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35839753881497-Section-Properties-Value",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "PERIIN": {
+                  "description": "PeriIn",
+                  "type": "number"
+                },
+                "PERIOUT": {
+                  "description": "PeriOut",
+                  "type": "number"
+                },
+                "BUILT_FLAG": {
+                  "description": "BuiltUpFlag",
+                  "type": "integer"
+                },
+                "STIFF": {
+                  "type": "object",
+                  "properties": {
+                    "AREA": {
+                      "description": "Area",
+                      "type": "number"
+                    },
+                    "ASY": {
+                      "description": "Asy",
+                      "type": "number"
+                    },
+                    "ASZ": {
+                      "description": "Asz",
+                      "type": "number"
+                    },
+                    "IXX": {
+                      "description": "Ixx",
+                      "type": "number"
+                    },
+                    "IYY": {
+                      "description": "Iyy",
+                      "type": "number"
+                    },
+                    "IZZ": {
+                      "description": "Izz",
+                      "type": "number"
+                    },
+                    "CYP": {
+                      "description": "Cyp",
+                      "type": "number"
+                    },
+                    "CYM": {
+                      "description": "Cym",
+                      "type": "number"
+                    },
+                    "CZP": {
+                      "description": "Czp",
+                      "type": "number"
+                    },
+                    "CZM": {
+                      "description": "Czm",
+                      "type": "number"
+                    },
+                    "QYB": {
+                      "description": "Qyb",
+                      "type": "number"
+                    },
+                    "QZB": {
+                      "description": "Qzb",
+                      "type": "number"
+                    },
+                    "Y": {
+                      "description": "dy",
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "maxItems": 4
+                      }
+                    },
+                    "Z": {
+                      "description": "dz",
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "maxItems": 4
+                      }
+                    },
+                    "IW": {
+                      "description": "Iw",
+                      "type": "number"
+                    },
+                    "W": {
+                      "description": "w",
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "maxItems": 4
+                      }
+                    },
+                    "CXY": {
+                      "description": "Cxy",
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "maxItems": 4
+                      }
+                    },
+                    "CXZ": {
+                      "description": "Cxz",
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "maxItems": 4
+                      }
+                    },
+                    "YS_YC": {
+                      "description": "ys-yc",
+                      "type": "number"
+                    },
+                    "ZS_ZC": {
+                      "description": "zs-zc",
+                      "type": "number"
+                    },
+                    "IP": {
+                      "description": "Ip",
+                      "type": "number"
+                    }
+                  }
+                },
+                "DESIGN": {
+                  "type": "object",
+                  "properties": {
+                    "YBAR": {
+                      "description": "YBar",
+                      "type": "number"
+                    },
+                    "ZBAR": {
+                      "description": "ZBar",
+                      "type": "number"
+                    },
+                    "ZYY": {
+                      "description": "Zyy",
+                      "type": "number"
+                    },
+                    "ZZZ": {
+                      "description": "Zzz",
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "CELL_SHAPE": {
+              "description": "CellShape",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "Angle_Auto": {
+      "Assign": {
+        "101": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Angle_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "L",
+            "SECT_I": {
+              "vSIZE": [
+                1.1,
+                1.2,
+                0.03,
+                0.028,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Angle_Manual": {
+      "Assign": {
+        "102": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Angle_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "L",
+            "SECT_I": {
+              "vSIZE": [
+                1.1,
+                1.2,
+                0.03,
+                0.028,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Angle_SemiAuto": {
+      "Assign": {
+        "103": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Angle_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "L",
+            "SECT_I": {
+              "vSIZE": [
+                1.1,
+                1.2,
+                0.03,
+                0.028,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Channel_Auto": {
+      "Assign": {
+        "104": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Channel_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "C",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.7,
+                0.02,
+                0.03,
+                0.9,
+                0.04,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            },
+            "CELL_SHAPE": 0
+          }
+        }
+      }
+    },
+    "Channel_Manual": {
+      "Assign": {
+        "105": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Channel_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "C",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.7,
+                0.02,
+                0.03,
+                0.9,
+                0.04,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Channel_SemiAuto": {
+      "Assign": {
+        "106": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Channel_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "C",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.7,
+                0.02,
+                0.03,
+                0.9,
+                0.04,
+                0,
+                0
+              ],
+              "PERIIN": 0,
+              "PERIOUT": 4.76,
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "H-Section_Auto": {
+      "Assign": {
+        "107": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "H-Section_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "H",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.03,
+                0.031,
+                0.7,
+                0.032,
+                0.0012,
+                0.0013
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "H-Section_Manual": {
+      "Assign": {
+        "108": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "H-Section_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "H",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.03,
+                0.031,
+                0.7,
+                0.032,
+                0.0012,
+                0.0013
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "H-Section_SemiAuto": {
+      "Assign": {
+        "109": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "H-Section_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "H",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.03,
+                0.031,
+                0.7,
+                0.032,
+                0.0012,
+                0.0013
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "T-Section_Auto": {
+      "Assign": {
+        "110": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "T-Section_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "T",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0.02,
+                0.03,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "T-Section_Manual": {
+      "Assign": {
+        "111": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "T-Section_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "T",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0.02,
+                0.03,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "T-Section_SemiAuto": {
+      "Assign": {
+        "112": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "T-Section_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "T",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0.02,
+                0.03,
+                0,
+                0,
+                0,
+                0
+              ],
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Box_Auto": {
+      "Assign": {
+        "113": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Box_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "B",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0.02,
+                0.03,
+                0.7,
+                0.04
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Box_Manual": {
+      "Assign": {
+        "114": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Box_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "B",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0.02,
+                0.03,
+                0.7,
+                0.04,
+                0,
+                -3.829207531621649e-270
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Box_SemiAuto": {
+      "Assign": {
+        "115": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Box_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "B",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0.02,
+                0.03,
+                0.7,
+                0.04,
+                0,
+                -3.829207531621649e-270
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Pipe_Auto": {
+      "Assign": {
+        "116": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Pipe_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "P",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.03,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Pipe_Manual": {
+      "Assign": {
+        "117": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Pipe_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "P",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.03,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Pipe_SemiAuto": {
+      "Assign": {
+        "118": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Pipe_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "P",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.03,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Double Angle_Auto": {
+      "Assign": {
+        "119": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "DoubleAngle_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "2L",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.02,
+                0.03,
+                0.1,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Double Angle_Manual": {
+      "Assign": {
+        "120": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "DoubleAngle_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "2L",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.02,
+                0.03,
+                0.1,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Double Angle_SemiAuto": {
+      "Assign": {
+        "121": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "DoubleAngle_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "2L",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.02,
+                0.03,
+                0.1,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Double Channel_Auto": {
+      "Assign": {
+        "122": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "DoubleChannel_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "2C",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.02,
+                0.03,
+                0.1,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Double Channel_Manual": {
+      "Assign": {
+        "123": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "DoubleChannel_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "2C",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.02,
+                0.03,
+                0.1,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Double Channel_SemiAuto": {
+      "Assign": {
+        "124": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "DoubleChannel_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "2C",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.6,
+                0.02,
+                0.03,
+                0.1,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Rectangle_Auto": {
+      "Assign": {
+        "125": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidRectangle_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Solid Rectangle_Manual": {
+      "Assign": {
+        "126": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidRectangle_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Rectangle_SemiAuto": {
+      "Assign": {
+        "127": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidRectangle_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SB",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0.9,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Round_Auto": {
+      "Assign": {
+        "128": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidRound_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SR",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Solid Round_Manual": {
+      "Assign": {
+        "129": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidRound_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SR",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Round_SemiAuto": {
+      "Assign": {
+        "130": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidRound_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SR",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Octagon_Auto": {
+      "Assign": {
+        "131": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Octagon_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "OCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.2,
+                0.1,
+                0.09,
+                0.12,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Octagon_Manual": {
+      "Assign": {
+        "132": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Octagon_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "OCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.2,
+                0.1,
+                0.09,
+                0.12,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Octagon_SemiAuto": {
+      "Assign": {
+        "133": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Octagon_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "OCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.2,
+                0.1,
+                0.09,
+                0.12,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Octagon_Auto": {
+      "Assign": {
+        "134": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidOctagon_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SOCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.2,
+                0.2,
+                0.1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Solid Octagon_Manual": {
+      "Assign": {
+        "135": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidOctagon_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SOCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.2,
+                0.2,
+                0.1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Octagon_SemiAuto": {
+      "Assign": {
+        "136": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidOctagon_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "SOCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.2,
+                0.2,
+                0.1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "R-Octagon_Auto": {
+      "Assign": {
+        "137": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "R-Octagon_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "ROCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                2,
+                0.05,
+                0.06,
+                0.08,
+                0.07,
+                0.075,
+                0
+              ],
+              "BUILT_FLAG": 1
+            },
+            "CELL_SHAPE": 3
+          }
+        }
+      }
+    },
+    "R-Octagon_Manual": {
+      "Assign": {
+        "138": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "R-Octagon_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "ROCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                2,
+                0.05,
+                0.06,
+                0.08,
+                0.07,
+                0.075,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            },
+            "CELL_SHAPE": 3
+          }
+        }
+      }
+    },
+    "R-Octagon_SemiAuto": {
+      "Assign": {
+        "139": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "R-Octagon_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "ROCT",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                2,
+                0.05,
+                0.06,
+                0.08,
+                0.07,
+                0.075,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            },
+            "CELL_SHAPE": 3
+          }
+        }
+      }
+    },
+    "Track_Auto": {
+      "Assign": {
+        "140": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Track_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "TRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.5,
+                0.03,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Track_Manual": {
+      "Assign": {
+        "141": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Track_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "TRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.5,
+                0.03,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Track_SemiAuto": {
+      "Assign": {
+        "142": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "Track_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "TRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.8,
+                1.5,
+                0.03,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Track_Auto": {
+      "Assign": {
+        "143": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidTrack_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "STRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.6,
+                1.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Solid Track_Manual": {
+      "Assign": {
+        "144": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidTrack_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "STRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.6,
+                1.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Solid Track_SemiAuto": {
+      "Assign": {
+        "145": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "SolidTrack_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "STRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.6,
+                1.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Half Track_Auto": {
+      "Assign": {
+        "146": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "HalfTrack_Auto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "HTRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.6,
+                1.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1
+            }
+          }
+        }
+      }
+    },
+    "Half Track_Manual": {
+      "Assign": {
+        "147": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "HalfTrack_Manual",
+          "CALC_OPT": false,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "HTRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.6,
+                1.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "Half Track_SemiAuto": {
+      "Assign": {
+        "148": {
+          "SECTTYPE": "VALUE",
+          "SECT_NAME": "HalfTrack_SemiAuto",
+          "CALC_OPT": true,
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": true,
+            "SHAPE": "HTRK",
+            "SECT_I": {
+              "vSIZE": [
+                0.6,
+                1.2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "BUILT_FLAG": 1,
+              "STIFF": {
+                "AREA": 1000
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Calculation options¹⁾",
+        "Key": "CALC_OPT",
+        "Value Type": "Boolean",
+        "Default": "true",
+        "Required": "CreateOnly"
+      },
+      {
+        "No.": "3",
+        "Description": "Section Data",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "",
+        "Description": "(1)",
+        "Key": "Section Specifications",
+        "Value Type": "\"SECT_I\"",
+        "Default": "Object",
+        "Required": "-"
+      },
+      {
+        "No.": "i. Dimension of Section³⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Built-Up Section Check•\nNot Build-Up: 0•\nBuild-Up: 1",
+        "Description": "\"BUILT_FLAG\"",
+        "Key": "Integer",
+        "Value Type": "1",
+        "Default": "Optional"
+      },
+      {
+        "No.": "iii. Inside perimeter length of a hollow section¹⁾",
+        "Description": "\"PERIIN\"",
+        "Key": "Number",
+        "Value Type": "0",
+        "Default": "Optional"
+      },
+      {
+        "No.": "iv. Total perimeter of the section¹⁾",
+        "Description": "\"PERIOUT\"",
+        "Key": "Number",
+        "Value Type": "0",
+        "Default": "Optional"
+      },
+      {
+        "No.": "v. Section Stiffness¹⁾ ²⁾",
+        "Description": "\"STIFF\"",
+        "Key": "Object",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "vi. Section Stiffness for design¹⁾ ²⁾",
+        "Description": "\"DESIGN\"",
+        "Key": "Object",
+        "Value Type": "-",
+        "Default": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Number of Cell•\nOnly for R-Octagon",
+        "Key": "CELL_SHAPE",
+        "Value Type": "Integer",
+        "Default": "",
+        "Required": "Required"
+      }
+    ],
+    [
+      {
+        "No.": "1",
+        "Description": "Section Stiffness",
+        "Key": "STIFF",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Cross section area",
+        "Key": "AREA",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Effective shear area for shear force in the element's local y-direction",
+        "Key": "ASY",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Effective shear area for shear force in the element's local z-direction",
+        "Key": "ASZ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Torsional constant about the element's local x-axis",
+        "Key": "IXX",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(5)",
+        "Description": "Moment of Inertia about the element's local y-direction",
+        "Key": "IYY",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(6)",
+        "Description": "Moment of Inertia about the element's local z-direction",
+        "Key": "IZZ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(7)",
+        "Description": "Distance from the section's neutral axis to the extreme fiber of the element in the local (+)y-direction",
+        "Key": "CYP",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(8)",
+        "Description": "Distance from the section's neutral axis to the extreme fiber of the element in the local (-)y-direction",
+        "Key": "CYM",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(9)",
+        "Description": "Distance from the section's neutral axis to the extreme fiber of the element in the local (+)z-direction",
+        "Key": "CZP",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(10)",
+        "Description": "Distance from the section's neutral axis to the extreme fiber of the element in the local (-)z-direction",
+        "Key": "CZM",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(11)",
+        "Description": "Shear coefficient for the shear force applied in the element's local z-direction",
+        "Key": "QYB",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(12)",
+        "Description": "Shear coefficient for the shear force applied in the element's local y-direction",
+        "Key": "QZB",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(13)",
+        "Description": "Distance from the section's neutral axis to the Location 1, 2, 3, 4•\n[y1, y2, y3, y4]",
+        "Key": "Y",
+        "Value Type": "Array[Number]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(14)",
+        "Description": "Distance from the section's neutral axis to the Location 1, 2, 3, 4•\n[z1, z2, z3, z4]",
+        "Key": "Z",
+        "Value Type": "Array[Number]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(15)",
+        "Description": "Warping Constant",
+        "Key": "Iw",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(16)",
+        "Description": "Warping function•\n[w1, w2, w3, w4]",
+        "Key": "W",
+        "Value Type": "Array[Number]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(17)",
+        "Description": "Coefficients to be used to calculate twisting and warping moment•\n[Cxy1, Cxy2, Cxy3, Cxy4]",
+        "Key": "CXY",
+        "Value Type": "Array[Number]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(18)",
+        "Description": "Coefficients to be used to calculate twisting and warping moment•\n[Cxz1, Cxz2, Cxz3, Cxz4]",
+        "Key": "CXZ",
+        "Value Type": "Array[Number]",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(19)",
+        "Description": "Distance between centroid and shear center in the local y directions",
+        "Key": "YS_YC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(20)",
+        "Description": "Distance between centroid and shear center in the local z directions",
+        "Key": "ZS_ZC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(21)",
+        "Description": "Polar moment of inertia",
+        "Key": "IP",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Stiffness for Design",
+        "Key": "DESIGN",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Centroidal distance in ECS y-axis",
+        "Key": "YBAR",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Centroidal distance in ECS z-axis",
+        "Key": "ZBAR",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Plastic section modulus about the element local y-direction",
+        "Key": "ZYY",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(4)",
+        "Description": "Plastic section modulus about the element local z-direction",
+        "Key": "ZZZ",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Value"
+}

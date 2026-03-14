@@ -1,0 +1,432 @@
+{
+  "endpoint": "db/STOR",
+  "title": "Story Data",
+  "url": "https://support.midasuser.com/hc/en-us/articles/49513466793113-Story-Data",
+  "input_uri": "{base url} + db/STOR",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "Argument": {
+      "type": "object",
+      "properties": {
+        "STORY_NAME": {
+          "description": "StoryName",
+          "type": "string"
+        },
+        "STORY_LEVEL": {
+          "description": "StoryLevel",
+          "type": "number"
+        },
+        "bFLOOR_DIAPHRAGM": {
+          "description": "FloorDiaphragm",
+          "type": "boolean"
+        },
+        "WIND_FLOOR_WIDTH_X": {
+          "description": "WindFloorWidthX-Dir",
+          "type": "number"
+        },
+        "WIND_FLOOR_WIDTH_Y": {
+          "description": "WindFloorWidthY-Dir",
+          "type": "number"
+        },
+        "WIND_CENTER_X": {
+          "description": "WindFloorCenterXc",
+          "type": "number"
+        },
+        "WIND_CENTER_Y": {
+          "description": "WindFloorCenterYc",
+          "type": "number"
+        },
+        "WIND_ECCENT_X": {
+          "description": "WindEccentricityX-Dir",
+          "type": "number"
+        },
+        "WIND_ECCENT_Y": {
+          "description": "WindEccentricityY-Dir",
+          "type": "number"
+        },
+        "SEIS_ACC_ECCENT_X": {
+          "description": "SeismicAccidentalEccentricityX-Dir",
+          "type": "number"
+        },
+        "SEIS_ACC_ECCENT_Y": {
+          "description": "SeismicAccidentalEccentricityX-Dir",
+          "type": "number"
+        },
+        "SEIS_INHERENT_ECCENT_X": {
+          "description": "SeismicInherentEccentricityX-Dir",
+          "type": "number"
+        },
+        "SEIS_INHERENT_ECCENT_Y": {
+          "description": "SeismicInherentEccentricityY-Dir",
+          "type": "number"
+        },
+        "SEIS_TORSIONAL_AMP_FACTOR_X": {
+          "description": "SeismicTorsionalAmplificationFactorX-Dir",
+          "type": "number"
+        },
+        "SEIS_TORSIONAL_AMP_FACTOR_Y": {
+          "description": "SeismicTorsionalAmplificationFactorY-Dir",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "examples": {
+    "Import to Json": {
+      "Assign": {
+        "1": {
+          "STORY_NAME": "1F",
+          "STORY_LEVEL": 0,
+          "bFLOOR_DIAPHRAGM": false,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 27.6,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 13.8,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.14,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.38,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "2": {
+          "STORY_NAME": "2F",
+          "STORY_LEVEL": 5,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "3": {
+          "STORY_NAME": "3F",
+          "STORY_LEVEL": 9.5,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "4": {
+          "STORY_NAME": "4F",
+          "STORY_LEVEL": 14,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "5": {
+          "STORY_NAME": "5F",
+          "STORY_LEVEL": 18,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "6": {
+          "STORY_NAME": "6F",
+          "STORY_LEVEL": 22,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "7": {
+          "STORY_NAME": "7F",
+          "STORY_LEVEL": 26,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "8": {
+          "STORY_NAME": "8F",
+          "STORY_LEVEL": 30,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "9": {
+          "STORY_NAME": "9F",
+          "STORY_LEVEL": 34,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "10": {
+          "STORY_NAME": "10F",
+          "STORY_LEVEL": 38,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "11": {
+          "STORY_NAME": "11F",
+          "STORY_LEVEL": 42,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "12": {
+          "STORY_NAME": "12F",
+          "STORY_LEVEL": 46,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        },
+        "13": {
+          "STORY_NAME": "Roof",
+          "STORY_LEVEL": 50,
+          "bFLOOR_DIAPHRAGM": true,
+          "WIND_FLOOR_WIDTH_X": 36,
+          "WIND_FLOOR_WIDTH_Y": 29.1,
+          "WIND_CENTER_X": 18,
+          "WIND_CENTER_Y": 14.55,
+          "WIND_ECCENT_X": 5.4,
+          "WIND_ECCENT_Y": 4.365,
+          "SEIS_ACC_ECCENT_X": 1.8,
+          "SEIS_ACC_ECCENT_Y": 1.455,
+          "SEIS_INHERENT_ECCENT_X": 0,
+          "SEIS_INHERENT_ECCENT_Y": 0,
+          "SEIS_TORSIONAL_AMP_FACTOR_X": 1,
+          "SEIS_TORSIONAL_AMP_FACTOR_Y": 1
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Story Name",
+        "Key": "STORY_NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Story height (elevation)",
+        "Key": "STORY_LEVEL",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "3",
+        "Description": "whether a floor at a given story level is assumed to act as arigid diaphragmin lateral load distribution.",
+        "Key": "bFLOOR_DIAPHRAGM",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Required"
+      },
+      {
+        "No.": "4",
+        "Description": "Effective width of the building in X-axis, subjected to GCS Y-direction wind load",
+        "Key": "WIND_FLOOR_WIDTH_X",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "5",
+        "Description": "Effective width of the building in Y-axis, subjected to GCS X-direction wind load",
+        "Key": "WIND_FLOOR_WIDTH_Y",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "6",
+        "Description": "Coordinate of the position in GCS X-direction, to which the wind load is applied",
+        "Key": "WIND_CENTER_X",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Coordinate of the position in GCS Y-direction, to which the wind load is applied",
+        "Key": "WIND_CENTER_Y",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "8",
+        "Description": "Eccentricity distance in X-direction at each story in GCS Y-direction wind load",
+        "Key": "WIND_ECCENT_X",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "9",
+        "Description": "Eccentricity distance in Y-direction at each story in GCS X-direction wind load",
+        "Key": "WIND_ECCENT_Y",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "10",
+        "Description": "Accidental eccentricity distance in X-direction due to the seismic loads at each story in GCS Y-direction",
+        "Key": "SEIS_ACC_ECCENT_X",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "11",
+        "Description": "Accidental eccentricity distance in Y-direction due to the seismic loads at each story in GCS X-direction",
+        "Key": "SEIS_ACC_ECCENT_Y",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "12",
+        "Description": "Inherent eccentricity distance in X-direction due to the seismic loads at each story in GCS Y-direction",
+        "Key": "SEIS_INHERENT_ECCENT_X",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "13",
+        "Description": "Inherent eccentricity distance in Y-direction due to the seismic loads at each story in GCS X-direction",
+        "Key": "SEIS_INHERENT_ECCENT_Y",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "14",
+        "Description": "Seismic Torsional Amplification Factor in X-direction",
+        "Key": "SEIS_TORSIONAL_AMP_FACTOR_X",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "15",
+        "Description": "Seismic Torsional Amplification Factor in Y-direction",
+        "Key": "SEIS_TORSIONAL_AMP_FACTOR_Y",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Story Data"
+}

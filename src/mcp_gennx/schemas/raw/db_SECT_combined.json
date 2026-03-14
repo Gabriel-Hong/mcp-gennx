@@ -1,0 +1,1199 @@
+{
+  "endpoint": "db/SECT",
+  "title": "Section Properties - Combined",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35851350827801-Section-Properties-Combined",
+  "input_uri": "{base url} + db/SECT",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "json_schema": {
+    "SECT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "SECTTYPE": {
+          "description": "Type",
+          "type": "string"
+        },
+        "SECT_NAME": {
+          "description": "SectName",
+          "type": "string"
+        },
+        "SECT_BEFORE": {
+          "type": "object",
+          "properties": {
+            "OFFSET_PT": {
+              "description": "CardinalPoint",
+              "type": "string"
+            },
+            "OFFSET_CENTER": {
+              "description": "OffsetCenter",
+              "type": "integer"
+            },
+            "USER_OFFSET_REF": {
+              "description": "UserOffsetRef",
+              "type": "integer"
+            },
+            "HORZ_OFFSET_OPT": {
+              "description": "HorizonoffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_YI": {
+              "description": "UserOffsetYI",
+              "type": "number"
+            },
+            "VERT_OFFSET_OPT": {
+              "description": "VerticalOffsetOption",
+              "type": "integer"
+            },
+            "USERDEF_OFFSET_ZI": {
+              "description": "UserOffsetZI",
+              "type": "number"
+            },
+            "USE_SHEAR_DEFORM": {
+              "description": "UseConsiderShearDeform",
+              "type": "boolean"
+            },
+            "USE_WARPING_EFFECT": {
+              "description": "UseConsiderWarpingEffect",
+              "type": "boolean"
+            },
+            "SHAPE": {
+              "description": "Shape",
+              "type": "string"
+            },
+            "DATATYPE": {
+              "description": "DataType",
+              "type": "integer"
+            },
+            "SECT_I": {
+              "type": "object",
+              "properties": {
+                "DB_NAME": {
+                  "description": "DBName",
+                  "type": "string"
+                },
+                "SECT_NAME": {
+                  "description": "SectionName",
+                  "type": "string"
+                },
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "SECT_J": {
+              "type": "object",
+              "properties": {
+                "SECT_NAME": {
+                  "description": "SectionName",
+                  "type": "string"
+                },
+                "vSIZE": {
+                  "description": "Size",
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "2H Combined Shape_DB": {
+      "Assign": {
+        "301": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2HCombinedShape_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2H",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "H100x50x5/7"
+            }
+          }
+        }
+      }
+    },
+    "2H Combined Shape_User": {
+      "Assign": {
+        "302": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2HCombinedShape_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2H",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007
+              ]
+            }
+          }
+        }
+      }
+    },
+    "H-C Combined Shape_DB": {
+      "Assign": {
+        "303": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-CCombinedShape_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HC1",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "C75x40x5/7"
+            }
+          }
+        }
+      }
+    },
+    "H-C Combined Shape_User": {
+      "Assign": {
+        "304": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-CCombinedShape_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HC1",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.075,
+                0.04,
+                0.005,
+                0.007
+              ]
+            }
+          }
+        }
+      }
+    },
+    "H-C Combined Shape2_DB": {
+      "Assign": {
+        "305": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-CCombinedShape2_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HC2",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "C100x50x5/7.5"
+            }
+          }
+        }
+      }
+    },
+    "H-C Combined Shape2_User": {
+      "Assign": {
+        "306": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-CCombinedShape2_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HC2",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.0075
+              ]
+            }
+          }
+        }
+      }
+    },
+    "H-T Combined Shape_DB": {
+      "Assign": {
+        "307": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-TCombinedShape_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HT",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "T50x100x6/8"
+            },
+            "SECT_J": {
+              "SECT_NAME": "H100x50x5/7"
+            }
+          }
+        }
+      }
+    },
+    "H-T Combined Shape_User": {
+      "Assign": {
+        "308": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-TCombinedShape_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HT",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.05,
+                0.1,
+                0.006,
+                0.008,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007
+              ]
+            }
+          }
+        }
+      }
+    },
+    "2T(Web Opened H)_DB": {
+      "Assign": {
+        "309": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2T(WebOpenedH)_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2T1",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "T50x100x6/8",
+              "vSIZE": [
+                0,
+                0,
+                0,
+                0,
+                0.08
+              ]
+            },
+            "SECT_J": {
+              "SECT_NAME": "T62.5x125x6.5/9"
+            }
+          }
+        }
+      }
+    },
+    "2T(Web Opened H)_User": {
+      "Assign": {
+        "310": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2T(WebOpenedH)_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2T1",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.05,
+                0.1,
+                0.006,
+                0.008,
+                0.1
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.0625,
+                0.125,
+                0.0065,
+                0.009
+              ]
+            }
+          }
+        }
+      }
+    },
+    "2T(Web Opened H)2_DB": {
+      "Assign": {
+        "311": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2T(WebOpenedH)2_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2T2",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "T50x100x6/8",
+              "vSIZE": [
+                0,
+                0,
+                0,
+                0,
+                0.05
+              ]
+            },
+            "SECT_J": {
+              "SECT_NAME": "T62.5x60x6/8"
+            }
+          }
+        }
+      }
+    },
+    "2T(Web Opened H)2_User": {
+      "Assign": {
+        "312": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2T(WebOpenedH)2_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2T2",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.05,
+                0.1,
+                0.006,
+                0.008,
+                0.05
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.0625,
+                0.06,
+                0.006,
+                0.008
+              ]
+            }
+          }
+        }
+      }
+    },
+    "H-Shape with 2T or Web_DB": {
+      "Assign": {
+        "313": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-Shapewith2TorWeb_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "H2T",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H125x60x6/8"
+            },
+            "SECT_J": {
+              "SECT_NAME": "T62.5x60x6/8"
+            }
+          }
+        }
+      }
+    },
+    "H-Shape with 2T or Web_User": {
+      "Assign": {
+        "314": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-Shapewith2TorWeb_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "H2T",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.125,
+                0.06,
+                0.006,
+                0.008,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.0625,
+                0.06,
+                0.006,
+                0.008
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Web Opend H with Stiff_DB": {
+      "Assign": {
+        "315": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "WebOpendHwithStiff_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "WOH",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H125x60x6/8",
+              "vSIZE": [
+                0,
+                0,
+                0,
+                0,
+                0.05
+              ]
+            },
+            "SECT_J": {
+              "SECT_NAME": "H150x75x5/7"
+            }
+          }
+        }
+      }
+    },
+    "Web Opend H with Stiff_User": {
+      "Assign": {
+        "316": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "WebOpendHwithStiff_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "WOH",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.125,
+                0.06,
+                0.006,
+                0.008,
+                0.05
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.15,
+                0.075,
+                0.005,
+                0.007
+              ]
+            }
+          }
+        }
+      }
+    },
+    "2C with Web Plate1_DB": {
+      "Assign": {
+        "317": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2CwithWebPlate1_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2CW1",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "C75x40x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "",
+              "vSIZE": [
+                0.02,
+                0.002
+              ]
+            }
+          }
+        }
+      }
+    },
+    "2C with Web Plate1_User": {
+      "Assign": {
+        "318": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2CwithWebPlate1_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2CW1",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.075,
+                0.04,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.02,
+                0.005,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "2C with Web Plate2_DB": {
+      "Assign": {
+        "319": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2CwithWebPlate2_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2CW2",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "C75x40x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "",
+              "vSIZE": [
+                0.09,
+                0.009
+              ]
+            }
+          }
+        }
+      }
+    },
+    "2C with Web Plate2_User": {
+      "Assign": {
+        "320": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "2CwithWebPlate2_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "2CW2",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.075,
+                0.04,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.09,
+                0.005,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "C with Web Plate1_DB": {
+      "Assign": {
+        "321": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "CwithWebPlate1_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "1CW1",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "C75x40x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "",
+              "vSIZE": [
+                0.1,
+                0.01
+              ]
+            }
+          }
+        }
+      }
+    },
+    "C with Web Plate1_User": {
+      "Assign": {
+        "322": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "CwithWebPlate1_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "1CW1",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.075,
+                0.04,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.1,
+                0.02,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "C with Web Plate2_DB": {
+      "Assign": {
+        "323": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "CwithWebPlate2_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "1CW2",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "C75x40x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "",
+              "vSIZE": [
+                0.08,
+                0.008
+              ]
+            }
+          }
+        }
+      }
+    },
+    "C with Web Plate2_User": {
+      "SECT": {
+        "324": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "CwithWebPlate2_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "1CW2",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.075,
+                0.04,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.08,
+                0.008,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "4-Angle_DB": {
+      "Assign": {
+        "325": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "4-Angle_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "4L",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "L25x3"
+            },
+            "SECT_J": {
+              "SECT_NAME": "",
+              "vSIZE": [
+                0.01
+              ]
+            }
+          }
+        }
+      }
+    },
+    "4-Angle_User": {
+      "Assign": {
+        "326": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "4-Angle_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "4L",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.025,
+                0.026,
+                0.003,
+                0.003,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.01,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "H-shape with Plate_DB": {
+      "Assign": {
+        "327": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-shapewithPlate_DB",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HP",
+            "DATATYPE": 1,
+            "SECT_I": {
+              "DB_NAME": "KS21",
+              "SECT_NAME": "H100x50x5/7"
+            },
+            "SECT_J": {
+              "SECT_NAME": "",
+              "vSIZE": [
+                0.03,
+                0.002
+              ]
+            }
+          }
+        }
+      }
+    },
+    "H-shape with Plate_User": {
+      "Assign": {
+        "328": {
+          "SECTTYPE": "COMBINED",
+          "SECT_NAME": "H-shapewithPlate_User",
+          "SECT_BEFORE": {
+            "OFFSET_PT": "CC",
+            "OFFSET_CENTER": 0,
+            "USER_OFFSET_REF": 0,
+            "HORZ_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_YI": 0,
+            "VERT_OFFSET_OPT": 0,
+            "USERDEF_OFFSET_ZI": 0,
+            "USE_SHEAR_DEFORM": true,
+            "USE_WARPING_EFFECT": false,
+            "SHAPE": "HP",
+            "DATATYPE": 2,
+            "SECT_I": {
+              "vSIZE": [
+                0.1,
+                0.05,
+                0.005,
+                0.007,
+                0
+              ]
+            },
+            "SECT_J": {
+              "vSIZE": [
+                0.03,
+                0.002,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Common•Refer to Common Page ↗",
+        "Key": "-",
+        "Value Type": "-",
+        "Default": "-",
+        "Required": "-"
+      },
+      {
+        "No.": "2",
+        "Description": "Section Data",
+        "Key": "SECT_BEFORE",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Data Type•\nDB: 1•\nUser: 2",
+        "Key": "DATATYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "DB Section²⁾"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Section Data 1",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. DB Name",
+        "Description": "\"DB_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Section Name of DB",
+        "Description": "\"SECT_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "iii. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Section Data 2",
+        "Key": "SECT_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Section Name of DB",
+        "Description": "\"SECT_NAME\"",
+        "Key": "String",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "ii. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "_condition": "User Section"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Section Data 1",
+        "Key": "SECT_I",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Section Data 2",
+        "Key": "SECT_J",
+        "Value Type": "Object",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "i. Dimension of Section¹⁾",
+        "Description": "\"vSIZE\"",
+        "Key": "Array[Number]",
+        "Value Type": "-",
+        "Default": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Section Properties - Combined"
+}
