@@ -59,17 +59,33 @@ pip install -e .
 
 ### 2. Configure
 
-Copy `.env.example` to `.env` and set `GENNX_API_BASE_URL` to your running GEN NX instance:
+Copy `.env.example` to `.env` and set the required environment variables:
 
 ```bash
 cp .env.example .env
-# edit .env — default is http://localhost:8080
 ```
+
+Edit `.env`:
+
+```env
+# GEN NX REST API base URL (required)
+GENNX_API_BASE_URL=https://moa-engineers.midasit.com:443/gen
+
+# MAPI key for GEN NX authentication (required for MIDAS cloud API)
+GENNX_MAPI_KEY=your-mapi-key-here
+```
+
+> **MAPI Key**: Issued from the MIDAS user portal. The server passes it as the `MAPI-Key` HTTP header on every request to the GEN NX REST API. Leave empty only when targeting a local GEN NX instance that does not require authentication.
 
 ### 3. Register with Claude Code
 
+Pass the environment variables via `-e` flags so the spawned MCP process inherits them:
+
 ```bash
-claude mcp add gennx -- mcp-gennx
+claude mcp add gennx \
+  -e GENNX_API_BASE_URL=https://moa-engineers.midasit.com:443/gen \
+  -e GENNX_MAPI_KEY=your-mapi-key-here \
+  -- mcp-gennx
 ```
 
 Or add manually to your MCP client config:
@@ -81,7 +97,8 @@ Or add manually to your MCP client config:
       "command": "mcp-gennx",
       "args": [],
       "env": {
-        "GENNX_API_BASE_URL": "http://localhost:8080"
+        "GENNX_API_BASE_URL": "https://moa-engineers.midasit.com:443/gen",
+        "GENNX_MAPI_KEY": "your-mapi-key-here"
       }
     }
   }
@@ -104,7 +121,8 @@ AI:  [calls post_db_elem with Assign: {"1": {"TYPE":"BEAM","MATL":1,"SECT":1,"NO
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `GENNX_API_BASE_URL` | `http://localhost:8080` | GEN NX REST API base URL |
+| `GENNX_API_BASE_URL` | `http://localhost:8080` | GEN NX REST API base URL (e.g. `https://moa-engineers.midasit.com:443/gen`) |
+| `GENNX_MAPI_KEY` | *(empty)* | MAPI key sent as `MAPI-Key` header — required for MIDAS cloud API |
 | `GENNX_API_TIMEOUT` | `30.0` | API request timeout (seconds) |
 | `TOOLSETS` | `default` | Toolset selection (see below) |
 | `READ_ONLY` | `false` | When `true`, only GET tools are exposed |
