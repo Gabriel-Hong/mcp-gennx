@@ -7,19 +7,29 @@ from fastmcp.exceptions import ToolError
 class GennxApiClient:
     """Async HTTP client for GEN NX REST API."""
 
-    def __init__(self, base_url: str, timeout: float = 30.0):
-        self._base_url = base_url.rstrip("/")
+    def __init__(self, base_url: str, timeout: float = 30.0, mapi_key: str = ""):
+        # Preserve any path in base_url (e.g., "https://host/gen") by ensuring it
+        # ends with "/" so httpx joins request paths relatively rather than
+        # treating absolute paths as a replacement for the base path.
+        self._base_url = base_url.rstrip("/") + "/"
+        headers = {}
+        if mapi_key:
+            headers["MAPI-Key"] = mapi_key
         self._client = httpx.AsyncClient(
             base_url=self._base_url,
             timeout=timeout,
+            headers=headers,
         )
 
     async def request(
         self, method: str, endpoint: str, payload: dict | None = None
     ) -> dict:
+        # Use a relative path (no leading slash) so httpx preserves the base_url
+        # path component instead of overriding it.
+        rel_endpoint = endpoint.lstrip("/")
         try:
             resp = await self._client.request(
-                method, f"/{endpoint}", json=payload
+                method, rel_endpoint, json=payload
             )
         except httpx.TimeoutException:
             raise ToolError(f"GEN NX request timed out ({endpoint})")

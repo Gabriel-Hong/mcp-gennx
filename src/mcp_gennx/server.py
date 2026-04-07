@@ -70,7 +70,9 @@ DOMAIN_TAGS = {"modeling", "boundary", "loads", "analysis", "project"}
 async def app_lifespan(server: FastMCP):
     settings = GennxSettings()
     client = GennxApiClient(
-        settings.gennx_api_base_url, settings.gennx_api_timeout
+        settings.gennx_api_base_url,
+        settings.gennx_api_timeout,
+        settings.gennx_mapi_key,
     )
     try:
         yield {"api_client": client, "settings": settings}
