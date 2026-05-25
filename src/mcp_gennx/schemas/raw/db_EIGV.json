@@ -9,6 +9,10 @@
     "PUT",
     "DELETE"
   ],
+  "description": "eigenvalue analysis parameters (고유치해석) - set modal analysis options",
+  "feature_name": "",
+  "menu_path": "",
+  "usage": "",
   "json_schema": {
     "EIGV": {
       "$schema": "http://json-schema.org/draft-07/schema#",

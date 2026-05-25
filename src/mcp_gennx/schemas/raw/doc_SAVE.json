@@ -6,6 +6,10 @@
   "active_methods": [
     "POST"
   ],
+  "description": "Save the current work in a project file. Save As will prompt if a project file has not been assigned previously.",
+  "feature_name": "Save",
+  "menu_path": "[File] > [Save] > [Ctrl]",
+  "usage": "",
   "json_schema": {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "doc/SAVE",

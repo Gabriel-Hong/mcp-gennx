@@ -56,6 +56,10 @@ class SchemaRegistry:
             json_schema=data.get("json_schema", {}),
             examples=data.get("examples", {}),
             tables=data.get("tables", []),
+            description=data.get("description", ""),
+            feature_name=data.get("feature_name", ""),
+            menu_path=data.get("menu_path", ""),
+            usage=data.get("usage", ""),
         )
 
     def _load_multi(self, endpoint: str, items: list[tuple[Path, dict]]) -> None:
@@ -91,6 +95,10 @@ class SchemaRegistry:
                 json_schema=data.get("json_schema", {}),
                 examples=data.get("examples", {}),
                 tables=data.get("tables", []),
+                description=data.get("description", ""),
+                feature_name=data.get("feature_name", ""),
+                menu_path=data.get("menu_path", ""),
+                usage=data.get("usage", ""),
             )
 
     def _load_multi_merged(
@@ -103,6 +111,11 @@ class SchemaRegistry:
         methods: list[str] = []
         title = ""
         api_path = ""
+        feature_name = ""
+        menu_path = ""
+        descriptions: list[str] = []
+        usages: list[str] = []
+        seen_descriptions: set[str] = set()
 
         for _, data in items:
             if not title:
@@ -111,6 +124,23 @@ class SchemaRegistry:
                 methods = data.get("active_methods", [])
             if not api_path:
                 api_path = _extract_api_path(data)
+            if not feature_name:
+                feature_name = data.get("feature_name", "")
+            if not menu_path:
+                menu_path = data.get("menu_path", "")
+
+            sub_desc = (data.get("description") or "").strip()
+            if sub_desc and sub_desc not in seen_descriptions:
+                descriptions.append(sub_desc)
+                seen_descriptions.add(sub_desc)
+
+            sub_usage = (data.get("usage") or "").strip()
+            if sub_usage:
+                sub_title_for_usage = data.get("title", "").strip()
+                if sub_title_for_usage:
+                    usages.append(f"[{sub_title_for_usage}] {sub_usage}")
+                else:
+                    usages.append(sub_usage)
 
             raw_schema = data.get("json_schema", {})
             all_schemas.update(raw_schema)
@@ -125,6 +155,11 @@ class SchemaRegistry:
         if " - " in title:
             title = title.split(" - ")[0].strip()
 
+        merged_description = "\n- ".join(descriptions) if descriptions else ""
+        if len(descriptions) > 1:
+            merged_description = "- " + merged_description
+        merged_usage = "\n\n".join(usages)
+
         self._schemas[endpoint] = ApiSchema(
             endpoint=endpoint,
             api_path=api_path,
@@ -133,6 +168,10 @@ class SchemaRegistry:
             json_schema=all_schemas,
             examples=all_examples,
             tables=all_tables,
+            description=merged_description,
+            feature_name=feature_name,
+            menu_path=menu_path,
+            usage=merged_usage,
         )
 
     def get_schema(self, endpoint: str) -> ApiSchema | None:

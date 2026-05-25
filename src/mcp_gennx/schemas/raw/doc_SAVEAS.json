@@ -6,6 +6,10 @@
   "active_methods": [
     "POST"
   ],
+  "description": "Save the current work in another filename.\n\nUse Save As supported by Standard Windows.",
+  "feature_name": "Save As",
+  "menu_path": "[File] > [Save As]",
+  "usage": "Select \"Save As\" to display the \"Save As\" dialog box. Assign a desired filename and its directory, and then click the Save button.",
   "json_schema": {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "doc/SAVEAS",

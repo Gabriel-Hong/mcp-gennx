@@ -9,6 +9,10 @@
     "PUT",
     "DELETE"
   ],
+  "description": "element temperatures (요소온도) - assign temperature to elements",
+  "feature_name": "Element Temperature",
+  "menu_path": "[Load] > [Type : Temperature] > [Temperature Loads] > [Element Temp.]",
+  "usage": "Load Case Name\n\nSelect a load case from the load case selection field. Click the ... Button to the right to prompt the \"Static Load Cases\" dialog box to add load cases or modify/delete previously defined load cases.\n\n\n\nLoad Group Name\n\nSelect the load group, which will include the element temperature loads. Click the ... Button to the right to prompt the \"Define Load Group\" dialog box to add/modify/delete Load Group Names.\n\n\n\nOptions\n\nAdd : new or additional element temperature\n\nReplace : replace previously defined element temperature\n\nDelete : delete previously defined element temperature\n\n\n\nTemperature\n\nEnter the element temperature.\n\nInitial\nIt displays the entered initial temperature. Click the ... Button to the right to change the initial temperature in the \"Structure Type\" dialog box.\n\nFinal Temperature : final element temperature\n\nNote: The temperature difference between the initial temperature and the final element temperature is applied as the temperature load.",
   "json_schema": {
     "ETMP": {
       "$schema": "http://json-schema.org/draft-07/schema#",

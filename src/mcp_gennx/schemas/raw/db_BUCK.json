@@ -9,6 +9,10 @@
     "PUT",
     "DELETE"
   ],
+  "description": "buckling analysis (좌굴해석) - set buckling analysis options",
+  "feature_name": "",
+  "menu_path": "",
+  "usage": "",
   "json_schema": {
     "BUCK": {
       "$schema": "http://json-schema.org/draft-07/schema#",

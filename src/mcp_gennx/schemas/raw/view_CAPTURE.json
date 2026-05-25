@@ -6,6 +6,10 @@
   "active_methods": [
     "POST"
   ],
+  "description": "Save the graphic data of the Model Window in an AutoCAD DXF, BMP or EMF.",
+  "feature_name": "Graphic Files",
+  "menu_path": "[File] > [Graphic Files]",
+  "usage": "Invoke the dialog box of Graphic Files to save the graphic data as a desired file format.\n\nEnter a file name, select a file type and click on the Save button to generate a new file.\n\nNote: File type to save can be selected among *.*(All Files), *.emf (Emf Files), *.bmp (Bmp Files), *.jpg (JPG files), *.dxf (Dxf Files) and *.dwg (Dwg Files). When *.dxf is selected, the program internally generates Meta file (emf) and execute Tools > Convert Meta Files to DXF Files.",
   "json_schema": {
     "CAPTURE": {
       "$schema": "http://json-schema.org/draft-07/schema#",

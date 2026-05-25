@@ -6,6 +6,10 @@
   "active_methods": [
     "POST"
   ],
+  "description": "Create a new project file.\n\nClick the Save button to save the file and enter the filename.",
+  "feature_name": "New Project",
+  "menu_path": "[File] > [New Project] > [Ctrl]",
+  "usage": "",
   "json_schema": {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "doc/NEW",

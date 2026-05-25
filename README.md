@@ -11,6 +11,7 @@
 - **Dynamic Tool Generation** — Tools are generated at startup from JSON schema files. No code generation step; add a schema file, register the endpoint, and the tool appears.
 - **Domain-Driven Sub-Servers** — 5 sub-servers (modeling, boundary, loads, analysis, project) keep tools organized by structural engineering domain.
 - **Toolset Filtering** — Control which tools are exposed via environment variables: 87 tools (default), 159 tools (all), or GET-only (read-only mode).
+- **Schema-Sourced Descriptions** — Tool descriptions, GUI feature names, and menu paths are read from the JSON schema files (single source of truth). Long-form GUI usage guides are served lazily as an MCP resource (`gennx://feature/{slug}`) instead of being inlined, keeping the tool list compact.
 
 ## Architecture
 
@@ -24,10 +25,11 @@ Main FastMCP ("gennx")
     ├── loads       (14 endpoints · load cases, nodal/beam loads, LCOM 6 sub-types …)
     ├── analysis    (6 endpoints  · eigenvalue, buckling, pushover …)
     └── project     (9 endpoints  · open/save/close, analysis run, view capture …)
-              │
-         GennxApiClient (httpx async)
-              │
-         GEN NX REST API (localhost:8080)
+              │  tool call
+              ▼
+         GennxApiClient (httpx async)  ──▶  GEN NX REST API (localhost:8080)
+
+    + resource  gennx://feature/{slug}  ──▶  SchemaRegistry (in-memory, no GEN NX call)
 ```
 
 ## Dynamic Tool Pipeline
@@ -48,6 +50,28 @@ Each endpoint produces up to 4 tools — one per HTTP method:
 | GET | `get_` | `get_db_node` | Read all records |
 | PUT | `put_` | `put_db_node` | Update records |
 | DELETE | `delete_` | `delete_db_node` | Delete by ID list |
+
+### Tool Description Composition
+
+Tool descriptions are composed from fields in each schema file rather than hardcoded. Each schema may carry:
+
+| Field | Used for |
+|-------|----------|
+| `description` | The feature summary in every tool description |
+| `feature_name` | GUI feature name, appended to POST/PUT descriptions as `(GUI: "…")` |
+| `menu_path` | GUI menu path, appended to POST/PUT descriptions as `Menu: …` |
+| `usage` | Long-form GUI usage guide — **not** inlined; served via the feature resource |
+
+### Feature Documentation Resource
+
+To keep the always-loaded tool list compact, the long-form `usage` guide is exposed on demand as an MCP resource instead of being inlined into descriptions:
+
+```
+gennx://feature/{slug}      # slug = endpoint with "/" and "-" → "_", lowercased
+                            # e.g. gennx://feature/db_node, gennx://feature/doc_new
+```
+
+POST/PUT tool descriptions that have a usage guide end with a `Docs: gennx://feature/<slug>` pointer. The LLM fetches that resource only when it needs the full guide, so the per-endpoint usage text (~1.5 KB each) stays out of the tool list. Parameter schema and a truncated example remain inline in each tool's input schema, since they are needed to construct valid calls.
 
 ## Quick Start
 
@@ -151,19 +175,20 @@ mcp-gennx/
     ├── client/
     │   └── gennx_client.py      # Async HTTP client for GEN NX API
     ├── schemas/
-    │   ├── registry.py          # SchemaRegistry — loads & merges JSON schemas
-    │   ├── models.py            # ApiSchema, ToolDef data models
+    │   ├── registry.py          # SchemaRegistry — loads & merges JSON schemas (incl. description/usage)
+    │   ├── models.py            # ApiSchema (+ description, feature_name, menu_path, usage), ToolDef
     │   └── raw/                 # 65 JSON schema files
     ├── servers/
     │   ├── modeling.py          # Nodes, elements, materials, sections
     │   ├── boundary.py          # Constraints, springs, rigid links
     │   ├── loads.py             # Load cases, forces, combinations (LCOM)
     │   ├── analysis.py          # Eigenvalue, buckling, nonlinear
-    │   └── project.py           # File ops, analysis run, view capture
+    │   ├── project.py           # File ops, analysis run, view capture
+    │   └── feature_docs.py      # gennx://feature/{slug} resource (lazy GUI/usage docs)
     ├── tools/
     │   └── factory.py           # ToolFactory — dynamic tool generation
     └── utils/
-        └── descriptions.py      # Auto-generated tool descriptions
+        └── descriptions.py      # Composes tool descriptions from schema fields
 ```
 
 ## Supported APIs
@@ -235,7 +260,7 @@ pytest
 
 ### Adding a New API
 
-1. Place the JSON schema file in `src/mcp_gennx/schemas/raw/`
+1. Place the JSON schema file in `src/mcp_gennx/schemas/raw/`. To enrich the generated descriptions, include the optional `description`, `feature_name`, `menu_path`, and `usage` fields (the `usage` text is served via the `gennx://feature/{slug}` resource, not inlined).
 2. Add the endpoint to the appropriate sub-server's `ENDPOINTS` dict:
    ```python
    # src/mcp_gennx/servers/modeling.py
@@ -244,7 +269,7 @@ pytest
        "db/NEW_ENDPOINT": {"tier": 2, "toolset": "modeling_advanced"},
    }
    ```
-3. Restart the server — tools are generated automatically.
+3. Restart the server — tools and the feature resource are generated automatically.
 
 ## License
 

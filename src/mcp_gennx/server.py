@@ -18,6 +18,7 @@ from .servers import (
     create_modeling_server,
     create_project_server,
 )
+from .servers.feature_docs import register_feature_resources
 from .tools.factory import ToolFactory
 
 logger = logging.getLogger(__name__)
@@ -38,6 +39,11 @@ Typical workflow:
 6. Run analysis (post_doc_anal)
 
 Use GET tools to query existing data, PUT to update, DELETE to remove.
+
+When a POST/PUT tool description ends with `Docs: gennx://feature/<slug>`, \
+read that resource for the full GUI usage guide before constructing the Assign \
+payload. The slug is the endpoint with `/` replaced by `_`, lowercased \
+(e.g. `db_node`, `doc_new`, `view_capture`).
 """
 
 # Toolset definitions
@@ -105,6 +111,9 @@ def create_server() -> FastMCP:
     main.mount(create_loads_server(registry, factory))
     main.mount(create_analysis_server(registry, factory))
     main.mount(create_project_server(registry, factory))
+
+    # 3b. Expose feature/usage docs as a resource (off the LLM tool list)
+    register_feature_resources(main, registry)
 
     # 4. Apply toolset filtering
     if settings.toolsets != "all":

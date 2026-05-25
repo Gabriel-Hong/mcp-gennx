@@ -9,6 +9,10 @@
     "PUT",
     "DELETE"
   ],
+  "description": "temperature gradients (온도경사) - define temperature gradients",
+  "feature_name": "Temperature Gradient",
+  "menu_path": "[Load] > [Type : Temperature] > [Temperature Loads] > [Temperature Gradient]",
+  "usage": "Load Case Name\n\nAssign the load case name. Click the ... Button to the right to enter additional load cases and modify or delete existing load cases.\n\n\n\nLoad Group Name\n\nSelect the desired Load Group Name. Click the ... Button to the right to enter additional load group names and modify or delete existing load group names.\n\n\n\nOptions\n\nAdd : To enter new or additional temperature gradients\n\nReplace : To replace previously entered temperature gradients\n\nDelete : To delete previously entered temperature gradients\n\n\n\nTypes, Gradient\n\nSelect the element type for which Temperature Gradient is to be specified. Refer to the figure to enter the required data.\n\n\n\nBeam\n\nT2z - T1z : Temperature difference between the two outermost faces in the element local z-direction\n\nUse Section Hz : Use the section dimension information as is.\n\nHz : Distance between the two faces in the element local z-direction\n\nT2y - T1y : Temperature difference between the two outermost faces in the element local y-direction\n\nUse Section Hy : Use the section dimension information as is.\n\nHy : Distance between the two faces in the element local y-direction\n\n\n\nPlate\n\nT2z - T1z : Temperature difference between the two faces in the element local z-direction\n\nUse Section Hz : Use the section dimension information as is.\n\nHz : Thickness of the plate element",
   "json_schema": {
     "GTMP": {
       "$schema": "http://json-schema.org/draft-07/schema#",

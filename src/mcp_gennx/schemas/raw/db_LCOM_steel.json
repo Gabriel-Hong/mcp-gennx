@@ -9,6 +9,10 @@
     "PUT",
     "DELETE"
   ],
+  "description": "load combinations (하중조합) - combine load cases with factors",
+  "feature_name": "Load Combinations",
+  "menu_path": "[Results] > [Type : Analysis Result] > [Combination] > [Load Combination] > [Ctrl] > [F9]",
+  "usage": "The entry methods are similar for each dialog box. Refer to Usage of Table Tool and enter as follows:\n\n\n\n- To enter new or additional load combinations\n\nEnter the load combination cases by the following 4 methods:\n\n1. The user directly specifies the load combinations\n\nDirectly enter the following basic items necessary to define load combinations in the Load Combination List.\n\nNo : Numbers are sequentially and automatically assigned in the order of the load combination entries.\n\nName : Enter the load combination name.\n\nNote: 1. This calculation method is identically applicable to the load combination that includes the load cases whose results are classified into max, min and all, i.e., the load cases such as moving load cases, settlement load cases and time history load cases.\n2. The 'all' condition of an Envelope type load combination or an Add type load combination that includes an Envelope type load combination produces the maximum of absolute values. Whether to produce the values with signs or without signs can be determined from the Tools>Preferences.",
   "json_schema": {
     "LCOM-STEEL": {
       "$schema": "http://json-schema.org/draft-07/schema#",

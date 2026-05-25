@@ -9,12 +9,33 @@ from mcp.types import ToolAnnotations
 
 from ..schemas.registry import SchemaRegistry
 from ..tools.factory import ToolFactory
+from .feature_docs import resource_uri_for
 
 # db/* endpoints handled by ToolFactory (GET/PUT only)
 DB_ENDPOINTS = {
     "db/UNIT": {"tier": 2, "toolset": "project"},
     "db/STYP": {"tier": 2, "toolset": "project"},
 }
+
+
+def _desc(registry: SchemaRegistry, endpoint: str, fallback: str) -> str:
+    """Resolve description from the raw schema, falling back to a hardcoded string.
+
+    Long-form ``usage`` is NOT inlined — it lives behind an MCP resource.
+    Tools that have usage docs get a `Docs:` pointer at the end so the LLM
+    can fetch them on demand.
+    """
+    schema = registry.get_schema(endpoint)
+    if schema is None or not schema.description:
+        return fallback
+    text = schema.description
+    if schema.feature_name:
+        text += f' (GUI: "{schema.feature_name}")'
+    if schema.menu_path:
+        text += f" Menu: {schema.menu_path}."
+    if schema.usage:
+        text += f" Docs: {resource_uri_for(endpoint)}"
+    return text
 
 
 def create_project_server(
@@ -31,22 +52,26 @@ def create_project_server(
             )
 
     # Manually register doc/* and view/CAPTURE tools
-    _register_doc_tools(server)
-    _register_capture_tool(server)
+    _register_doc_tools(server, registry)
+    _register_capture_tool(server, registry)
 
     return server
 
 
-def _register_doc_tools(server: FastMCP) -> None:
+def _register_doc_tools(server: FastMCP, registry: SchemaRegistry) -> None:
     """Register doc/* tools manually (they don't follow the Assign pattern)."""
 
     @server.tool(
         name="post_doc_anal",
         title="Perform Analysis",
-        description=(
-            "Run structural analysis in GEN NX. "
-            "Call with no arguments for standard analysis, "
-            'or pass Argument={"TYPE": "Pushover"} for pushover analysis.'
+        description=_desc(
+            registry,
+            "doc/ANAL",
+            (
+                "Run structural analysis in GEN NX. "
+                "Call with no arguments for standard analysis, "
+                'or pass Argument={"TYPE": "Pushover"} for pushover analysis.'
+            ),
         ),
         tags={"project", "write", "toolset:project"},
         annotations=ToolAnnotations(
@@ -67,7 +92,9 @@ def _register_doc_tools(server: FastMCP) -> None:
     @server.tool(
         name="post_doc_new",
         title="New Project",
-        description="Create a new empty project in GEN NX.",
+        description=_desc(
+            registry, "doc/NEW", "Create a new empty project in GEN NX."
+        ),
         tags={"project", "write", "toolset:project"},
         annotations=ToolAnnotations(
             readOnlyHint=False, destructiveHint=True
@@ -81,9 +108,13 @@ def _register_doc_tools(server: FastMCP) -> None:
     @server.tool(
         name="post_doc_open",
         title="Open Project",
-        description=(
-            "Open a project file in GEN NX. "
-            'Provide the file path, e.g. "C:\\\\Projects\\\\model.mcb".'
+        description=_desc(
+            registry,
+            "doc/OPEN",
+            (
+                "Open a project file in GEN NX. "
+                'Provide the file path, e.g. "C:\\\\Projects\\\\model.mcb".'
+            ),
         ),
         tags={"project", "write", "toolset:project"},
         annotations=ToolAnnotations(
@@ -98,7 +129,9 @@ def _register_doc_tools(server: FastMCP) -> None:
     @server.tool(
         name="post_doc_save",
         title="Save Project",
-        description="Save the current project in GEN NX.",
+        description=_desc(
+            registry, "doc/SAVE", "Save the current project in GEN NX."
+        ),
         tags={"project", "write", "toolset:project"},
         annotations=ToolAnnotations(
             readOnlyHint=False, destructiveHint=False, idempotentHint=True
@@ -112,9 +145,13 @@ def _register_doc_tools(server: FastMCP) -> None:
     @server.tool(
         name="post_doc_saveas",
         title="Save Project As",
-        description=(
-            "Save the current project to a new file path in GEN NX. "
-            'Provide the target path, e.g. "C:\\\\Projects\\\\model_v2.mcb".'
+        description=_desc(
+            registry,
+            "doc/SAVEAS",
+            (
+                "Save the current project to a new file path in GEN NX. "
+                'Provide the target path, e.g. "C:\\\\Projects\\\\model_v2.mcb".'
+            ),
         ),
         tags={"project", "write", "toolset:project"},
         annotations=ToolAnnotations(
@@ -129,7 +166,9 @@ def _register_doc_tools(server: FastMCP) -> None:
     @server.tool(
         name="post_doc_close",
         title="Close Project",
-        description="Close the current project in GEN NX.",
+        description=_desc(
+            registry, "doc/CLOSE", "Close the current project in GEN NX."
+        ),
         tags={"project", "write", "toolset:project"},
         annotations=ToolAnnotations(
             readOnlyHint=False, destructiveHint=True
@@ -141,17 +180,21 @@ def _register_doc_tools(server: FastMCP) -> None:
         return json.dumps(result, ensure_ascii=False, indent=2)
 
 
-def _register_capture_tool(server: FastMCP) -> None:
+def _register_capture_tool(server: FastMCP, registry: SchemaRegistry) -> None:
     """Register view/CAPTURE tool manually."""
 
     @server.tool(
         name="post_view_capture",
         title="Capture View",
-        description=(
-            "Capture the current view as an image in GEN NX. "
-            "Provide Argument with EXPORT_PATH (required), and optional: "
-            "WIDTH, HEIGHT (pixels), SET_MODE ('pre'/'post'), "
-            "ANGLE ({HORIZONTAL, VERTICAL}), SET_HIDDEN (bool)."
+        description=_desc(
+            registry,
+            "view/CAPTURE",
+            (
+                "Capture the current view as an image in GEN NX. "
+                "Provide Argument with EXPORT_PATH (required), and optional: "
+                "WIDTH, HEIGHT (pixels), SET_MODE ('pre'/'post'), "
+                "ANGLE ({HORIZONTAL, VERTICAL}), SET_HIDDEN (bool)."
+            ),
         ),
         tags={"project", "write", "toolset:project"},
         annotations=ToolAnnotations(

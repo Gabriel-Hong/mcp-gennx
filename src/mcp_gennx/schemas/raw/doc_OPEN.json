@@ -6,6 +6,10 @@
   "active_methods": [
     "POST"
   ],
+  "description": "Open an existing file (fn.mgb : MIDAS GENw Binary File).\n\nUse Open supported by Standard Windows.",
+  "feature_name": "Open Project",
+  "menu_path": "[File] > [Open Project] > [Ctrl]",
+  "usage": "Select Open Project to display the File Open dialog box. Assign a desired file and click the Open button.",
   "json_schema": {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "doc/OPEN",

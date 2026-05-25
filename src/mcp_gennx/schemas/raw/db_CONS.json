@@ -9,6 +9,10 @@
     "PUT",
     "DELETE"
   ],
+  "description": "boundary conditions (지점조건) - define supports and constraints",
+  "feature_name": "Define Supports",
+  "menu_path": "[Boundary] > [Supports] > [Define Supports]",
+  "usage": "Click the [...] button to the right of Supports: Display the Support Table\n\n\n\nBoundary Group Name\n\nSelect a Boundary Group in which the specified boundary condition is included. Select \"Default\" if Group assignment is unnecessary. Click the [...] button to the right to prompt the \"Define Boundary Group\" dialog box to add, modify or delete Boundary Groups.\n\n\n\nOptions\n\nAdd : Add new restraints to selected nodes\n\nReplace : Replace previously defined restraints on selected nodes\n\nDelete : Delete previously defined restraints on selected nodes\n\n\n\nSupport Type\n\nSelect the components of the degrees of freedom of the selected nodes to be restrained. The components correspond to the GCS (Nodal local coordinate system if it is defined) (refer to \"Coordinate system and nodes\").\n\n\n\nD-ALL : All displacement degrees-of-freedom\n\nDx : Displacement degree-of-freedom in GCS X-direction (Nodal local x-axis direction)\n\nDy : Displacement degree-of-freedom in GCS Y-direction (Nodal local y-axis direction)\n\nDz : Displacement degree-of-freedom in GCS Z-direction (Nodal local z-axis direction)\n\n\n\nR-ALL : All rotational degrees-of-freedom\n\nRx : Rotational degree-of-freedom about GCS X-axis (Nodal local x-axis)\n\nRy : Rotational degree-of-freedom about GCS Y-axis (Nodal local y-axis)\n\nRz : Rotational degree-of-freedom about GCS Z-axis (Nodal local z-axis)\n\nRw : Warping degree-of-freedom about GCS X-axis (Node's local x-axis)",
   "json_schema": {
     "CONS": {
       "$schema": "http://json-schema.org/draft-07/schema#",

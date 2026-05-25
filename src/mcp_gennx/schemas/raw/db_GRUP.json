@@ -8,6 +8,10 @@
     "GET",
     "PUT"
   ],
+  "description": "structure groups (구조그룹) - organize elements into groups",
+  "feature_name": "Structure Group",
+  "menu_path": "[Structure] > [Group] > [Group] > [Structure] > [Ctrl] > [F1]",
+  "usage": "Name\n\nEnter the name of a structure group to be created, modified or deleted.\n\n\n\nSuffix\n\nThe Suffix entry field is provided for the convenience of creating a number of related group names simultaneously. This is mainly used to generate changing interim structures pertaining to multiple construction stages.\n\nNote: Use the Group tab of the Tree Menu to assign nodes and elements to the defined Structure Groups.\nFirst, select the nodes and elements to be assigned to a group using the Selection functions. Next, drag and drop the structure group name to which the selected nodes and elements will be assigned from the Tree Menu to the Model Window. Once properly assigned, the numbers of nodes and elements belonging to the structure group are indicated in Group Tree.\n\n\n\nFig. Group Selection",
   "json_schema": {
     "GRUP": {
       "$schema": "http://json-schema.org/draft-07/schema#",

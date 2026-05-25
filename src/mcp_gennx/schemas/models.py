@@ -14,6 +14,11 @@ class ApiSchema(BaseModel):
     examples: dict = Field(default_factory=dict)  # Example payloads
     tables: list = Field(default_factory=list)  # Parameter table metadata
 
+    description: str = ""  # Single-source-of-truth feature description for LLM
+    feature_name: str = ""  # GUI feature name (e.g. "Create Nodes")
+    menu_path: str = ""  # GUI menu path (e.g. "[Node/Element] > [General] > ...")
+    usage: str = ""  # Detailed usage notes; exposed for POST/PUT only
+
 
 class ToolDef(BaseModel):
     """Intermediate representation before creating a FunctionTool."""

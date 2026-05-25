@@ -6,6 +6,10 @@
   "active_methods": [
     "POST"
   ],
+  "description": "Close the current project file.\n\nUse Close supported by Standard Windows.\n\nIf the project data have been modified, a Dialog Box will appear and ask if the changes are to be saved. When the project file is closed, midas Gen restores the default window.",
+  "feature_name": "Close Project",
+  "menu_path": "[File] > [Close Project]",
+  "usage": "",
   "json_schema": {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "doc/CLOSE",

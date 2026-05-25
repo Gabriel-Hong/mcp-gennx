@@ -11,14 +11,7 @@ from fastmcp.tools.function_tool import FunctionTool
 from mcp.types import ToolAnnotations
 
 from ..schemas.models import ApiSchema, ToolDef
-from ..utils.descriptions import generate_description
-
-METHOD_VERBS = {
-    "POST": "Create",
-    "GET": "Get all",
-    "PUT": "Update",
-    "DELETE": "Delete",
-}
+from ..utils.descriptions import METHOD_VERBS, generate_description
 
 
 class ToolFactory:

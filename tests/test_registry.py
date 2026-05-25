@@ -78,3 +78,39 @@ def test_get_methods_unit_styp():
 def test_missing_endpoint():
     registry = SchemaRegistry(SCHEMA_DIR)
     assert registry.get_schema("db/NONEXISTENT") is None
+
+
+def test_schema_has_description_fields():
+    """New 4 fields must be loaded from raw JSON."""
+    registry = SchemaRegistry(SCHEMA_DIR)
+    s = registry.get_schema("db/NODE")
+    assert s.description, "db/NODE must have a non-empty description"
+    assert s.feature_name == "Create Nodes"
+    assert s.menu_path.startswith("[Node/Element]")
+    assert s.usage, "db/NODE.usage should be populated from Feature.sections.input"
+
+
+def test_multi_merged_description_present():
+    """SECT merges sub-files; description should be a single deduplicated string."""
+    registry = SchemaRegistry(SCHEMA_DIR)
+    s = registry.get_schema("db/SECT")
+    assert s.description, "db/SECT must have a non-empty description after merge"
+    assert s.feature_name, "db/SECT.feature_name should come from one of the sub-files"
+
+
+def test_multi_separate_description_per_subtype():
+    """Each LCOM sub-type gets its own description."""
+    registry = SchemaRegistry(SCHEMA_DIR)
+    s = registry.get_schema("db/LCOM-GEN")
+    assert s.description, "db/LCOM-GEN must have its own description"
+
+
+def test_all_endpoints_have_description():
+    """Regression guard: every loaded endpoint must produce a non-empty description."""
+    registry = SchemaRegistry(SCHEMA_DIR)
+    missing = [
+        ep
+        for ep in registry.list_endpoints()
+        if not (registry.get_schema(ep).description or "").strip()
+    ]
+    assert not missing, f"Endpoints with empty description: {missing}"

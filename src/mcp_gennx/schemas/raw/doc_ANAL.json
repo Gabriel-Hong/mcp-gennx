@@ -6,6 +6,10 @@
   "active_methods": [
     "POST"
   ],
+  "description": "perform structural analysis (구조해석 수행) - run analysis on the current model",
+  "feature_name": "",
+  "menu_path": "",
+  "usage": "",
   "json_schema": {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "doc/ANAL",

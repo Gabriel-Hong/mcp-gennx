@@ -9,6 +9,10 @@
     "PUT",
     "DELETE"
   ],
+  "description": "nonlinear analysis (비선형해석) - set nonlinear analysis options",
+  "feature_name": "",
+  "menu_path": "",
+  "usage": "",
   "json_schema": {
     "NLCT": {
       "$schema": "http://json-schema.org/draft-07/schema#",
