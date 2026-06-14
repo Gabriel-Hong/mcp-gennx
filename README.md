@@ -8,9 +8,10 @@
 
 ## Features
 
-- **Dynamic Tool Generation** — Tools are generated at startup from JSON schema files. No code generation step; add a schema file, register the endpoint, and the tool appears.
+- **Dynamic Tool Generation** — Tools are generated at startup from JSON schema files. No code generation step; add a schema file plus one line to the endpoint map, and the tool appears.
 - **Domain-Driven Sub-Servers** — 5 sub-servers (modeling, boundary, loads, analysis, project) keep tools organized by structural engineering domain.
-- **Toolset Filtering** — Control which tools are exposed via environment variables: 87 tools (default), 159 tools (all), or GET-only (read-only mode).
+- **Data-Driven Routing** — Endpoint→sub-server/toolset/tier mapping and toolset presets live in packaged JSON (`data/endpoint_subserver_map.json`, `data/toolset_definitions.json`), the single source of truth for which tools load where — no hardcoded routing dicts in Python.
+- **Toolset Filtering** — Control which tools are exposed via environment variables: 87 tools (default), 161 tools (all), or GET-only (read-only mode).
 - **Schema-Sourced Descriptions** — Tool descriptions, GUI feature names, and menu paths are read from the JSON schema files (single source of truth). Long-form GUI usage guides are served lazily as an MCP resource (`gennx://feature/{slug}`) instead of being inlined, keeping the tool list compact.
 
 ## Architecture
@@ -22,7 +23,7 @@ Claude / GPT / Cursor
 Main FastMCP ("gennx")
     ├── modeling    (9 endpoints  · nodes, elements, materials, sections …)
     ├── boundary    (8 endpoints  · constraints, springs, rigid links …)
-    ├── loads       (14 endpoints · load cases, nodal/beam loads, LCOM 6 sub-types …)
+    ├── loads       (15 endpoints · load cases, nodal/beam loads, LCOM 6 sub-types …)
     ├── analysis    (6 endpoints  · eigenvalue, buckling, pushover …)
     └── project     (9 endpoints  · open/save/close, analysis run, view capture …)
               │  tool call
@@ -36,7 +37,7 @@ Main FastMCP ("gennx")
 
 ```
 schemas/raw/*.json
-    → SchemaRegistry (load & merge 65 schema files → 46 endpoints)
+    → SchemaRegistry (load & merge 66 schema files → 47 endpoints)
     → ToolFactory (generate closure per method)
     → FunctionTool (name, description, JSON Schema params, annotations)
     → FastMCP.add_tool()
@@ -156,7 +157,7 @@ AI:  [calls post_db_elem with Assign: {"1": {"TYPE":"BEAM","MATL":1,"SECT":1,"NO
 
 ```bash
 TOOLSETS=default                  # 87 tools — core endpoints only
-TOOLSETS=all                      # 159 tools — all endpoints
+TOOLSETS=all                      # 161 tools — all endpoints
 TOOLSETS=default,loads_advanced   # default + advanced load types
 TOOLSETS=modeling_core            # only core modeling tools (20 tools)
 READ_ONLY=true                   # expose only GET tools
@@ -172,16 +173,21 @@ mcp-gennx/
     ├── __init__.py              # Entry point (main)
     ├── server.py                # Server assembly & toolset filtering
     ├── config.py                # GennxSettings (pydantic-settings)
+    ├── routing.py               # Endpoint routing + toolset presets loaded from data/*.json
+    ├── data/
+    │   ├── endpoint_subserver_map.json   # endpoint → sub-server/toolset/tier (single source of truth)
+    │   └── toolset_definitions.json      # default/all toolset presets
     ├── client/
     │   └── gennx_client.py      # Async HTTP client for GEN NX API
     ├── schemas/
     │   ├── registry.py          # SchemaRegistry — loads & merges JSON schemas (incl. description/usage)
     │   ├── models.py            # ApiSchema (+ description, feature_name, menu_path, usage), ToolDef
-    │   └── raw/                 # 65 JSON schema files
+    │   └── raw/                 # 66 JSON schema files
     ├── servers/
+    │   ├── _common.py           # register_routed_tools() — map-driven tool registration
     │   ├── modeling.py          # Nodes, elements, materials, sections
     │   ├── boundary.py          # Constraints, springs, rigid links
-    │   ├── loads.py             # Load cases, forces, combinations (LCOM)
+    │   ├── loads.py             # Load cases, forces, combinations (LCOM), response spectrum
     │   ├── analysis.py          # Eigenvalue, buckling, nonlinear
     │   ├── project.py           # File ops, analysis run, view capture
     │   └── feature_docs.py      # gennx://feature/{slug} resource (lazy GUI/usage docs)
@@ -227,9 +233,10 @@ mcp-gennx/
 | boundary | `db/OFFS` | Beam Offsets (보 오프셋) |
 | boundary | `db/MCON` | Multi-point Constraints |
 | loads | `db/PRES` | Pressure Loads (압력하중) |
-| loads | `db/PSLT` | Prescribed Displacements |
-| loads | `db/ETMP` | Element Temperatures |
-| loads | `db/GTMP` | Gradient Temperatures |
+| loads | `db/PSLT` | Pressure Load Types (압력하중 타입) |
+| loads | `db/ETMP` | Element Temperatures (요소온도) |
+| loads | `db/GTMP` | Gradient Temperatures (온도경사) |
+| loads | `db/SPLC` | Response Spectrum Load Cases (응답스펙트럼 하중 케이스) |
 | analysis | `db/ACTL` | Analysis Control (해석 제어) |
 | analysis | `db/BUCK` | Buckling Analysis (좌굴해석) |
 | analysis | `db/PDEL` | P-Delta Analysis |
@@ -261,14 +268,11 @@ pytest
 ### Adding a New API
 
 1. Place the JSON schema file in `src/mcp_gennx/schemas/raw/`. To enrich the generated descriptions, include the optional `description`, `feature_name`, `menu_path`, and `usage` fields (the `usage` text is served via the `gennx://feature/{slug}` resource, not inlined).
-2. Add the endpoint to the appropriate sub-server's `ENDPOINTS` dict:
-   ```python
-   # src/mcp_gennx/servers/modeling.py
-   ENDPOINTS = {
-       ...
-       "db/NEW_ENDPOINT": {"tier": 2, "toolset": "modeling_advanced"},
-   }
+2. Add one line to the endpoint map `src/mcp_gennx/data/endpoint_subserver_map.json`, routing it to a sub-server, toolset, and tier:
+   ```json
+   "db/NEW_ENDPOINT": {"sub_server": "modeling", "toolset": "modeling_advanced", "tier": 2}
    ```
+   No Python edit is needed — each sub-server reads its endpoints from this map at startup via `register_routed_tools()`. (`tests/test_routing.py` fails if a schema and its map entry drift out of sync.)
 3. Restart the server — tools and the feature resource are generated automatically.
 
 ## License
