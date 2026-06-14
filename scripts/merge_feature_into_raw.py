@@ -43,6 +43,7 @@ FEATURE_DESCRIPTIONS: dict[str, str] = {
     "db/BODF": "body forces / self-weight (자중) - define gravity loads",
     "db/CNLD": "concentrated nodal loads (절점하중) - apply forces at nodes",
     "db/BMLD": "beam loads (보하중) - apply distributed loads on beams",
+    "db/SPLC": "response spectrum load cases (응답스펙트럼 하중 케이스) - define response spectrum load cases for seismic/dynamic analysis",
     "db/LCOM": "load combinations (하중조합) - combine load cases with factors",
     "db/LCOM-GEN": "general load combinations (일반 하중조합) - combine load cases for general analysis",
     "db/LCOM-CONC": "concrete design load combinations (콘크리트 설계 하중조합)",

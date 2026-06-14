@@ -1,0 +1,864 @@
+{
+  "endpoint": "db/SPLC",
+  "title": "Response Spectrum Load Cases",
+  "url": "https://support.midasuser.com/hc/en-us/articles/35963719599641-Response-Spectrum-Load-Cases",
+  "input_uri": "{base url} + db/SPLC",
+  "active_methods": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "description": "response spectrum load cases (응답스펙트럼 하중 케이스) - define response spectrum load cases for seismic/dynamic analysis",
+  "feature_name": "",
+  "menu_path": "",
+  "usage": "",
+  "json_schema": {
+    "SPLC": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "description": "SpectrumLoadCaseName",
+          "type": "string"
+        },
+        "DIR": {
+          "description": "Direction",
+          "type": "string"
+        },
+        "ANGLE": {
+          "description": "Excitationangle",
+          "type": "number"
+        },
+        "SCALE": {
+          "description": "ScaleFactor",
+          "type": "number"
+        },
+        "PMFT": {
+          "description": "PeriodModificationFactor",
+          "type": "number"
+        },
+        "bDAMP": {
+          "description": "ApplyDampingMethod-CheckBox",
+          "type": "boolean"
+        },
+        "INTERP": {
+          "description": "Interpolationofspectraldata",
+          "type": "string"
+        },
+        "DESC": {
+          "description": "Desctiprion",
+          "type": "string"
+        },
+        "COMTYPE": {
+          "description": "Modalcombinationtype",
+          "type": "string"
+        },
+        "bADDSIGN": {
+          "description": "Addsignstotheresults-CheckBox",
+          "type": "boolean"
+        },
+        "iSIGNTYPE": {
+          "description": "Addsignstotheresultstype",
+          "type": "integer"
+        },
+        "bMODE": {
+          "description": "Selectmodeshapes-CheckBox",
+          "type": "boolean"
+        },
+        "bAUTO": {
+          "description": "AutoSearchAngle",
+          "type": "boolean"
+        },
+        "iAUTOTYPE": {
+          "description": "AutoType",
+          "type": "integer"
+        },
+        "bNDP": {
+          "description": "NonDissipative",
+          "type": "boolean"
+        },
+        "NDP": {
+          "description": "NonDissipative",
+          "type": "number"
+        },
+        "aFUNCNAME": {
+          "description": "SpectrumNameList",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aUSEMODE": {
+          "description": "UseModeList",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "bUSE": {
+                "description": "BooleanUseMode",
+                "type": "boolean"
+              },
+              "MSFACTOR": {
+                "description": "ModeShapeFactor",
+                "type": "number"
+              }
+            }
+          }
+        },
+        "bCDAMP": {
+          "description": "CorrectDamping",
+          "type": "boolean"
+        },
+        "iMDTYPE": {
+          "description": "Dampingratiomethodtype",
+          "type": "integer"
+        },
+        "DALL": {
+          "description": "Dampingratioforallmodes",
+          "type": "number"
+        },
+        "aDAMPING": {
+          "description": "Modaldampingoverrides-dampingratioList",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "iMODE": {
+                "description": "Mode",
+                "type": "integer"
+              },
+              "DAMPING": {
+                "description": "ModeShapeFactor",
+                "type": "number"
+              }
+            }
+          }
+        },
+        "iCOEF": {
+          "description": "DampingType",
+          "type": "integer"
+        },
+        "bMASSP": {
+          "description": "Massproportional-CheckBox",
+          "type": "boolean"
+        },
+        "MASSC": {
+          "description": "Massproportional-Value",
+          "type": "number"
+        },
+        "bSTIFFP": {
+          "description": "Stiffnessproportional-CheckBox",
+          "type": "boolean"
+        },
+        "STIFFC": {
+          "description": "Stiffnessproportional-Value",
+          "type": "number"
+        },
+        "iCALC": {
+          "description": "Coefficientscalculationmethod",
+          "type": "integer"
+        },
+        "FP1": {
+          "description": "Frequency/Period-Mode1",
+          "type": "number"
+        },
+        "FP2": {
+          "description": "Frequency/Period-Mode2",
+          "type": "number"
+        },
+        "DR1": {
+          "description": "Dampingratio-Mode1",
+          "type": "number"
+        },
+        "DR2": {
+          "description": "DampingRatio-Mode2",
+          "type": "number"
+        },
+        "bACCECC": {
+          "description": "AccidentalEccentricity",
+          "type": "boolean"
+        },
+        "bACCECC_AUTO": {
+          "description": "EccentricityData-Automatic",
+          "type": "boolean"
+        },
+        "ACCECC_PERCENT": {
+          "description": "EccentricityData-Eccentricity",
+          "type": "number"
+        },
+        "bACCECC_CONSIDER_GL": {
+          "description": "EccentricityData-ConsiderbelowG.L",
+          "type": "boolean"
+        },
+        "bACCECC_MINIMUM_TORSION": {
+          "description": "EccentricityData-LimitMinimumTorsion",
+          "type": "boolean"
+        },
+        "aACCECC_ECCEN_LIST": {
+          "description": "EccentricityData-EccentricityList",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "STORY": {
+                "description": "Story",
+                "type": "string"
+              },
+              "CROSS": {
+                "description": "Cross",
+                "type": "number"
+              },
+              "ALONG": {
+                "description": "Along",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "RS Load Cases": {
+      "Assign": {
+        "6": {
+          "NAME": "LC00",
+          "DIR": "XY",
+          "ANGLE": 0,
+          "SCALE": 1,
+          "PMFT": 1,
+          "bDAMP": false,
+          "INTERP": "LOG",
+          "DESC": "",
+          "COMTYPE": "CQC",
+          "bADDSIGN": true,
+          "iSIGNTYPE": 0,
+          "bMODE": true,
+          "aFUNCNAME": [
+            "RS_func"
+          ],
+          "aUSEMODE": [
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            }
+          ]
+        }
+      }
+    },
+    "Damping Method - Modal": {
+      "Assign": {
+        "1": {
+          "NAME": "LC01",
+          "DIR": "XY",
+          "ANGLE": 0,
+          "SCALE": 1,
+          "PMFT": 1,
+          "bDAMP": true,
+          "INTERP": "LOG",
+          "DESC": "",
+          "COMTYPE": "CQC",
+          "bADDSIGN": true,
+          "iSIGNTYPE": 0,
+          "bMODE": true,
+          "aFUNCNAME": [
+            "RS_func"
+          ],
+          "aUSEMODE": [
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            }
+          ],
+          "bCDAMP": true,
+          "iMDTYPE": 1,
+          "DALL": 0.05,
+          "aDAMPING": [
+            {
+              "iMODE": 1,
+              "DAMPING": 0.06
+            },
+            {
+              "iMODE": 2,
+              "DAMPING": 0.07
+            }
+          ]
+        }
+      }
+    },
+    "Damping Method - Mass & Stiffness Proportional (Direction Specifications)": {
+      "Assign": {
+        "2": {
+          "NAME": "LC02",
+          "DIR": "XY",
+          "ANGLE": 90,
+          "SCALE": 1,
+          "PMFT": 1,
+          "bDAMP": true,
+          "INTERP": "LOG",
+          "DESC": "",
+          "COMTYPE": "CQC",
+          "bADDSIGN": true,
+          "iSIGNTYPE": 0,
+          "bMODE": true,
+          "aFUNCNAME": [
+            "RS_func"
+          ],
+          "aUSEMODE": [
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            }
+          ],
+          "bCDAMP": false,
+          "iMDTYPE": 2,
+          "iCOEF": 1,
+          "bMASSP": true,
+          "MASSC": 1.1,
+          "bSTIFFP": true,
+          "STIFFC": 1.2
+        }
+      }
+    },
+    "Damping Method - Mass & Stiffness Proportional (Calc. from Modal Damping/Frequency)": {
+      "Assign": {
+        "3": {
+          "NAME": "LC03",
+          "DIR": "XY",
+          "ANGLE": 90,
+          "SCALE": 1,
+          "PMFT": 1,
+          "bDAMP": true,
+          "INTERP": "LOG",
+          "DESC": "",
+          "COMTYPE": "CQC",
+          "bADDSIGN": true,
+          "iSIGNTYPE": 0,
+          "bMODE": true,
+          "aFUNCNAME": [
+            "RS_func"
+          ],
+          "aUSEMODE": [
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            }
+          ],
+          "bCDAMP": false,
+          "iMDTYPE": 2,
+          "iCOEF": 2,
+          "bMASSP": true,
+          "bSTIFFP": true,
+          "iCALC": 1,
+          "FP1": 0.6,
+          "FP2": 0.7,
+          "DR1": 0.05,
+          "DR2": 0.06
+        }
+      }
+    },
+    "Damping Method - Mass & Stiffness Proportional (Calc. from Modal Damping/Period)": {
+      "Assign": {
+        "4": {
+          "NAME": "LC04",
+          "DIR": "XY",
+          "ANGLE": 90,
+          "SCALE": 1,
+          "PMFT": 1,
+          "bDAMP": true,
+          "INTERP": "LOG",
+          "DESC": "",
+          "COMTYPE": "CQC",
+          "bADDSIGN": true,
+          "iSIGNTYPE": 0,
+          "bMODE": true,
+          "aFUNCNAME": [
+            "RS_func"
+          ],
+          "aUSEMODE": [
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            }
+          ],
+          "bCDAMP": false,
+          "iMDTYPE": 2,
+          "iCOEF": 2,
+          "bMASSP": true,
+          "bSTIFFP": true,
+          "iCALC": 2,
+          "FP1": 0.01,
+          "FP2": 0.02,
+          "DR1": 0.05,
+          "DR2": 0.06
+        }
+      }
+    },
+    "Damping Method - Strain Energy Proportional": {
+      "Assign": {
+        "5": {
+          "NAME": "LC05",
+          "DIR": "Z",
+          "ANGLE": 0,
+          "SCALE": 1,
+          "PMFT": 1,
+          "bDAMP": true,
+          "INTERP": "LOG",
+          "DESC": "",
+          "COMTYPE": "CQC",
+          "bADDSIGN": true,
+          "iSIGNTYPE": 0,
+          "bMODE": true,
+          "aFUNCNAME": [
+            "RS_func"
+          ],
+          "aUSEMODE": [
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            },
+            {
+              "bUSE": true,
+              "MSFACTOR": 1
+            }
+          ],
+          "bCDAMP": false,
+          "iMDTYPE": 3
+        }
+      }
+    }
+  },
+  "tables": [
+    [
+      {
+        "No.": "1",
+        "Description": "Spectrum Load Case Name",
+        "Key": "NAME",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "2",
+        "Description": "Description",
+        "Key": "DESC",
+        "Value Type": "String",
+        "Default": "Blank",
+        "Required": "Optional"
+      },
+      {
+        "No.": "3",
+        "Description": "Direction•\nX-Y: \"XY\"•\nZ: \"Z\"",
+        "Key": "DIR",
+        "Value Type": "String",
+        "Default": "\"XY\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "4",
+        "Description": "Excitation angle",
+        "Key": "ANGLE",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "5",
+        "Description": "Scale Factor",
+        "Key": "SCALE",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "6",
+        "Description": "Period Modification Factor",
+        "Key": "PMFT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "7",
+        "Description": "Spectrum Name List",
+        "Key": "aFUNCNAME",
+        "Value Type": "Array[String]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "8",
+        "Description": "Interpolation of spectral data•\nLinear: \"LINEAR\"•\nLogarithm: \"LOG\"",
+        "Key": "INTERP",
+        "Value Type": "String",
+        "Default": "\"LINEAR\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "9",
+        "Description": "Modal Combination Type•\nSRSS: \"SRSS\"•\nCQC: \"CQC\"•\nABS: \"ABS\"•\nLinear: \"Linear\"",
+        "Key": "COMTYPE",
+        "Value Type": "String",
+        "Default": "\"CQC\"",
+        "Required": "Optional"
+      },
+      {
+        "No.": "10",
+        "Description": "Add signs to the results",
+        "Key": "bADDSIGN",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "11",
+        "Description": "Add signs to the results type•\nAlong the Major Mode Direction: 0•\nAlong the Absolute Maximum Value: 1",
+        "Key": "iSIGNTYPE",
+        "Value Type": "Integer",
+        "Default": "1",
+        "Required": "Optional"
+      },
+      {
+        "No.": "12",
+        "Description": "Select mode shapes",
+        "Key": "bMODE",
+        "Value Type": "Boolean",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "13",
+        "Description": "Use Mode List•\nInsert the data as an object",
+        "Key": "aUSEMODE",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Boolean Use Mode",
+        "Key": "bUSE",
+        "Value Type": "Boolean",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Mode Shape Factor",
+        "Key": "MSFACTOR",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "14",
+        "Description": "Apply Damping Method",
+        "Key": "bDAMP",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "15",
+        "Description": "Correction by Damping Ratio",
+        "Key": "bCDAMP",
+        "Value Type": "Boolean",
+        "Default": "False",
+        "Required": "Optional"
+      },
+      {
+        "No.": "16",
+        "Description": "Damping Method•\nModal: 1•\nMass & Stiffness Proportional: 2•\nStrain Energy Proportional: 3",
+        "Key": "iMDTYPE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Damping Method - Modal"
+      },
+      {
+        "No.": "17",
+        "Description": "Damping ratio for all modes",
+        "Key": "DALL",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "18",
+        "Description": "Modal damping overrides - damping ratio List",
+        "Key": "aDAMPING",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Mode Number",
+        "Key": "iMODE",
+        "Value Type": "Integer",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Mode Shape Factor",
+        "Key": "DAMPING",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Damping Method - Mass & Stiffness Proportional (Direction Specifications)"
+      },
+      {
+        "No.": "17",
+        "Description": "Damping Type•\nDirect Specification: 1",
+        "Key": "iCOEF",
+        "Value Type": "Integer",
+        "Default": "1",
+        "Required": "Required"
+      },
+      {
+        "No.": "18",
+        "Description": "Mass Proportional",
+        "Key": "bMASSP",
+        "Value Type": "Boolean",
+        "Default": "true",
+        "Required": "Optional"
+      },
+      {
+        "No.": "19",
+        "Description": "Stiffness Proportional",
+        "Key": "bSTIFFP",
+        "Value Type": "Boolean",
+        "Default": "true",
+        "Required": "Optional"
+      },
+      {
+        "No.": "20",
+        "Description": "Direction Specification for Mass Proportional",
+        "Key": "MASSC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "No.": "21",
+        "Description": "Direction Specification for Stiffness Proportional",
+        "Key": "STIFFC",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Optional"
+      },
+      {
+        "_condition": "Damping Method - Mass & Stiffness Proportional (Calc. from Modal Damping)"
+      },
+      {
+        "No.": "17",
+        "Description": "Damping Type•\nCalculation from Modal Damping: 2",
+        "Key": "iCOEF",
+        "Value Type": "Integer",
+        "Default": "1",
+        "Required": "Required"
+      },
+      {
+        "No.": "18",
+        "Description": "Mass Proportional",
+        "Key": "bMASSP",
+        "Value Type": "Boolean",
+        "Default": "true",
+        "Required": "Optional"
+      },
+      {
+        "No.": "19",
+        "Description": "Stiffness Proportional",
+        "Key": "bSTIFFP",
+        "Value Type": "Boolean",
+        "Default": "true",
+        "Required": "Optional"
+      },
+      {
+        "No.": "",
+        "Description": "Coefficients Calculation method•\nFrequency: 1•\nPeriod: 2",
+        "Key": "iCALC",
+        "Value Type": "Integer",
+        "Default": "1",
+        "Required": "Required"
+      },
+      {
+        "No.": "20",
+        "Description": "Frequency / Period - Mode1",
+        "Key": "FP1",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Required"
+      },
+      {
+        "No.": "21",
+        "Description": "Frequency / Period - Mode2",
+        "Key": "FP2",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Required"
+      },
+      {
+        "No.": "22",
+        "Description": "Damping ratio - Mode1",
+        "Key": "DR1",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Required"
+      },
+      {
+        "No.": "23",
+        "Description": "Damping Ratio - Mode2",
+        "Key": "DR2",
+        "Value Type": "Number",
+        "Default": "0",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Accidental Eccentricity for Response Spectrum"
+      },
+      {
+        "No.": "24",
+        "Description": "Accidental Eccentricity• Active: true• InActive: fasle",
+        "Key": "bACCECC",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "25",
+        "Description": "Eccentricity Data• Automatic: true• User Defined: fasle",
+        "Key": "bACCECC_AUTO",
+        "Value Type": "Boolean",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "26",
+        "Description": "Eccentricitiy Percentage",
+        "Key": "ACCECC_PERTCENT",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "27",
+        "Description": "Consider Eccentricity below G.L",
+        "Key": "bACCECC_CONSIDER_GL",
+        "Value Type": "Boolean",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "28",
+        "Description": "Limit Minimum Accidental Torsional Moment",
+        "Key": "bACCECC_CONSIDER_GL",
+        "Value Type": "Boolean",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "29",
+        "Description": "Accidental Eccentricity User List",
+        "Key": "aACCECC_ECCEN_LIST",
+        "Value Type": "Array[Object]",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Story",
+        "Key": "STORY",
+        "Value Type": "String",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(2)",
+        "Description": "Cross Position",
+        "Key": "CROSS",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "No.": "(3)",
+        "Description": "Along Position",
+        "Key": "Along",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      },
+      {
+        "_condition": "Non-Dissipative element design"
+      },
+      {
+        "No.": "30",
+        "Description": "Non-dissipative element design",
+        "Key": "bNDP",
+        "Value Type": "Boolean",
+        "Default": "false",
+        "Required": "Optional"
+      },
+      {
+        "No.": "(1)",
+        "Description": "Value for Non-dissipative",
+        "Key": "NDP",
+        "Value Type": "Number",
+        "Default": "-",
+        "Required": "Required"
+      }
+    ]
+  ],
+  "menu_name": "Response Spectrum Load Cases"
+}

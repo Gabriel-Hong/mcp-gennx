@@ -32,6 +32,7 @@
   "db/PSLT":  {"sub_server": "loads",    "toolset": "loads_advanced",    "tier": 2},
   "db/ETMP":  {"sub_server": "loads",    "toolset": "loads_advanced",    "tier": 2},
   "db/GTMP":  {"sub_server": "loads",    "toolset": "loads_advanced",    "tier": 2},
+  "db/SPLC":  {"sub_server": "loads",    "toolset": "loads_advanced",    "tier": 2},
 
   "db/EIGV":  {"sub_server": "analysis", "toolset": "analysis_core",     "tier": 1},
   "db/NMAS":  {"sub_server": "analysis", "toolset": "analysis_core",     "tier": 1},

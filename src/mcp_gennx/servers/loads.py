@@ -16,6 +16,7 @@ ENDPOINTS = {
     "db/PSLT": {"tier": 2, "toolset": "loads_advanced"},
     "db/ETMP": {"tier": 2, "toolset": "loads_advanced"},
     "db/GTMP": {"tier": 2, "toolset": "loads_advanced"},
+    "db/SPLC": {"tier": 2, "toolset": "loads_advanced"},
 }
 
 # LCOM has sub-typed URIs (db/LCOM-GEN, db/LCOM-CONC, etc.)
