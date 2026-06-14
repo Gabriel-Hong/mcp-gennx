@@ -9,13 +9,8 @@ from mcp.types import ToolAnnotations
 
 from ..schemas.registry import SchemaRegistry
 from ..tools.factory import ToolFactory
+from ._common import register_routed_tools
 from .feature_docs import resource_uri_for
-
-# db/* endpoints handled by ToolFactory (GET/PUT only)
-DB_ENDPOINTS = {
-    "db/UNIT": {"tier": 2, "toolset": "project"},
-    "db/STYP": {"tier": 2, "toolset": "project"},
-}
 
 
 def _desc(registry: SchemaRegistry, endpoint: str, fallback: str) -> str:
@@ -43,13 +38,9 @@ def create_project_server(
 ) -> FastMCP:
     server = FastMCP("project")
 
-    # Register db/UNIT and db/STYP via factory
-    for endpoint, meta in DB_ENDPOINTS.items():
-        schema = registry.get_schema(endpoint)
-        if schema:
-            factory.register_tools(
-                server, schema, "project", meta["toolset"]
-            )
+    # Register routed db/* endpoints (db/UNIT, db/STYP) via factory.
+    # Manual endpoints (doc/*, view/CAPTURE) are excluded here and built below.
+    register_routed_tools(server, registry, factory, "project")
 
     # Manually register doc/* and view/CAPTURE tools
     _register_doc_tools(server, registry)

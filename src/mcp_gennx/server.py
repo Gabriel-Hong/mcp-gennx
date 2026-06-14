@@ -10,6 +10,7 @@ from fastmcp import FastMCP
 
 from .client.gennx_client import GennxApiClient
 from .config import GennxSettings
+from .routing import load_toolset_definitions
 from .schemas.registry import SchemaRegistry
 from .servers import (
     create_analysis_server,
@@ -46,27 +47,9 @@ payload. The slug is the endpoint with `/` replaced by `_`, lowercased \
 (e.g. `db_node`, `doc_new`, `view_capture`).
 """
 
-# Toolset definitions
-TOOLSET_DEFINITIONS: dict[str, list[str]] = {
-    "default": [
-        "modeling_core",
-        "boundary_core",
-        "loads_core",
-        "analysis_core",
-        "project",
-    ],
-    "all": [
-        "modeling_core",
-        "modeling_advanced",
-        "boundary_core",
-        "boundary_advanced",
-        "loads_core",
-        "loads_advanced",
-        "analysis_core",
-        "analysis_advanced",
-        "project",
-    ],
-}
+# Toolset presets (default/all -> list of toolset tags), loaded from package
+# data so the mapping is data-driven rather than hardcoded here.
+TOOLSET_DEFINITIONS: dict[str, list[str]] = load_toolset_definitions()
 
 # All domain tags used across sub-servers
 DOMAIN_TAGS = {"modeling", "boundary", "loads", "analysis", "project"}
