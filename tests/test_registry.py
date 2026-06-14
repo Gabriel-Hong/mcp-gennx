@@ -1,19 +1,22 @@
 """Tests for SchemaRegistry."""
 
-from pathlib import Path
-
 from mcp_gennx.schemas.registry import SchemaRegistry
 
-
-SCHEMA_DIR = Path(__file__).parent.parent / "src" / "mcp_gennx" / "schemas" / "raw"
+from conftest import SCHEMA_DIR, expected_endpoint_count
 
 
 def test_load_all_schemas():
     registry = SchemaRegistry(SCHEMA_DIR)
     endpoints = registry.list_endpoints()
-    # 41 logical endpoints, but LCOM splits into 6 sub-types = 40 + 6 - 1 = 45
-    # (db/LCOM is NOT registered; db/LCOM-GEN etc. are)
-    assert len(endpoints) == 46, f"Expected 46 endpoints, got {len(endpoints)}: {sorted(endpoints)}"
+    # Expected count is derived from raw/*.json (handles SECT-style merges and
+    # LCOM-style splits) so adding a schema needs no test edit.
+    expected = expected_endpoint_count(SCHEMA_DIR)
+    assert len(endpoints) == expected, (
+        f"Registry exposed {len(endpoints)} endpoints but raw/*.json implies "
+        f"{expected}: {sorted(endpoints)}"
+    )
+    # Floor guard: ensure schemas actually loaded (not a vacuous 0 == 0).
+    assert len(endpoints) > 40
 
 
 def test_single_file_endpoint():

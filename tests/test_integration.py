@@ -88,11 +88,15 @@ def test_tool_descriptions_not_empty():
 
 
 def test_all_endpoints_loaded():
-    """SchemaRegistry should load all endpoints (LCOM splits into 6 sub-types)."""
-    from mcp_gennx.schemas.registry import SchemaRegistry
-    from pathlib import Path
+    """SchemaRegistry should load every endpoint implied by raw/*.json.
 
-    schema_dir = Path(__file__).parent.parent / "src" / "mcp_gennx" / "schemas" / "raw"
-    registry = SchemaRegistry(schema_dir)
-    # 41 logical APIs, but LCOM has 6 sub-types registered separately
-    assert len(registry.list_endpoints()) == 46
+    Count is derived (SECT-style merges + LCOM-style splits handled) rather
+    than hardcoded, so adding a schema file needs no test edit.
+    """
+    from mcp_gennx.schemas.registry import SchemaRegistry
+
+    from conftest import SCHEMA_DIR, expected_endpoint_count
+
+    registry = SchemaRegistry(SCHEMA_DIR)
+    assert len(registry.list_endpoints()) == expected_endpoint_count(SCHEMA_DIR)
+    assert len(registry.list_endpoints()) > 40
